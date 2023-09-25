@@ -1,0 +1,100 @@
+.estructura {
+    width: 300px;
+    height: 440px;
+    border: 8px solid rgb(51, 123, 205);
+    background-color: rgb(61, 83, 124);
+    border-radius: 20px;
+    text-align: center;
+}
+
+.panel {
+    height: 50px;
+    width: 260px;
+    background-color: darkgray;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.botonazul {
+    height: 50px;
+    width: 55px;
+    margin-left: 4px;
+    border-radius: 10px;
+    background-color: rgb(107, 145, 216);
+    border-color: aliceblue;
+    color: white;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.botonazul:hover {
+    background-color: rgb(76, 102, 151);
+}
+
+.botonamarillo {
+    height: 50px;
+    width: 55px;
+    margin-left: 4px;
+    border-radius: 10px;
+    background-color: rgb(177, 159, 89);
+    border-color: aliceblue;
+    color: white;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.botonamarillo:hover {
+    background-color: rgb(142, 128, 71);
+}
+
+.botonrojo {
+    height: 50px;
+    width: 55px;
+    margin-left: 4px;
+    border-radius: 10px;
+    background-color: rgb(141, 73, 73);
+    border-color: aliceblue;
+    color: white;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.botonrojo:hover {
+    background-color: rgb(105, 53, 53);
+}
+
+.botonverde {
+    height: 50px;
+    width: 55px;
+    margin-left: 4px;
+    border-radius: 10px;
+    background-color: rgb(63, 156, 86);
+    border-color: aliceblue;
+    color: white;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.botonverde:hover {
+    background-color: rgb(47, 110, 63);
+}
+
+.botonextra {
+    height: 50px;
+    width: 55px;
+    margin-left: 4px;
+    border-radius: 10px;
+    background-color:  rgb(99, 190, 243);
+    border-color: aliceblue;
+    color: white;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.botonextra:hover {
+    background-color:  rgb(77, 134, 167);}
+
+.abajo{
+    margin-right: 62px;
+}

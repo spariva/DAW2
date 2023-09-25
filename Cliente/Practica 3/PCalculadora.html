@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejercicio 3</title>
+    <link rel="stylesheet" type="text/css" href="PCalculadora.css">
+</head>
+
+<body>
+    <p></p>
+    <div class="estructura">
+        <form>
+            <p><input type="text" class="panel" id="panel" /> </p>
+            <div style="margin: 25px;">
+                <p><input id="1" type="button" class="botonazul" onclick="anadirnum(1)" value="1" />
+                    <input id="2" type="button" class="botonazul" onclick="anadirnum(2)" value="2" />
+                    <input id="3" type="button" class="botonazul" onclick="anadirnum(3)" value="3" />
+                    <input id="+" type="button" class="botonamarillo" onclick="operar('+')" value="+" />
+                </p>
+
+                <p><input id="4" type="button" class="botonazul" onclick="anadirnum(4)" value="4" />
+                    <input id="5" type="button" class="botonazul" onclick="anadirnum(5)" value="5" />
+                    <input id="6" type="button" class="botonazul" onclick="anadirnum(6)" value="6" />
+                    <input id="-" type="button" class="botonamarillo" onclick="operar('-')" value="-" />
+                </p>
+
+                <p><input id="7" type="button" class="botonazul" onclick="anadirnum(7)" value="7" />
+                    <input id="8" type="button" class="botonazul" onclick="anadirnum(8)" value="8" />
+                    <input id="9" type="button" class="botonazul" onclick="anadirnum(9)" value="9" />
+                    <input id="*" type="button" class="botonamarillo" onclick="operar('*')" value="*" />
+                </p>
+
+                <p><input id="0" type="button" class="botonazul" onclick="anadirnum(0)" value="0" />
+                    <input id="." type="button" class="botonazul" onclick="anadirnum('.')" value="." />
+                    <input id="=" type="button" class="botonverde" onclick="resultado()" value="=" />
+                    <input id="/" type="button" class="botonamarillo" onclick="operar('/')" value="/" />
+                </p>
+                <p class="abajo">
+                    <input id="c" type="button" class="botonrojo" onclick="resetear()" value="c" />
+                    <input id="√" type="button" class="botonextra" onclick="operar('√')" value="√" />
+                    <input id="%" type="button" class="botonextra" onclick="operar('%')" value="%" />
+
+                </p>
+            </div>
+        </form>
+
+        <script>
+            var num1;
+            var num2;
+            var signo;
+            var resultado;
+            var txt = "";
+            var operacion;
+
+
+            function anadirnum(num) {
+                txt += num;
+                document.getElementById("panel").value = txt;
+            }
+
+            function operar(signo) {
+                num1 = parseFloat(txt);
+                txt = "";
+                operacion = signo;
+                document.getElementById("panel").value = txt;
+            }
+
+            function resetear() {
+                num1 = 0;
+                num2 = 0;
+                txt = "";
+                document.getElementById("panel").value = txt;
+            }
+
+            function resultado() {
+
+                if(operacion!='0'){
+                //si el signo es cero no se operara ya que significa que no se ha seleccionada nada para operar
+
+                    num2 = parseFloat(txt);
+
+                    switch (operacion) {
+
+                        case '+':
+                            txt = num1 + num2;
+                            break;
+
+                        case '-':
+                            txt = num1 - num2;
+                            break;
+
+                        case '*':
+                            txt = num1 * num2;
+                            break;
+
+                        case '/':
+                            txt = num1 / num2;
+                            break;
+                        
+                        case '√':
+                            break;
+
+                        case '%':
+                            break;
+                    }
+
+                    operacion='0';
+                    num1 = txt; //el valor se guarda como valor a operar
+                    num2 = 0; //y como segundo valor lo dejamos vacio
+                    //resultado= parseFloat(txt);
+                    //txt= resultado.toFixed(1);
+                    document.getElementById("panel").value = txt;
+                }
+
+            }
+
+
+        </script>
+
+    </div>
+</body>
+
+</html>
