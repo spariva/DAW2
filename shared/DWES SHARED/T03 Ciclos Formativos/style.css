@@ -1,0 +1,75 @@
+.smr{
+    margin-top: 20px;
+    width: 500px;
+    padding-right: 15px;
+    background-color: rgb(255, 244, 127);
+    transition: background-color 0.3s;
+    transition: width 2.0s;
+    color:black;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding-left: 15px;
+    padding-bottom: 10px;
+}
+
+.smr:hover{
+    background-color: rgb(255, 237, 44);
+    width: 700px;
+}
+
+.daw{
+    margin-top: 20px;
+    width: 500px;
+    padding-right: 15px;
+    background-color: rgb(156, 233, 249);
+    transition: background-color 0.3s;
+    transition: width 2.0s;
+    color:black;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding-left: 15px;
+    padding-bottom: 10px;
+}
+
+.daw:hover{
+    background-color: rgb(86, 227, 255);
+    width: 700px;
+}
+
+.dam{
+    margin-top: 20px;
+    width: 500px;
+    padding-right: 15px;
+    background-color: rgb(145, 235, 120);
+    transition: background-color 0.3s;
+    transition: width 2.0s;
+    color:black;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding-left: 15px;
+    padding-bottom: 10px;
+}
+
+.dam:hover{
+    background-color: rgb(105, 231, 71);
+    width: 700px;
+}
+
+.asir{
+    margin-top: 20px;
+    width: 500px;
+    padding-right: 15px;
+    background-color: rgb(232, 153, 232);
+    transition: background-color 0.3s;
+    transition: width 2.0s;
+    color:black;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding-left: 15px;
+    padding-bottom: 10px;
+}
+
+.asir:hover{
+    background-color: rgb(219, 90, 219);
+    width: 700px;
+}

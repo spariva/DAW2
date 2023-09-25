@@ -1,0 +1,11 @@
+.cuadro{
+    height: 150px;
+    width: 350px;
+    text-align: center;
+    border:5px solid blue;
+    border-radius: 15px;
+    margin-left: 40%;
+    margin-top: 500px;
+    font-size: 35px;
+    padding-top: 10px;
+}
