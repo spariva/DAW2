@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>P02-1 Arrays</title>
+    <link rel="stylesheet" type="text/css" href="Arrays.css">
+</head>
+
+<body>
+    <div>
+        <p>
+        <h1>Ejercicio 1</h1>
+        </p>
+    </div>
+    <p> <input type="text" class="txtcss" id="numeros" placeholder="Ejemplos" />
+        <input type="button" class="btn" id="cargar" value="Cargar Ejemplo" onclick="cargando()" /> </p>
+    <p> <input type="button" class="btn" id="calcular" value="Calcular" onclick="calculando()" /> </p>
+
+    <script>
+        var array = [63, 45, 58, 56];
+        var num = 0;
+        var texto = "";
+        var suma = 0;
+        var media;
+        var mayor = 0;
+        var menor = 1000000;
+        var cantidad = 0;
+
+        array.forEach(function (elemento) {
+            num = elemento;
+            texto = texto + num.toString() + ", ";
+
+            suma = suma + elemento;
+
+            if (elemento > mayor) {
+                mayor = elemento;
+            }
+
+            if (elemento < menor) {
+                menor = elemento;
+            }
+
+            cantidad++;
+        });
+        media = (suma / cantidad);
+
+        function calculando() {
+            alert("La suma es: " + suma + "\nLa media es: " + media + "\nEl mayor es: "
+                + mayor + "\nEl menor es: " + menor);
+        }
+
+        function cargando() {
+            document.getElementById("numeros").value = texto;
+        }
+    </script>
+    <p></p>
+    <br>
+
+
+
+    <div>
+        <p>
+        <h1>Ejercicio 2</h1>
+        </p>
+    </div>
+    <p> <input type="text" class="txtcss" id="numeros1" /> <input type="button" class="btn" onclick="ejemplo1()"
+            value="Ejemplo1" /> </p>
+    <p> <input type="text" class="txtcss" id="numeros2" /> <input type="button" class="btn" onclick="ejemplo2()"
+            value="Ejemplo2" /> </p>
+    <p> <input type="button" class="btn" id="concatenar" onclick="concatenar()" value="Concatenar" /> </p>
+
+    <script>
+        var array1 = new Array("");
+        var array2 = new Array("");
+        var array22 = new Array("");
+        var aleatorio02;
+        var cadena;
+
+        function ejemplo1() {
+            aleatorio02 = (Math.round((Math.random()) * 100)).toString();
+            array1.push(aleatorio02 + " ");
+            document.getElementById("numeros1").value = array1;
+        }
+
+        function ejemplo2() {
+            aleatorio02 = (Math.round((Math.random()) * 100)).toString();
+            array22.push(aleatorio02 + " ");
+            document.getElementById("numeros2").value = array22;
+        }
+
+        function concatenar() {
+            cadena = (document.getElementById("numeros1").value);
+            cadena = (document.getElementById("numeros1").value) + "," + (document.getElementById("numeros2").value);
+            alert(cadena);
+        }
+    </script>
+    <p></p>
+    <br>
+
+
+    <div>
+        <p>
+        <h1>Ejercicio 3</h1>
+        </p>
+    </div>
+    <p>Introduce los numeros separados por comas:</p>
+    <p> <input type="text" class="txtcss" id="numeros3" value="Introduce un array" />
+        <input type="button" class="btn" id="aleatorio" onclick="aleatorio()" value="Introduce un ejemplo" /> </p>
+    <p><input type="button" class="btn" id="ascendente" onclick="ascendente()" value="Ascendente" />
+        <input type="button" class="btn" id="descendente" onclick="descendente()" value="Descendente" /> </p>
+
+
+    <script>
+        var aleatorio3;
+        var guardados = [];
+        //var texto;
+
+        function aleatorio() {
+            aleatorio3 = Math.round(Math.random() * 100);
+            guardados.push(aleatorio3);
+            document.getElementById("numeros3").value = guardados.join(", ");
+        }
+
+        function quitarComas() {
+            guardados = document.getElementById("numeros3").value.split(',');
+        }
+
+        function ascendente() {
+            quitarComas();
+            guardados.sort(function (a, b) {
+                return a - b; // Ordenar en orden ascendente
+            });
+            var texto = "El orden ascendente queda así: \n" + guardados.join(", ");
+            alert(texto);
+        }
+
+        function descendente() {
+            quitarComas();
+            guardados.sort(function (a, b) {
+                return b - a; // Ordenar en orden descendente
+            });
+            var texto = "El orden descendente queda así: \n" + guardados.join(", ");
+            alert(texto);
+        }
+
+    </script>
+    <p></p>
+    <br>
+
+    <div>
+        <p>
+        <h1>Ejercicio 4</h1>
+        </p>
+    </div>
+    <p>Introduce los primeros enteros separados por comas:</p>
+    <p> <input type="text" class="txtcss" id="numeros4" value="Array de enteros" />
+        <input type="button" class="btn" id="aleatorio5" onclick="aleatorio5()" value="Ejemplo" /> </p>
+    <p>Valor: <input style="width: 120px;" type="text" class="txtcss" name="caja" id="caja" value="Numero a añadir" />
+        Posicion del Array:
+        <input style="width: 40px;" type="number" class="txtcss" id="posicion" />
+        <input type="button" class="btn" id="insertar" onclick="insertar()" value="Insertar" /> </p>
+
+
+    <script>
+        var aleatorio4;
+        var guardados2 = [];
+
+        function aleatorio5() {
+            aleatorio4 = Math.round(Math.random() * 100);
+            guardados2.push(aleatorio4);
+            document.getElementById("numeros4").value = guardados2.join(", ");
+        }
+
+        function quitarComas2() {
+            guardados2 = document.getElementById("numeros4").value.split(',');
+        }
+
+        function insertar() {
+            //quitarComas2();
+            /*guardados2.sort(function(a, b) {
+                return a - b; // Ordenar en orden ascendente
+            });
+            var texto = "El orden ascendente queda así: \n" + guardados2.join(", ");
+            alert(texto);*/
+            var posicion = document.getElementById("posicion").value;
+            var anadir = document.getElementById("caja").value;
+            guardados2.splice(posicion, 0, anadir);
+            var txt = "El array queda así: \n" + guardados2.join(", ");
+            alert(txt);
+        }
+
+    </script>
+
+</body>
+
+</html>

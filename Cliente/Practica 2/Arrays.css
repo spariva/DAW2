@@ -1,0 +1,25 @@
+body{
+    background-color: rgb(246, 237, 162);
+}
+
+div{
+    background-color: #c5b859;
+    color:rgb(0, 0, 0);
+    padding-left: 120px;
+    width: 500px;
+    border-radius: 20px;
+}
+
+.btn{
+    background-color: rgb(166, 182, 235);
+    border-radius: 5px;
+    border-color: rgb(226, 239, 184);
+}
+
+.txtcss{
+    background-color:#eff0a8;
+    border-color: white;
+    border-radius: 5px;
+    text-align: center;
+
+}
