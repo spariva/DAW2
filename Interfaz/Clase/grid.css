@@ -1,0 +1,15 @@
+body{
+    background-color: rgb(225, 235, 243);
+}
+
+.contenedor{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px 100px;
+    grid-gap: 10px;
+    grid-template-areas: "a";
+}
+.item{
+    background-color: rgb(230, 227, 92);
+    border: 1px solid black;
+}
