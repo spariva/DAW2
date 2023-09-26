@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica Objetos</title>
+
+</head>
+<body>
+    <h1>Biblioteca de Libros</h1>
+    <button onclick="addBook()">Agregar Libro</button>
+    <button onclick="deleteBook()">Eliminar Libro</button>
+    <script>
+        var arrayLibros = {};
+        function Libro(titulo, autore, editorial){
+            this.titulo = titulo;
+            this.autore = autore;
+            this.editorial = editorial;
+        }
+
+        function addBook(){
+            var libro = new Libro();
+            libro.titulo = prompt("Título?");
+            libro.autore = prompt("Autore?");
+            libro.editorial = parseInt(prompt("Año?"));
+            libro.editorial = prompt("Género?");
+            arrayLibros.push(libro);
+            alert(`Hola, soy ${libro.titulo} tengo ${libro.autore} años y vivo en ${libro.editorial}`);
+        }
+        function deleteBook(){
+            arrayLibros.pop();
+        }
+        arrayLibros.forEach(function(element)){
+            alert(`$[element]`);
+        }
+    </script>
+</body>
+</html>

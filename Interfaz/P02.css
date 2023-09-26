@@ -1,0 +1,56 @@
+.cuerpo{
+    background-color: rgb(238, 238, 238);
+    border: black;
+    width: 1900px;
+}
+#miEncabezado{
+    background-color: rgb(248, 196, 52);
+    padding-left: 10px;
+    padding-top: 10px;
+    height: 150px;
+}
+.tituloPrincipal{
+    color: rgb(12, 98, 211);
+
+}
+.contenidoPrincipal{
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid rgb(170, 170, 170);
+
+}
+.parrafoDestacado{
+    color:rgb(62, 143, 62);
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.listaElementos{
+    background-color: rgba(255, 160, 160, 0.534);
+    padding-left: 14px;
+    list-style: circle;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.contenidoSecundario{
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid rgb(170, 170, 170);
+}
+.botonAccion{
+    background-color: rgb(214, 49, 20);
+    color:white;
+    border-radius: 5px;
+    height: 35px;
+    width: 70px;
+    border: tomato;
+}
+#miPieDePagina{
+    background-color: rgb(46, 46, 46);
+    padding-top:6px;
+    padding-left: 10px;
+    margin-top:20px;
+    height: 55px;
+    color:white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+}

@@ -8,7 +8,7 @@ body {
 }
 .calculator {
     display: flex;
-    width: 300px;
+    width: 900px;
     margin: 0 auto;
     border: 3px solid #224a7b;
     background-color: #3876c2;
@@ -23,7 +23,7 @@ body {
     margin-bottom: 10px;
 }*/
 .buttons { 
-    width: 232px;
+    width: 100px;
 }
 button {
     display: flex;
