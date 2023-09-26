@@ -1,5 +1,5 @@
 .cuerpo{
-    background-color: rgb(238, 238, 238);
+    background-color: rgb(255, 254, 254);
     border: black;
     width: 1900px;
 }
@@ -25,7 +25,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 .listaElementos{
-    background-color: rgba(255, 160, 160, 0.534);
+    background-color: rgba(241, 152, 152, 0.781);
     padding-left: 14px;
     list-style: circle;
     padding-top: 10px;
@@ -34,10 +34,10 @@
 .contenidoSecundario{
     margin-top: 20px;
     padding: 20px;
-    border: 1px solid rgb(170, 170, 170);
+    border: 1px solid rgb(124, 124, 124);
 }
 .botonAccion{
-    background-color: rgb(214, 49, 20);
+    background-color: rgb(235, 54, 22);
     color:white;
     border-radius: 5px;
     height: 35px;
@@ -45,7 +45,7 @@
     border: tomato;
 }
 #miPieDePagina{
-    background-color: rgb(46, 46, 46);
+    background-color: rgb(0, 0, 0);
     padding-top:6px;
     padding-left: 10px;
     margin-top:20px;
