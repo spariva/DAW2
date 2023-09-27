@@ -1,0 +1,77 @@
+/*
+Básicamente el div contenedor contiene todo con display grid, en la tercera fila hay otro div
+que es también display grid, y contiene en 1fr de ancho para que se adecúe a la web las principales,
+y 400 px (independientemente de la web). 
+
+Hay al final unos hovers para dejarlo más bonito y que parezca más dinámica.
+*/
+body{
+    background-color: rgb(160, 207, 245);
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.contenedor{
+    background-color: orange;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr 4fr 3fr 1fr;
+    grid-template-areas: "cabecera cabecera" "navegación navegación" 
+    "noticias noticias" "noticias noticias" "pie pie";
+    align-content: center;
+    grid-template-columns: 2fr 1fr;
+
+}
+.cabecera{
+    grid-area: cabecera;
+    background-color: rgb(33, 199, 228);
+    transition: background-color 2.0s ease;
+    transition: font-size 2.0s ease;
+}
+.navegación{
+    grid-area: navegación;
+    background-color: rgb(107, 226, 107);
+    transition: background-color 15.0s ease;
+    transition: font-size 2.0s ease;
+}
+.noticias{
+    grid-area: noticias;
+    background-color: plum;
+    display: grid;
+    grid-template-areas: "principales ." ". destacadas";
+    grid-gap: 10px;
+    grid-template-rows: 40% 50%;
+    grid-template-columns: 1fr 400px;
+
+}
+.principales{
+    grid-area: principales;
+    background-color: rgb(203, 71, 226);
+}
+.destacadas{
+    grid-area: destacadas;
+    background-color: rgb(85, 168, 224);
+}
+.pie{
+    grid-area: pie;
+    background-color: rgb(23, 24, 20);
+}
+iframe{
+    height:200px;
+    width:300px;
+    border: none;
+}
+/*.contenido:hover{
+    background-color: rgb(253, 180, 71);
+    font-size: 35px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.cabecera:hover{
+    background-color: rgb(251, 255, 14);
+    font-size: 35px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.sidebar:hover{
+    background-color: rgb(255, 14, 203);
+    font-size: 35px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}*/
