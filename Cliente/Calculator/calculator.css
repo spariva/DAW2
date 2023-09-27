@@ -16,12 +16,12 @@ body {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-/*input[type="text"] {
+input[type="text"] {
     width: 100%;
     padding: 10px;
     font-size: 18px;
     margin-bottom: 10px;
-}*/
+}
 .buttons { 
     width: 100px;
 }
