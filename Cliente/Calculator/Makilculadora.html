@@ -4,29 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="calculator.css">
+    <script src="calculator.js"></script>
     <title>Basic Calculator</title>
 </head>
 <body>
     <div class= "calculator" id="calculator">
-        <input type="text" id="display" disabled>
+        <input type="text" id="display">
         <div class="buttons">
+        <!-- 
+            El display está disabled, pero si lo quitamos se puede 
+            escribir por pantalla pero daría error con strings al usar
+            Eval.
+            
+        Lo he metido en este orden para que me salga como la típica calculadora
+        y luego un display grid, y de ahí un inline block los botones para agruparlos.-->
         <button onclick="clearDisplay()" id="clear">C</button>
         <button onclick="appendToDisplay('7')">7</button>
         <button onclick="appendToDisplay('8')">8</button>
         <button onclick="appendToDisplay('9')">9</button>
-        <button onclick="appendToDisplay('+')">+</button>
+        <button onclick="appendToDisplay('+')" class="operator">+</button>
         <button onclick="appendToDisplay('4')">4</button>
         <button onclick="appendToDisplay('5')">5</button>
         <button onclick="appendToDisplay('6')">6</button>
-        <button onclick="appendToDisplay('-')">-</button>
+        <button onclick="appendToDisplay('-')" class="operator">-</button>
         <button onclick="appendToDisplay('1')">1</button>
         <button onclick="appendToDisplay('2')">2</button>
         <button onclick="appendToDisplay('3')">3</button>
-        <button onclick="appendToDisplay('*')">*</button>
+        <button onclick="appendToDisplay('*')" class="operator">*</button>
         <button onclick="appendToDisplay('0')">0</button>
         <button onclick="appendToDisplay('.')">.</button>
-        <button onclick="appendToDisplay('/')">/</button>
-        <button onclick="calculateResult()">=</button>
+        <button onclick="appendToDisplay('/')" class="operator">/</button>
+        <button onclick="calculateResult()" class="operator">=</button>
+        <button onclick="appendToDisplay('(Math.sqrt())')" class="operator">sqrt</button>
+        <button onclick="appendToDisplay('/100')" class="operator">%</button>
         </div>
     </div>
 </body>

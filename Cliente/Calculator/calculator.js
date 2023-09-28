@@ -1,4 +1,8 @@
 function appendToDisplay(value) {
+    var num1 = value;
+    if(document.getElementById('display').value==`(Math.sqrt())`){
+        let num = value;
+    }
     document.getElementById('display').value += value;
 }
 
@@ -12,5 +16,7 @@ function calculateResult() {
         document.getElementById('display').value = result;
     } catch (error) {
         document.getElementById('display').value = 'Error';
+
     }
 }
+
