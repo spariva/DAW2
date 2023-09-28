@@ -1,7 +1,12 @@
+var num1 = value;
+var countComa = 0;
+
 function appendToDisplay(value) {
-    var num1 = value;
-    if(document.getElementById('display').value==`(Math.sqrt())`){
-        let num = value;
+    if(value == '.'){
+        countComa++;
+        if(countComa > 1){
+            alert('No se puede poner mas de un punto');
+        }
     }
     document.getElementById('display').value += value;
 }
@@ -18,5 +23,8 @@ function calculateResult() {
         document.getElementById('display').value = 'Error';
 
     }
+}
+function sqrt(){
+    document.getElementById('display').value = Math.sqrt(num1);
 }
 
