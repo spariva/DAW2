@@ -4,38 +4,38 @@
         <title>Tienes algo para decir?</title>
     </head>
     <body>
-        <p><h1>Tienes algo para decir?</h1></p>
-        <p>A traves de este formulartio puedes enviarme un mensaje para ayudarme a 
+        <label><h1>Tienes algo para decir?</h1></label>
+        <p>A través de este formulartio puedes enviarme un mensaje para ayudarme a 
             corregir errores, a mejorar mi blog, o simplemente para decir hola. 
-            Cualquier cosa que tengas para decir es bienvenida, asi que no lo dudes y 
-            dejame un mensaje, estare feliz de contestarte.</p>
+            Cualquier cosa que tengas para decir es bienvenida, así que no lo dudes y 
+            déjame un mensaje, estare feliz de contestarte.</p>
         <form action="" method="get">
 
             <fieldset>
             <legend>Mensaje</legend>
-                <p>Tu nombre: <input type="text" name="Nombre" required/></p>
-                <p>Tu correo: <input type="email" name="Email" value="Introduce tu correo"/></p>
-                <p>Fecha actual: <input type="date" name="Fecha" /></p>
-                <p>Numero: <input type="number" name="Numero" min="-120" max="183"/></p>
-                <p>Color: <input type="color" name="color" /></p>
-                <p>Elige la asignatura: <select name="Desplegable" >
+                <label for="Nombre">Tu nombre: <input type="text" name="Nombre" id="Nombre" required/></label>
+                <label>Tu correo: <input type="email" name="Email"></label>
+                <label>Fecha actual: <input type="date" name="Fecha" /></label>
+                <label>Número: <input type="number" name="Numero" min="-120" max="183"/></label>
+                <label>Color: <input type="color" name="color" /></label>
+                <label>Elige la asignatura: <select name="Desplegable">
                     <option value="DEC" selected="selected">Desarrollo Entorno Cliente</option>
                     <option value="DIW" >Desarrollo Interfaces Web</option>
                     <option value="DES" >Desarrollo Entorno Servidor</option>
                     <option value="DAW" >Despliegue Aplicaciones Web</option>
-                </select></p>
-                <p>Tu mensaje:</p>
-                <textarea name="Mensaje" rows="4" cols="17" ></textarea>
+                </select></label>
+                <label>Tu mensaje:</label>
+                <textarea name="Mensaje" rows="5" cols="20" ></textarea>
             </fieldset>
 
             <fieldset>
                 <legend>Nuevos Temas</legend>
-                <p>¿Que temas te gustaria que trate mas en mi sitio?</p>
-                <p><input name="Temas" type="checkbox" value="html"/>HTML
+                <label>¿Que temas te gustaria que trate mas en mi sitio?</label>
+                <label><input name="Temas" type="checkbox" value="html"/>HTML
                 <input name="Temas" type="checkbox" value="graficos"/>Graficos
                 <input name="Temas" type="checkbox" value="videojuegos"/>Videojuegos
                 <input name="Temas" type="checkbox" value="arte"/>Arte
-                <input name="Temas" type="checkbox" value="musica"/>Musica</p>
+                <input name="Temas" type="checkbox" value="musica"/>Musica</label>
             </fieldset>
             <br>
             
