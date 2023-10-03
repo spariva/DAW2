@@ -8,31 +8,58 @@
 </head>
 <body>
     <h1>Biblioteca de Libros</h1>
-    <button onclick="addBook()">Agregar Libro</button>
-    <button onclick="deleteBook()">Eliminar Libro</button>
+    <div id="biblioteca"> <!-- La lista de libros se mostrará aquí --> 
+        <div><p>"Titulo: La delicadeza Año:2002 Género: Narrativa</p></div>
+        <div><p>"Titulo: Un mundo feliz Año:1984 Género: Ciencia Ficción</p></div>
+    </div>
+    <button onclick="agregarLibro()">Agregar Libro</button>
+    <button onclick="eliminarLibro()">Eliminar Libro</button>
+    <button onclick="eliminarUltimo()">Eliminar Último Libro introducido</button>
+    <!-- Por si acaso le voy  a meter clase e id a cada libro en la línea 33--> 
     <script>
         var arrayLibros = {};
-        function Libro(titulo, autore, editorial){
+        var divLibros = document.getElementById("biblioteca").innerHTML;
+        function Libro(titulo, anio, genero){
             this.titulo = titulo;
-            this.autore = autore;
-            this.editorial = editorial;
+            this.anio = anio;
+            this.genero = genero;
         }
 
-        function addBook(){
+        function agregarLibro(){
             var libro = new Libro();
             libro.titulo = prompt("Título?");
-            libro.autore = prompt("Autore?");
-            libro.editorial = parseInt(prompt("Año?"));
-            libro.editorial = prompt("Género?");
+            libro.anio = parseInt(prompt("Año?"));
+            libro.genero = prompt("Género?");
+
             arrayLibros.push(libro);
-            alert(`Hola, soy ${libro.titulo} tengo ${libro.autore} años y vivo en ${libro.editorial}`);
+            mostrarInfo(libro);
+
         }
-        function deleteBook(){
+
+        function eliminarLibro(/*le debería meter tituloEliminar como param?*/){
+            let tituloEliminar = prompt("Título?");
+            for(let i = 0; i<arrayLibros.length; i++){
+
+            }
+            arrayLibros.forEach(function (element){
+                if(element.titulo == tituloEliminar){
+                    arrayLibros.delete(element);
+                }
+            }
+        }
+        function eliminarUltimo(){
             arrayLibros.pop();
         }
-        arrayLibros.forEach(function(element)){
-            alert(`$[element]`);
+
+
+        function mostrarInfo(){
+            arrayLibros.forEach(function(element){
+                divLibros += `<div class="libro" id="libro"> 
+                <p> Título: ${libro.titulo} Año: ${libro.anio} Género: ${libro.genero}</p>
+            </div> `;
+            }
         }
-    </script>
+
+    </script> 
 </body>
 </html>
