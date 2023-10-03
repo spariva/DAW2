@@ -6,3 +6,42 @@ para seleccionar y mostrar en la consola los siguientes elementos:
 • El elemento con el identificador único “contenedor".
 • El primer párrafo con la clase “destacado".
 • El segundo elemento de lista dentro de la lista desordenada.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>E</title>
+</head>
+<body>
+    <botton onclick="cambiar()">cambiar</botton>
+    <h1>Hola</h1>
+
+<div class="item">1</div>
+<div class="item">2</div>
+<div class="item">3</div>
+<div class="destacado">4</div>
+<div class="destacado">5</div>
+<div class="destacado">6</div>
+<div class="oculto">7</div>
+<div class="oculto">8</div>
+<div class="oculto">9</div>
+<script>
+    var item = document.querySelectorAll('.item');
+    var destacado = document.querySelectorAll('.destacado:nth-first-child(-n+3)');
+    var oculto = document.querySelectorAll('.oculto:nth-last-child(-n+2)');
+    function cambiar(){
+        for (let index = 0; index < item.length; index++) {
+            console.log(item[index]);
+        }
+        for (let index = 0; index < destacado.length; index++) {
+            console.log(elementos[index]);
+        }
+        for (let index = 0; index < oculto.length; index++) {
+            console.log(oculto[index]);
+        }
+    }
+    window.onload()=cambiar();
+</script>
+</body>
+</html>
