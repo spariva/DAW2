@@ -1,0 +1,9 @@
+body{
+    background-color: azure;
+}
+
+img{
+    max-width: 250px;
+    max-height: 250px;
+    border: 1px solid greenyellow;
+}

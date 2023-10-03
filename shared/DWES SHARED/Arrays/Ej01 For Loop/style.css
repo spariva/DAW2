@@ -1,0 +1,17 @@
+body{
+    background-color: rgb(53, 53, 53);
+    font-size: 25px;
+}
+
+.tabla{
+    color: white;
+    padding:10px;
+    margin-left: 50px;
+    text-align: center;
+    width: 200px;
+}
+
+.lista{
+    margin-left: 50px;
+    color: white;
+}

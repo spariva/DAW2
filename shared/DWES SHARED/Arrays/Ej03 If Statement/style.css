@@ -1,0 +1,9 @@
+.annoAnterior{
+    font-style: italic;
+    color: red;
+}
+
+.annoFuturo {
+    font-weight: bold;
+    color: green;
+}
