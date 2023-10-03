@@ -1,0 +1,29 @@
+<!--Enunciado D: Crea una página web que contenga una lista de elementos <li> con una clase
+común, por ejemplo, "elemento". Utilizando JavaScript, recorre todos los elementos de la lista y
+realiza una operación con cada uno de ellos, como imprimir su contenido en la consola del
+navegador. Puedes utilizar un bucle for para este propósito.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>D</title>
+</head>
+<body>
+    <botton onclick="cambiar()">cambiar</botton>
+<ul>
+    <li class="clase">peli 1</li>
+    <li class="clase">dfsfs</li>
+    <li class="clase">bvccxb</li>
+    <li class="clase">4 gffsdhs</li>
+</ul>
+<script>
+    var elementos = document.getElementsByTagName('li');
+    function cambiar(){
+        for (let index = 0; index < elementos.length; index++) {
+            console.log(elementos[index]);
+        }
+    }
+</script>
+</body>
+</html>

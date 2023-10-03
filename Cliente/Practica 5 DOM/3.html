@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>lista Peliculas</title>
+</head>
+<body>
+    <botton onclick="cambiar()">cambiar</botton>
+    <!--Crea una página web que contenga una lista de películas. La lista debe estar dentro
+de un elemento <ul> con el id listaPeliculas. Utilizando JavaScript, al presionar un botón se debe
+cambiar el color del texto de todos los elementos de la lista a verde.-->
+<ul>
+    <li class="clase">peli 1</li>
+    <li class="clase">dfsfs</li>
+    <li class="clase">bvccxb</li>
+    <li class="clase">4 gffsdhs</li>
+</ul>
+<script>
+    var elementos = document.getElementsByTagName('li');
+    function cambiar(){
+        for (let index = 0; index < elementos.length; index++) {
+            elementos[index].style.color = "green";
+            
+        }
+    }
+</script>
+</body>
+</html>

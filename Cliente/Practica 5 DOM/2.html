@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Crea una página web con una lista de elementos <li>. Asigna la misma clase a todos
+los elementos de la lista. Utilizando JavaScript, cambia el color de fondo DE FONDO de todos los
+elementos cada uno diferente, con esa clase y el color del texto a rojo.-->
+<ul>
+    <li class="clase">asddasf</li>
+    <li class="clase">dfsfs</li>
+    <li class="clase">bvccxb</li>
+    <li class="clase">4 gffsdhs</li>
+</ul>
+<script>
+    window.onload = cambiar();
+    var elementos = document.getElementsByClassName("clase");
+    function cambiar(){
+    for (let index = 0; index < elementos.length; index++) {
+        var col = getRandom();
+        elementos[index].style.backgroundColor = col;   
+    }
+    }
+    function getRandom(){
+        var letras = '0123456789ACBDEF';
+        var color = '#';
+        for (let index = 0; index < 6; index++) {
+            color += letras(Math.floor(Math.random()*16));
+        }
+        return color;
+    }
+    
+</script>
+</body>
+</html>
