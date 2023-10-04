@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Práctica Objetos</title>
-
 </head>
 <body>
     <h1>Biblioteca de Libros</h1>
@@ -16,9 +15,9 @@
     <button onclick="eliminarLibro()">Eliminar Libro</button>
     <button onclick="eliminarUltimo()">Eliminar Último Libro introducido</button>
     <button onclick="mostrarBiblio()">Mostrar Biblioteca</button>
-    <!-- Por si acaso le voy  a meter clase e id a cada libro en la línea 33--> 
+    <!-- Por si acaso le voy  a meter clase e id a cada libro en la línea 53--> 
     <script>
-        var arrayLibros = {};
+        var arrayLibros = [];
         var divLibros = document.getElementById("biblioteca");
         function Libro(titulo, anio, genero){
             this.titulo = titulo;
@@ -31,35 +30,31 @@
             libro.titulo = prompt("Título?");
             libro.anio = parseInt(prompt("Año?"));
             libro.genero = prompt("Género?");
-
+            console.log(arrayLibros);
             arrayLibros.push(libro);
-            mostrarInfo(libro);
+            mostrarBiblio();
         }
 
         function eliminarLibro(){
-            //let tituloEliminar = prompt("Título?");
-            
-            //for(let i = 0; i<arrayLibros.length; i++){}
+            let tituloEliminar = prompt("Título?");
             arrayLibros.forEach(function (element){
                 if(element.titulo == tituloEliminar){
                     arrayLibros.delete(element);//sería mejor el splice que no te deja index huecos
+                    //por qué no funciona ? =()
                 }
             })
+            mostrarBiblio();
         }
         function eliminarUltimo(){
             arrayLibros.pop();
+            mostrarBiblio();
         }
-
-        function mostrarInfo(libro){
-            divLibros.innerHTML += "<div class='libro' id='libro'> <p> Título:" + libro.titulo + " Año: " + libro.anio + "Género: " + libro.genero + " </p> </div>";
-        }
-
         function mostrarBiblio(){
-            arrayLibros.forEach(function(element){
-                mostrarInfo(element);
+            divLibros.innerHTML = "";
+            arrayLibros.forEach(function(libro){
+                divLibros.innerHTML += "<div class='libro' id='libro'> <p> Título:" + libro.titulo + " Año: " + libro.anio + "Género: " + libro.genero + " </p> </div>";
             })
         }
-
     </script> 
 </body>
 </html>
