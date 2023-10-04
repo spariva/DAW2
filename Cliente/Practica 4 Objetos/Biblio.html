@@ -15,6 +15,7 @@
     <button onclick="agregarLibro()">Agregar Libro</button>
     <button onclick="eliminarLibro()">Eliminar Libro</button>
     <button onclick="eliminarUltimo()">Eliminar Último Libro introducido</button>
+    <button onclick="mostrarBiblio()">Mostrar Biblioteca</button>
     <!-- Por si acaso le voy  a meter clase e id a cada libro en la línea 33--> 
     <script>
         var arrayLibros = {};
@@ -33,17 +34,15 @@
 
             arrayLibros.push(libro);
             mostrarInfo(libro);
-
         }
 
         function eliminarLibro(){
-            let tituloEliminar = prompt("Título?");
-            for(let i = 0; i<arrayLibros.length; i++){
-
-            }
+            //let tituloEliminar = prompt("Título?");
+            
+            //for(let i = 0; i<arrayLibros.length; i++){}
             arrayLibros.forEach(function (element){
                 if(element.titulo == tituloEliminar){
-                    arrayLibros.delete(element);
+                    arrayLibros.delete(element);//sería mejor el splice que no te deja index huecos
                 }
             })
         }
@@ -51,12 +50,13 @@
             arrayLibros.pop();
         }
 
+        function mostrarInfo(libro){
+            divLibros += "<div class='libro' id='libro'> <p> Título:" + libro.titulo + " Año: " + libro.anio + "Género: " + libro.genero + " </p> </div>";
+        }
 
-        function mostrarInfo(){
+        function mostrarBiblio(){
             arrayLibros.forEach(function(element){
-                divLibros += `<div class="libro" id="libro"> 
-                <p> Título: ${libro.titulo} Año: ${libro.anio} Género: ${libro.genero}</p>
-            </div> `;
+                mostrarInfo(element);
             })
         }
 
