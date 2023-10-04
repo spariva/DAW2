@@ -19,7 +19,7 @@
     <!-- Por si acaso le voy  a meter clase e id a cada libro en la línea 33--> 
     <script>
         var arrayLibros = {};
-        var divLibros = document.getElementById("biblioteca").innerHTML;
+        var divLibros = document.getElementById("biblioteca");
         function Libro(titulo, anio, genero){
             this.titulo = titulo;
             this.anio = anio;
@@ -51,7 +51,7 @@
         }
 
         function mostrarInfo(libro){
-            divLibros += "<div class='libro' id='libro'> <p> Título:" + libro.titulo + " Año: " + libro.anio + "Género: " + libro.genero + " </p> </div>";
+            divLibros.innerHTML += "<div class='libro' id='libro'> <p> Título:" + libro.titulo + " Año: " + libro.anio + "Género: " + libro.genero + " </p> </div>";
         }
 
         function mostrarBiblio(){
