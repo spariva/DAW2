@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica repaso examen</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div id="cuerpo">
+        <h1>Listado de Peliculas</h1>
+        <div id="peliculas"></div>
+        <script>
+            window.onload = function () {
+                cargarPeliculas();
+                listarPeliculas();
+            }
+
+            var arrayPeliculas = [];
+
+            function Pelicula(nombre, anno, reparto) {
+                this.nombre = nombre;
+                this.anno = anno;
+                this.reparto = reparto;
+            }
+
+            function agregarPelicula(nombre, anno, reparto) {
+                var nuevaPelicula = new Pelicula(nombre, anno, reparto);
+                arrayPeliculas.push(nuevaPelicula);
+            }
+
+            function cargarPeliculas() {
+                agregarPelicula("Los Pitufos", 2001, ["Pitufo", "Pitufina"]);
+                agregarPelicula("Bob Esponja", 2008, ["Bob Esponja", "Patricio Estrella"]);
+                agregarPelicula("It", 2020, ["Payaso", "niños"]);
+            }
+
+            function listarPeliculas() {
+                var peliculasHTML = "";
+                for (var i = 0; i < arrayPeliculas.length; i++) {
+                    peliculasHTML += `<br> <div>
+                    <h2>${arrayPeliculas[i].nombre}</h2>
+                    <p>Año: ${arrayPeliculas[i].anno}</p>
+                    <p>Actores Principales: ${arrayPeliculas[i].reparto.join(", ")}</p>
+                    </div> <br>`;
+                }
+                document.getElementById("peliculas").innerHTML = peliculasHTML;
+            }
+        </script>
+    </div>
+
+</body>
+
+</html>

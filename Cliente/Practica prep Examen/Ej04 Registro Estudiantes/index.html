@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Estudiantes</title>
+</head>
+
+<body>
+    <h1>Registro de Estudiantes</h1>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre"><br>
+    <label for="edad">Edad:</label>
+    <input type="number" id="edad"><br>
+    <label for="materia">Nueva Materia:</label>
+    <input type="text" id="materia">
+    <button onclick="agregarMateria()">Agregar Materia</button><br><br>
+    <button onclick="mostrarInfo()">Mostrar Información</button><br><br>
+    <div id="infoEstudiante"></div>
+
+    <script>
+        function Estudiante(nombre, edad, materias) {
+            this.nombre = nombre;
+            this.edad = edad;
+            this.materias = materias;
+        }
+
+        Estudiante.prototype.agregarMateria = function(materia) {
+            this.materias.push(materia);
+        };
+
+        Estudiante.prototype.mostrarInfo = function() {
+            var info = "Nombre: " + this.nombre + "<br>Edad: " + this.edad + "<br>Materias: " + this.materias.join(", ");
+            document.getElementById("infoEstudiante").innerHTML = info;
+        };
+
+        function agregarMateria() {
+            var nuevaMateria = document.getElementById("materia").value;
+            estudianteActual.agregarMateria(nuevaMateria);
+        }
+
+        function mostrarInfo() {
+            estudianteActual.mostrarInfo();
+        }
+
+        // Crear una instancia de Estudiante para probar
+        var estudianteActual = new Estudiante("Juan", 20, ["Matemáticas", "Historia"]);
+
+        // Ejemplo de uso de los métodos
+        estudianteActual.agregarMateria("Ciencias");
+        estudianteActual.mostrarInfo();
+    </script>
+</body>
+
+</html>
