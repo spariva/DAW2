@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuadrado</title>
+
+</head>
+<body>
+    <h1>Impresión de Cuadrado</h1> 
+<pre id="cuadrado"></pre> 
+<script> 
+function ImprimirCuadrado(){
+    var content = "";
+    const cuad = document.getElementById("cuadrado");
+    for (let i=0; i<5; i++){
+        content += "\n";
+        for (let j=0; j<5;j++){
+            if(i==0 || i==4 || j==0 || j==4){
+                content += "*";
+            }else{
+                content += " ";
+            }
+        }
+    }
+    cuad.innerHTML = content;
+}
+window.onload = function(){
+    ImprimirCuadrado();
+}
+</script> 
+</body>
+</html>

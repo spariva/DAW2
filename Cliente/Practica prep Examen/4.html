@@ -1,0 +1,69 @@
+<!--Crea un programa que permita llevar un registro de estudiantes. Cada estudiante tendrá un 
+nombre, una edad y una lista de materias en las que está inscrito. Además, se deberán 
+proporcionar métodos para agregar materias y mostrar la información del estudiante.
+1. Define una función constructor llamada Estudiante que acepte tres parámetros: nombre, edad 
+y materias. Esta función deberá asignar estos valores a propiedades del objeto estudiante.
+2. Añade 2 funciones más:
+1. agregarMateria: Esta función permitirá agregar una nueva materia a la lista de materias del 
+estudiante.
+2. mostrarInfo: Esta función mostrará en la pantalla la información del estudiante (nombre, 
+edad y lista de materias).
+3. Crea instancias de Estudiante y prueba los métodos agregarMateria y mostrarInfo.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro estudiantes</title>
+</head>
+<body>
+    <div>
+        <div id="estudiantes"></div>
+        <button onclick="agregarEstudiante()"> Add Estudiante</button>
+        <button onclick="agregarMateria()"> Add Materia</button>
+    </div>
+<script>
+var estudiantes = [];
+const estHtml = document.getElementById("estudiantes");
+function Estudiante(nombre, edad, materias){
+    this.nombre = nombre;
+    this.edad = edad;
+    this.materias = materias;
+}
+function agregarEstudiante(){
+    var est = new Estudiante();
+    est.nombre = prompt("Nombre?");
+    est.edad = parseInt(prompt("Edad?"));
+    est.materias = prompt("Materia?");
+    estudiantes.push(est);
+    mostrarInfo();
+}
+
+function agregarMateria(){
+    var mat = prompt("materia?");
+    var nombreEstud = prompt("nombre?");
+    estudiantes.forEach(function(estudiante){
+        if(nombreEstud==estudiante.nombre){
+            estudiante.materias.push(mat);
+        }
+    })
+
+
+}
+
+function mostrarInfo(){
+    estHtml.innerHTML=""
+    var content = "";
+    estudiantes.forEach(function(estudiante){
+        content += `<div> 
+        <h2>${estudiante.nombre}</h2> 
+        <p>Edad: ${estudiante.edad}</p> 
+        <p>Materias: ${estudiante.materias}</p> 
+        </div> `;
+    })
+    estHtml.innerHTML = content;
+}
+
+</script>
+</body>
+</html>

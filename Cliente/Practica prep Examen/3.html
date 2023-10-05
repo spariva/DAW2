@@ -1,0 +1,36 @@
+<!DOCTYPE html> <html lang="es"> 
+<head> <meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Cálculo de Días en un Mes</title> 
+</head> 
+<body> 
+<h1>Ingresa un Mes</h1> 
+<label for="mes">Mes:</label> 
+<input type="text" id="mes"> 
+<br> 
+<button onclick="calcularDias()">Calcular Días</button> 
+<div id="resultado"></div> 
+<!--2. En el script JavaScript, crea una función llamada calcularDias que obtenga el número de mes 
+ingresado por el usuario.
+3. Verifica si el número de mes es válido (entre 1 y 12).
+4. Utiliza new Date().getFullYear() para obtener el año actual del sistema.
+5. Usa new Date(año, mes, 0).getDate() para calcular el último día del mes, es decir, el número de 
+días que tiene cada mes. Para obtener el año uso el paso 4.
+6. Actualiza el contenido del elemento con id "resultado" para mostrar el nombre del mes y el 
+número de días.-->
+<script> 
+function calcularDias(){
+    var mes = document.getElementById("mes").value;
+    if(mes>12 || mes < 1){
+        alert('Mes incorrecto');
+        return;
+    }
+    var anoActual = new Date().getFullYear();
+    var numDias = new Date(anoActual, mes, 0).getDate();
+    document.getElementById("resultado").textContent = "El mes " + mes + " tiene " + numDias + " días.";
+
+
+}
+</script>
+ </body>
+ </html>
