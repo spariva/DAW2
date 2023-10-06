@@ -1,13 +1,13 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $title = $_POST["title"];
-    $title = (isset($_POST['title']))?$_POST["title"]:"";// No sé si mejor hacerlo así o como arriba ? 
+    //$title = (isset($_POST['title']))?$_POST["title"]:"";// No sé si mejor hacerlo así o como arriba ? 
     $rating = $_POST["rating"];
 
     if (empty($title) || empty($rating)) {
         echo "Título y Rating son campos requeridos.";
     } else {
-        $file = 'movies.json';
+        $file = 'movies.json';//esto debería ser un array ??
 
         // Leer el contenido actual del archivo JSON
         $data = file_get_contents($file);

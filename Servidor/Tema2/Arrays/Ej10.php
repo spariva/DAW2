@@ -5,6 +5,14 @@ include ('data.php');
 <html>
 <head>
     <title>Lista de Películas y Series</title>
+    <style>
+        .estrella{
+
+        }
+        .estrella:hover{
+            background-color: yellow;
+        }
+    </style>
 </head>
 <body>
     <h1>Mis Películas y Series</h1>
@@ -34,7 +42,6 @@ include ('data.php');
         echo 'El archivo JSON no existe.';
     }
     ?>
-
     <h2>Agregar una Nueva Película o Serie</h2>
     <form action="add_movie.php" method="post">
         Título: <input type="text" name="title" required><br>
