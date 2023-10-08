@@ -1,7 +1,0 @@
-<?php
-$yque="HOLA";
-$smr ="El Grado Medio de Sistemas Microinformáticos y Redes (SMR) es una formación técnica que prepara a estudiantes para administrar, mantener y solucionar problemas en sistemas informáticos y redes. Incluye habilidades en hardware, software y seguridad, allanando el camino para carreras en soporte técnico y administración de redes.";
-$daw ="El Grado Medio en Desarrollo de Aplicaciones Web (DAW) es un programa educativo que prepara a los estudiantes para diseñar y desarrollar aplicaciones web. Cubre conceptos de programación, diseño web, bases de datos y más. Prepara a los graduados para trabajos en desarrollo web y tecnología de la información.";
-$dam="El Grado Medio de Desarrollo de Aplicaciones Multiplataforma (DAM) es una formación técnica que prepara a estudiantes para desarrollar aplicaciones informáticas en diferentes sistemas. Cubre programación, bases de datos y diseño de interfaces, brindando habilidades clave para ingresar al campo de desarrollo de software y la tecnología.";
-$asir="El Grado Medio de Administración de Sistemas Informáticos en Red (ASIR) es una formación técnica que prepara a estudiantes para gestionar y mantener redes informáticas, sistemas operativos y servicios. Incluye aspectos de seguridad, virtualización y resolución de problemas en entornos tecnológicos, brindando habilidades clave para carreras en IT.";
-?>
