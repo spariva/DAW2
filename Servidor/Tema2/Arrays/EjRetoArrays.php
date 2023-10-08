@@ -26,12 +26,3 @@ print_r($resultado);
 ?>
 </body>
 </html>
-<!--         <?php foreach ($arrayss as $elemento-) : ?>
-
-            <tr>
-
-                <td><?php echo $elemento; ?></td>
-
-            </tr>
-
-            <?php endforeach; ?> -->
