@@ -1,0 +1,45 @@
+<!-- EJERCICIO D. Diferencias entre value, innerHTML y textContent. Crea una página web que incluya un
+campo de entrada de tipo texto (`<input>`) con un valor inicial "Texto de entrada" y un párrafo (`<p>`) con
+el texto "Este es un párrafo de ejemplo." Además, agrega tres botones:
+- El primer botón debe tener el texto "Cambiar Value". Al hacer clic en este botón, se debe ejecutar una
+función JavaScript que cambie el valor del campo de entrada a "Nuevo valor del campo" utilizando la
+propiedad `value`.
+- El segundo botón debe tener el texto "Cambiar InnerHTML". Al hacer clic en este botón, se debe
+ejecutar una función JavaScript que cambie el contenido del párrafo a “¡El contenido ha sido cambiado
+con innerHTML!" utilizando la propiedad `innerHTML`.
+- El tercer botón debe tener el texto "Cambiar TextContent". Al hacer clic en este botón, se debe ejecutar
+una función JavaScript que cambie el contenido del párrafo a "¡El contenido ha sido cambiado con
+textContent!" utilizando la propiedad `textContent`. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<fieldset>
+    <h1>Modificar el contenido con innerHTML</h1>
+    <p id="1">Parráfo</p>
+    <input id ="2" type="text" value="Texto inicial" name="texto"/>
+    <button onclick="cambiar()">Cambia textContent</button>
+    <button onclick="cambiarHtml()">Cambia innerHTML</button>
+    <button onclick="cambiarValue()">Cambia Value</button>
+    <script>
+        const element = document.getElementById("1");
+        const element = document.getElementById("2");
+        function cambiarValue() {
+            element.value = "Texto nuevo";
+        }
+        function cambiar() {
+            element.textContent = "¡El contenido ha sido cambiado!";
+        }
+        function cambiarHtml() {
+            element.innerHTML = '<b>"¡El contenido ha sido cambiado!"</b>';
+        }
+
+    </script>
+</fieldset>
+
+</body>
+</html>

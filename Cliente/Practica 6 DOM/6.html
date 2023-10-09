@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<fieldset>
+    <h1>Cambiar la imagen </h1>
+    <p id="1">Mis fotos intensas: </p><button onclick="cambiarImagen()">Cambiar Imagen</button>
+    <img id="miImagen" src="https://makspariva.files.wordpress.com/2018/10/fireflies.jpg" alt="fotos intensas"/>
+    <script>
+        var img = ["https://makspariva.files.wordpress.com/2018/10/fireflies.jpg", "https://makspariva.files.wordpress.com/2018/09/lostinsociety.jpg", "https://makspariva.files.wordpress.com/2018/10/foundsilence.jpg", "https://makspariva.files.wordpress.com/2018/09/img_9724.jpg"];
+        const imagenElemento = document.getElementById('miImagen');
+        var contador = 0;
+        console.log(imagenElemento.src); 
+        function cambiarImagen() {  
+            imagenElemento.src = img[contador];
+            contador ++;
+        }
+    </script>
+</fieldset>
+
+</body>
+</html>

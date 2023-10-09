@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<fieldset>
+    <h1>Cambiar el Value</h1>
+        <input id ="1" type="text" value="Texto inicial" name="texto"/>
+        <button onclick="cambiar()">Cambia Value</button>
+    <script>
+        const element = document.getElementById("1");
+        function cambiar() {
+            element.value = "Texto nuevo";
+        }
+
+    </script>
+</fieldset>
+</body>
+</html>

@@ -53,6 +53,10 @@
 
     Alumno mas joven usando la funcion <b>min():</b>
     <!--TODO: HAY QUE HACERLO CON REDUCE TMBN-->
+    <? php
+        $jovenzue
+        echo $jovenzuelo . " tiene " . $edadJovenzuelo;
+    ?>
     <?php
         $edades = array_column($alumnos, 'edad');
         $edadMasJoven = min($edades);

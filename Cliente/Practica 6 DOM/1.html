@@ -1,0 +1,27 @@
+<!--Ejercicio A: Modificación del contenido de un párrafo con textContent. Crea una página web que contenga
+un párrafo inicial con el texto "Este es un párrafo de ejemplo." y un botón con el texto "Cambiar
+Contenido". Cuando el usuario haga clic en el botón, el contenido del párrafo deberá cambiar
+dinámicamente a "¡El contenido ha sido cambiado!" utilizando la propiedad textContent en una función
+JavaScript. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<fieldset>
+    <h1>Modificar el contenido con innerHTML</h1>
+    <p id="1">Parráfo</p>
+    <button onclick="cambiar()"></button>
+    <script>
+        const element = document.getElementById("1");
+        function cambiar() {
+            element.textContent = "¡El contenido ha sido cambiado!";
+        }
+    </script>
+</fieldset>
+
+</body>
+</html>

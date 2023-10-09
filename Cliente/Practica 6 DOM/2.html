@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<fieldset>
+    <h1>Modificar el contenido con innerHTML</h1>
+    <p id="1">Parráfo</p>
+    <button onclick="cambiar()">Cambia textContent</button>
+    <button onclick="cambiarHtml()">Cambia innerHTML</button>
+    <script>
+        const element = document.getElementById("1");
+        function cambiar() {
+            element.textContent = "¡El contenido ha sido cambiado!";
+        }
+        function cambiarHtml() {
+            element.innerHTML = '<b>"¡El contenido ha sido cambiado!"</b>';
+        }
+    </script>
+</fieldset>
+
+</body>
+</html>

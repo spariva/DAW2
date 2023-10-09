@@ -1,0 +1,29 @@
+<!--EJERCICIO G. Modificar el atributo href de un enlace . Crea una página web que contenga un
+enlace (<a>) y un botón. El objetivo es modificar el atributo href del enlace cuando el usuario
+haga clic en el botón.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<fieldset>
+    <h1>Cambiar enlace </h1>
+   <button onclick="cambiaWeb()">Cambiar el href</button>
+    <a id="https://makspariva.wordpress.com/portfolio/selfportrait/" href="https://makspariva.wordpress.com/">Cambia este enlace</a>
+    <script>
+        const urls = ["https://makspariva.wordpress.com/portfolio/book/", "https://makspariva.wordpress.com/portfolio/selfportrait/"]
+        const enlaceElemento = document.getElementById('miEnlace');
+        console.log(enlaceElemento.href); 
+        var contador = 0;
+        function cambiaWeb() {  
+            url.href = urls[contador];
+            contador ++;
+        }
+    </script>
+</fieldset>
+
+</body>
+</html>

@@ -9,7 +9,7 @@ $numFranjas = (isset($_GET["number"])?$_GET["number"]:1);
         // Anyways : Necesitaría declararlo global para poder usarlo dentro de la función.
         // O bien, pasarle el parámetro $numFranjas a la función.
         // O bien, usar $_GET["number"] dentro de la función.
-        for ($i = 0; $i < 5; $i++) {
+        for ($i = 0; $i < 6; $i++) {
             $hexadecimal .= $caracteres[rand(0, 15)];
         }
         return $hexadecimal;
@@ -27,6 +27,9 @@ $numFranjas = (isset($_GET["number"])?$_GET["number"]:1);
         height: 100vh;
         align-items: center;
     }
+    .a {
+        background-color: <?php= hexadecimal()?>;
+    }
 </style>
 </head>
 <body>
@@ -42,7 +45,7 @@ $numFranjas = (isset($_GET["number"])?$_GET["number"]:1);
     <?php endfor ?>
     <?php 
     for($i = 0; $i < $numFranjas; $i++){
-        echo "<div style= height: 100%; display: inline-block; background-color: " . hexadecimal() . ";'> AAA </div>";
+        echo "<div  class='a' style= height: 100%; display: inline-block; background-color: " . hexadecimal() . ";'> " . hexadecimal() . " </div>";
         
     }
     ?>
