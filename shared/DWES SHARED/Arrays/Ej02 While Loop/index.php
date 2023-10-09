@@ -55,7 +55,9 @@
     <!--TODO: HAY QUE HACERLO CON REDUCE TMBN-->
     <? php
         function jovenzagal($arr){
-            $arr.reduce(    )
+            $arr.reduce($arr, function($anterior, $actual)){
+                
+            };   
         }
         $jovenzuelo
         echo $jovenzuelo . " tiene " . $edadJovenzuelo;
