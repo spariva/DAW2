@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="astral_test.css"/>
+    <title>Formulario</title>
+</head>
+<body>
+  <h1 id="title">Test astral definitivo</h1>
+  <p id="description">"Los planetas existen, el dinero es inventado"</p>
+  <form id="survey-form" action="https://survey-form.com" method="post">
+      <div class="container">
+          <label for="name" id="name-label">Nombre
+            <input type="text" name="name" id="name" class="name" placeholder="Nombre" required/>
+          </label>
+          <label for="email" id="email-label">Mail
+            <input type="email" name="email" id="email" class="email" placeholder="RealMail@hotmail.com" required/>
+          </label>
+          <label id="number-label"> Age <span style="color: rgb(245, 226, 222);">(optional)</span>
+            <input type="number" name="age" id="number" class="name" min="18" max="120" placeholder="Min 18" required/>
+          </label>
+          <label for="name">¿Cuáles son tus luminales?
+            <input type="text" name="name" id="name" class="name" placeholder="Piscis, ascendente virgo, luna en Aries" required/>
+          </label>
+          <label for="name">Introduzca carta natal
+            <input type="file" name="profile-pic" id="profile-pic" class="profile-pic"/>
+          </label>
+          <hr>
+          <label>¿Cuál es el peor signo con diferencia?</label>
+          <select id="dropdown">
+            <option value="Aries">Aries</option>
+            <option value="Ninguno" disabled>No hay ningún signo malo, ni bueno</option>
+            <option value="Géminis">Géminis que he visto en Google que es manipulador</option>
+            <option value="Fuego">Cualquiera de fuego, pero sobretodo Leo</option>
+          </select>
+          <p class="elemento"> ¿Qué elemento te gusta más? </p>
+            <label class="elemental">
+              fuego <input type="radio" name="elemento" value="fuego" class="input-radio"/>
+            </label>
+            <label class="elemental">
+              aire<input type="radio" name="elemento" value="aire" class="input-radio"/>
+            </label>  
+            <label class="elemental">
+              tierra<input type="radio" name="elemento" value="tierra" class="input-radio"/>
+            </label>  
+            <label class="elemental">
+              agua<input type="radio" name="elemento" value="agua" class="input-radio"/>
+            <br><br>
+            </label>
+            <label class="textarea">¿Si pudiera cambiar algo de su carta, qué sería?
+              <input type="textarea" name="textarea" class="textarea">
+            </label>
+    
+            <p>¿Por qué?</p>
+            <textarea id="textarea" cols="40" rows="4"></textarea>
+              
+            
+            <p class="vs"> ¿Qué preferirías tener, Venus en Capri o en Piscis? </p>
+            <label class="vsCheck">
+              Capri <input type="checkbox" name="vs" value="Capri" class="input-check"/>
+            </label>
+            <label class="vsCheck">
+              Piscis<input type="checkbox" name="vs" value="Piscis" class="input-check"/>
+            </label>  
+          
+          
+          
+      </div>
+      
+      <input type="submit" id="submit" class="submit-button"/>
+  </form>
+      
+  
+</body>
+</html>

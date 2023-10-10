@@ -34,7 +34,8 @@ function agregarEstudiante(){
     var est = new Estudiante();
     est.nombre = prompt("Nombre?");
     est.edad = parseInt(prompt("Edad?"));
-    est.materias = prompt("Materia?");
+    est.materias = [];
+    est.materias.push(prompt("Materia?"));
     estudiantes.push(est);
     mostrarInfo();
 }
@@ -43,12 +44,12 @@ function agregarMateria(){
     var mat = prompt("materia?");
     var nombreEstud = prompt("nombre?");
     estudiantes.forEach(function(estudiante){
+        console.log(estudiante.materias);
         if(nombreEstud==estudiante.nombre){
             estudiante.materias.push(mat);
         }
     })
-
-
+    mostrarInfo();
 }
 
 function mostrarInfo(){

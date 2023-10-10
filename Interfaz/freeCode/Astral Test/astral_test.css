@@ -1,0 +1,46 @@
+body {
+    background: linear-gradient(4555555555555deg, rgba(223, 46, 40) 10%, rgb(216, 127, 18) 30%, rgb(213, 216, 26) 45%, rgb(73, 235, 146)47%, rgb(73, 124, 233) 72%, rgb(226, 59, 204) 99%);
+    color:  hsl(0, 53%, 9%);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
+    width: 100%;
+    height: auto;
+    text-align:center;
+    padding: 2em 4px;
+}
+h1, h2, p {
+    text-align: center;
+
+}
+.container {
+    padding: 10px 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(189, 47, 106, 0.3);
+    text-align: center;
+}
+label {
+    font-style: oblique;
+    display: block;
+    text-align: center;
+}
+input {
+    max-width: 500px;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4px;
+    margin-bottom: 9px;
+    display: block;
+
+}
+input[type="submit"] {
+    margin-top: 10px;
+    color:hsl(308, 78%, 52%);
+    font-variant: small-caps;
+}
+hr{
+    color: aqua;
+    width: 5px;
+
+}
