@@ -4,3 +4,76 @@ contenga un elemento de tipo "checkbox", un botón y un elemento de párrafo. El
 cambiar el estado "checked" del checkbox cuando el usuario haga clic en el botón utilizando el
 DOM
 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10/10/2023</title>
+    <style>
+        .resaltar{
+            background-color: bisque;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+<fieldset>
+    <h1>Cambiar checked y ClassList</h1>
+    <fieldset>
+        <input type="checkbox" id="miCheckbox">
+   <button onclick="cambiaCheck()">Cambiar el checkbox</button>
+</fieldset>
+    <script>
+        const checkboxElemento = document.getElementById('miCheckbox'); 
+        console.log(checkboxElemento.checked); 
+        function cambiaCheck() {
+            if(checkboxElemento.checked){
+                checkboxElemento.checked = false; 
+            }else{
+                checkboxElemento.checked = true; 
+            }
+        }
+    </script>
+</fieldset>
+<fieldset>
+    <!--EJERCICIO A: Cambio de Estilo al Pulsar Botón. Crea una página web simple con un párrafo que
+pueda ser resaltado o eliminar el resaltado al hacer clic en un botón. Al hacer clic por primera
+vez en el botón, el párrafo se resaltará (cambiando su estilo) y al hacer clic nuevamente en el
+botón, el resaltado se quitará (el estilo original del párrafo se restaurará).-->
+<p id="1dom">Parráfo cambiante.</p>
+<button onclick="dom1()">Cambiar</button>
+</fieldset>
+    <script>
+        const elemento = document.getElementById('1dom');
+        function dom1() {
+            if (elemento.classList != 'resaltar'){
+                elemento.classList.add('resaltar');
+            } else {
+                elemento.classList.remove('resaltar');
+            }
+            
+//EJERCICIO C: Verificar Resaltado. Sobre el código anterior añade un nuevo botón que muestre en
+//la pantalla (escribiéndolo en la pantalla, no con alert) si el texto está resaltado o no.
+            if (elemento.classList.contains('resaltar')) {
+            elemento.textContent = "Este párrafo está resaltado =)";
+        }else{
+            elemento.textContent = "Sin resaltar =(";
+        }
+        }
+    </script>
+<fieldset>
+    <!--EJERCICIO B: Alternar Resaltado con classList.toggle(). Crea una página web con un párrafo que
+pueda ser alternativamente resaltado o no resaltado al hacer clic en un botón. Utiliza la función
+classList.toggle().-->
+<p id="2dom">Parráfo cambiante 2.</p>
+<button onclick="dom2()">Cambiar</button>
+</fieldset>
+    <script>
+        const element = document.getElementById('2dom');
+        function dom2() {
+                element.classList.toggle('resaltar');
+        }
+    </script>
+</body>
+</html>
