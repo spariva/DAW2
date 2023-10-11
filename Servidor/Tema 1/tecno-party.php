@@ -28,7 +28,7 @@ $numFranjas = (isset($_GET["number"])?$_GET["number"]:1);
         align-items: center;
     }
     .a {
-        background-color: <?php= hexadecimal()?>;
+        background-color: <?= hexadecimal()?>;
     }
 </style>
 </head>
