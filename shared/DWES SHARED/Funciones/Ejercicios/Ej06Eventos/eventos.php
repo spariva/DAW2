@@ -15,45 +15,55 @@
     </div>
     <br>
     <div class="texto"></div>
-    <?php
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nombre = $_POST["nombre"];
-    $fecha = $_POST["fecha"];
-    $ubicacion = $_POST["ubicacion"];
-
-    class Evento($nombre, $fecha, $ubicacion){
-        $nombre = $this.nombre;
-        $fecha = $this.fecha;
-        $ubicacion = $this.ubicacion;
+<?php
+function mostrarEvento():string{
+    global $arrayEventos;
+    $txt = "<table>";
+    $txt .= "<tr><th>Evento</th><th>Nombre</th><th>Fecha</th><th>Ubicación</th><th>Acciones</th></tr>";
+    for($i=0;$i<count($arrayEventos);$i++){
+        $txt .= "<tr>";
+        $txt .= "<td>Evento ".$i."</td>";
+        $txt .= "<td>".$arrayEventos[$i]->nombre."</td>";
+        $txt .= "<td>".$arrayEventos[$i]->fecha."</td>";
+        $txt .= "<td>".$arrayEventos[$i]->ubicacion."</td>";
+        $txt .= "<td><form method='POST'><input type='hidden' name='delete' value='".$i."'><input type='submit' value='Delete'></form></td>";
+        $txt .= "</tr>";
     }
-
-    $evento = new Evento($nombre, $fecha, $ubicacion);
-
-    $arrayEventos = [];
-    array_push($arrayEventos, $evento);
+    $txt .= "</table>";
+    return $txt;//lo saca en un div
 }
 
-    function mostrarEvento():string{
-        $txt="";
-        for($i=0;$i<count($arrayEventos);$i++){
-            txt += "Evento"+$i+": NOMBRE: "+$arrayEventos.nombre[$i]+"; FECHA: "+
-            $arrayEventos.fecha[$i]+"; UBICACION: "+$arrayEventos.ubicacion[$i];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST["nombre"]) && isset($_POST["fecha"]) && isset($_POST["ubicacion"])) {
+        $nombre = $_POST["nombre"];
+        $fecha = $_POST["fecha"];
+        $ubicacion = $_POST["ubicacion"];
+
+        class Evento {
+            public $nombre;
+            public $fecha;
+            public $ubicacion;
+
+            public function __construct($nombre, $fecha, $ubicacion) {
+                $this->nombre = $nombre;
+                $this->fecha = $fecha;
+                $this->ubicacion = $ubicacion;
+            }
         }
-        return txt;//lo saca en un div
+
+        $evento = new Evento($nombre, $fecha, $ubicacion);
+
+        $arrayEventos = [];
+        array_push($arrayEventos, $evento);
+    } elseif (isset($_POST["delete"])) {
+        $index = $_POST["delete"];
+        unset($arrayEventos[$index]);
+        $arrayEventos = array_values($arrayEventos);
+    } else {
+        echo "Error: missing POST variables";
+        exit();
     }
-
-    function modificarEvento():void{
-        //coge los eventos y metelos en un formulario
-
-    }
-
-    function mostrarTablaEvento():void{
-        //imprime un tr con tds
- 
-    }
-
-
+}
 ?>
 </body>
 </html>
