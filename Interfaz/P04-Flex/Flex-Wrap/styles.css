@@ -1,0 +1,24 @@
+.contenedor-flex {
+display: flex;
+justify-content: center;
+border: 1px rgb(189, 195, 193) solid;
+}
+.no-wrap {
+flex-wrap: nowrap;
+}
+.wrap {
+flex-wrap: wrap;
+padding: 20px;
+}     
+.elemento {
+width: 100px;
+height: 100px;
+background-color: #3498db;
+margin: 10px;
+color: white;
+padding: 10px;
+}
+.wrap-reverse {
+flex-wrap: wrap-reverse;
+}
+
