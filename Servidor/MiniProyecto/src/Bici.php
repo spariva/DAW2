@@ -2,7 +2,7 @@
 
 class Bici {
     private $numRuedas;
-    const static $NUM_RUEDAS_DEFECTO = 2;
+    static const  NUM_RUEDAS_DEFECTO = 2;
 
     function __construct($numRuedas = Bici:: NUM_RUEDAS_DEFECTO){
         $this->numRuedas = $numRuedas;

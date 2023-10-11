@@ -2,7 +2,6 @@
 
 include('../config/init.php');
 //en el init pongo la gestión de los requires por no ponerla aquí
-$b = new Bici(2);
 ?>
 <!DOCTYPE html>
 <html lang="en">
