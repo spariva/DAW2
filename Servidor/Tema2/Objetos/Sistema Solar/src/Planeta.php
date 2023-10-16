@@ -12,6 +12,12 @@ class Planeta{
         $this->distanciaSol = $distanciaSol;
     }
 
+    //public function addPlaneta
+
+    public function __toString() {
+        return "Nombre: ".$this->nombre."<br>Masa: ".$this->masa."<br>Diametro: ".$this->diametro."<br>Distancia al sol: ".$this->distanciaSol;
+    }
+
     public function savePlanetOnFile(){
         if(!file_exists("planetas.txt")){
             $file = fopen("planetas.txt", "w");
@@ -25,14 +31,33 @@ class Planeta{
     public function loadPlanetFromFile(){
         $file = fopen("planetas.txt", "r");
         $planetas = [];
-        //le he preguntado a la ia y me ha dicho esto pero no acabo de entenderlo
-        while(!feof($file)){
+        while(!feof($file)){//mientras no llegue al final del archivo/siga abierto es el feof
             $linea = fgets($file);
-            $planeta = explode(" ", $linea);
+            $planeta = explode(" ", $linea);//separa la linea por espacios y lo guarda en un array
             $planetas[] = new Planeta($planeta[0], $planeta[1], $planeta[2], $planeta[3]);
         }
         fclose($file);
         return $planetas;
+    }
+
+    public function printDiv(string $container = "div", string $etiqueta = "span")
+    {
+      echo "<$container>";
+      echo "<$etiqueta>Nombre: $this->nombre</$etiqueta>";
+      echo "<$etiqueta>Masa: $this->masa</$etiqueta>";
+      echo "<$etiqueta>Diametro: $this->diametro</$etiqueta>";
+      echo "<$etiqueta>Distancia al Sol: $this->distanciaSol</$etiqueta>";
+      echo "</$container>";
+    }
+
+    public function printFila(string $container = "tr", string $etiqueta = "td")
+    {
+      echo "<$container>";
+      echo "<$etiqueta>Nombre: $this->nombre</$etiqueta>";
+      echo "<$etiqueta>Masa: $this->masa</$etiqueta>";
+      echo "<$etiqueta>Diametro: $this->diametro</$etiqueta>";
+      echo "<$etiqueta>Distancia al Sol: $this->distanciaSol</$etiqueta>";
+      echo "</$container>";
     }
 
     //getters y setters
