@@ -1,0 +1,12 @@
+.resaltar{
+    background-color: bisque;
+    font-size: large;
+}
+.contenido{
+    border: 3px black solid;
+    margin: 10px;
+}
+.display-hidden{
+    visibility: hidden;
+}
+
