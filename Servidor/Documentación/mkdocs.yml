@@ -1,0 +1,6 @@
+site_name: Puente Chill
+nav:
+  - Inicio: index.md
+  - Subpáginas:
+    - Subpágina 1: php.md
+    - Subpágina 2: social.md
