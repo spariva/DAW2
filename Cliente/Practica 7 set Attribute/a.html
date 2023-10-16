@@ -1,0 +1,60 @@
+<!--EJERCICIO A: Crear una página HTML que contenga un div con un ID ("miDiv") y un botón. Al
+hacer clic en el botón, se llama a la función `cambiarIdDelDiv`. Esta función utiliza
+`document.getElementById` para obtener una referencia al div y luego utiliza `setAttribute` para
+cambiar el valor del atributo "id" del div de "miDiv" a "nuevoId" cuando se hace clic en el botón.
+Diseña un sitio web que utilice lo anterior.
+EJERCICIO B: Validación de Correo Electrónico. Crea un formulario de registro que solicite al
+usuario su nombre y dirección de correo electrónico. Implementa una validación que cuando el
+usuario introduzca una dirección de correo electrónico que no cumpla con el formato esperado, se
+resalte el campo con un color de fondo rojo y muestra un mensaje de error.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var div = document.getElementById('miDiv');
+        function cambiarId(){
+            div.setAttribute("id", "nuevoId");
+        }
+
+    </script>
+    <div id="miDiv">
+        <button onclick="cambiarId"></button>
+    </div>
+    <style>
+        .emailError {
+            background-color: red;
+        }
+    </style>
+    <script>
+        var regex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+        var divB = document.getElementById('B');
+
+        function validateMail(){
+            var mail = divB.value;
+            if (!regex.test(mail)){
+                divB.setAttribute("b", "emailError");
+            }
+        }
+
+        
+
+
+
+    </script>
+    <div>
+        <form>
+            <fieldset>
+                <label for="Nombre">Tu nombre: <input type="text" name="Nombre" id="Nombre" required/></label>
+                <label>Tu correo: <input id="B" type="email" name="Email"></label>
+                <input type="submit" value="Registrarse">
+            </fieldset>
+        </form>
+        
+    </div>
+</body>
+</html>
