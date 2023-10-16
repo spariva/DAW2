@@ -10,6 +10,7 @@ class Planeta{
         $this->masa = $masa;
         $this->diametro = $diametro;
         $this->distanciaSol = $distanciaSol;
+        savePlanetOnFile($this);
     }
 
     //public function addPlaneta
