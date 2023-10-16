@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P 2.1</title>
+    <link rel="stylesheet" type="text/css" href="Ej01.css">
+</head>
+
+<body>
+    <h1>Práctica DOM Avanzada</h1>
+    <div id="contenido">
+
+        <!--Seccion1-->
+
+        <div id="seccion1">
+            <h2>Sección 1</h2>
+            <div id="elementos1"></div>
+            <p><button onclick="resaltar1()">Resaltar</button>
+                <button onclick="ocultar1()">Ocultar</button>
+                <button onclick="mostrar1()">Mostrar</button>
+            </p>
+
+            <script>
+                var listaElementos1Llena = '<ul> <li id="e1">Elemento 1 </li>' +
+                    '<li>Elemento 2</li> <li>Elemento 3</li></ul>';
+                var listaElementos1Vacia = "";
+                function mostrar1() {
+                    document.getElementById('elementos1').innerHTML = listaElementos1Llena;
+                }
+
+                function ocultar1() {
+                    document.getElementById('elementos1').innerHTML = listaElementos1Vacia;
+                }
+
+                function resaltar1() {
+                    var num1 = prompt("Introduce el número del elemento que quieres resaltar (1, 2 o 3):");
+
+                    if (num1 >= 1 && num1 <= 3) {
+                        var listaItems1 = document.querySelectorAll('#elementos1 ul li');
+                        listaItems1[num1 - 1].style.backgroundColor = 'yellow';
+                    } else {
+                        alert('Debes ser 1, 2 o 3.');
+                    }
+                }
+            </script>
+
+        </div>
+
+
+        <!--Seccion2-->
+
+        <div id="seccion2">
+            <h2>Sección 2</h2>
+            <div id="elementos2"></div>
+            <p><button onclick="ocultar2()">Ocultar</button>
+                <button onclick="mostrar2()">Mostrar</button>
+            </p>
+
+            <script>
+                var listaElementos2Llena = '<p> <button onclick="colorAleatorio()">Color de Fondo</button>' +
+                    '<button onclick="colorBlanco()">Limpiar</button></up>';
+                var listaElementos2Vacia = "";
+                function mostrar2() {
+                    document.getElementById('elementos2').innerHTML = listaElementos2Llena;
+                }
+
+                function ocultar2() {
+                    document.getElementById('elementos2').innerHTML = listaElementos2Vacia;
+                }
+
+                function colorAleatorio() {
+                    var fondoSeccion2 = document.getElementById("seccion2");
+                    var r = Math.floor(Math.random() * 256); // Valor de rojo entre 0 y 255
+                    var g = Math.floor(Math.random() * 256); // Valor de verde entre 0 y 255
+                    var b = Math.floor(Math.random() * 256); // Valor de azul entre 0 y 255
+                    fondoSeccion2.style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+                }
+
+                function colorBlanco() {
+                    var fondoSeccion2 = document.getElementById("seccion2");
+                    fondoSeccion2.style.backgroundColor = "white";
+                }
+            </script>
+
+        </div>
+
+        <!--Seccion3-->
+
+        <div id="seccion3">
+            <h2>Sección 3</h2>
+            <div id="elementos3"></div>
+            <p><button onclick="resaltar3()">Resaltar</button>
+                <button onclick="ocultar3()">Ocultar</button>
+                <button onclick="mostrar3()">Mostrar</button>
+            </p>
+
+            <script>
+                var i =0;
+                var listaElementos3Llena = ["https://images.wikidexcdn.net/mwuploads/esssbwiki/thumb/e/ed/latest/20230128230828/Kirby_SSB4.png/800px-Kirby_SSB4.png",
+                "https://images.wikidexcdn.net/mwuploads/esssbwiki/8/8d/latest/20180613002217/Yoshi_SSBU.png","https://images.wikidexcdn.net/mwuploads/esssbwiki/9/93/latest/20180613003458/Pikachu_SSBU.png"];
+                var listaElementos3Vacia = "";
+                function mostrar3() {
+                    document.getElementById('elementos3').innerHTML = '<img id="imagen3" src="'+listaElementos3Llena[i]+
+                    '"><br><button onclick="siguiente()"> Otra Foto </button><button onclick="noResaltar()"> No Resaltar </button>';
+                }
+
+                function siguiente(){
+                    i++;
+                    if(i==3){
+                        i=0;
+                    }
+                    mostrar3();
+                }
+
+                function ocultar3() {
+                    document.getElementById('elementos3').innerHTML = listaElementos3Vacia;
+                }
+
+                function resaltar3() {
+                    var imagenDestacar = document.getElementById('elementos3');
+                    imagenDestacar.style.backgroundColor='lightyellow';
+                }
+
+                function noResaltar() {
+                    var imagenDestacar = document.getElementById('elementos3');
+                    imagenDestacar.style.backgroundColor='white';
+                }
+
+            </script>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

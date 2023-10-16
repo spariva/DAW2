@@ -3,5 +3,5 @@
 if(!isset($sistemaSolar)){
     $sistemaSolar = new Sistema();
 }else{
-    $sistemaSolar=>load();
+    $sistemaSolar=>load(        );
 }
