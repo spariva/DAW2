@@ -15,40 +15,52 @@ resalte el campo con un color de fondo rojo y muestra un mensaje de error.-->
     <title>Document</title>
 </head>
 <body>
+
+    <h1>Ej A</h1>
+    <div id="id">
+        <p>Ejemplo</p>
+        <button onclick="cambiarId()" class="button">Cambia ID</button>
+    </div>    
     <script>
-        var div = document.getElementById('miDiv');
+        var adiv = document.getElementById("id");
         function cambiarId(){
-            div.setAttribute("id", "nuevoId");
+            adiv.setAttribute("id", "nuevoId");
         }
 
     </script>
-    <div id="miDiv">
-        <button onclick="cambiarId"></button>
-    </div>
     <style>
-        .emailError {
+        html{
+            display: flex;
+            background-color: rgb(211, 181, 233);
+            margin: auto;
+
+        }
+        div{
+            flex: auto;
+        }
+        #emailError {
             background-color: red;
         }
-    </style>
-    <script>
-        var regex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
-        var divB = document.getElementById('B');
-
-        function validateMail(){
-            var mail = divB.value;
-            if (!regex.test(mail)){
-                divB.setAttribute("b", "emailError");
-            }
+        #nuevoId{
+            background-color: aquamarine;
+            padding: 20px;
+            color:goldenrod;
         }
-
-        
-
-
-
-    </script>
+        .button{
+            margin: 10px;
+            padding: 10px;  
+            background-color: goldenrod;
+        }
+        .resaltado{
+            font-size: larger;
+            background-color: yellow;
+            padding: 10px;
+        }
+    </style>
+    <h1>Ej B</h1>    
     <div>
         <form>
-            <fieldset>
+            <fieldset id="fieldMail">
                 <label for="Nombre">Tu nombre: <input type="text" name="Nombre" id="Nombre" required/></label>
                 <label>Tu correo: <input id="B" type="email" name="Email"></label>
                 <input type="submit" value="Registrarse">
@@ -56,5 +68,172 @@ resalte el campo con un color de fondo rojo y muestra un mensaje de error.-->
         </form>
         
     </div>
+    <script>
+        var regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        var divB = document.getElementById("B");
+
+        function validateMail(){
+            var mail = divB.value;
+            if (!regex.test(mail)){
+                divB.setAttribute("b", "emailError");
+                var nuevoError = document.createElement("p");
+                nuevoError.textContent = "Email incorrecto.";
+                nuevoError.style.color = "red";
+                nuevoError.style.backgroundColor = "red";
+                var contenedor = document.getElementById("fieldMail"); 
+                contenedor.appendChild(nuevoParrafo);
+                return false; //para que no se envíe el formulario.
+            }
+        }
+    </script>
+
+    <!--EJERCICIO C: Crear un nuevo elemento de párrafo utilizando document.createElement() y
+agregarlo al Document Object Model (DOM) de una página web. Se utiliza un botón que, al hacer
+clic en él, llama a una función que crea el párrafo y lo inserta como hijo de un div existente en la
+página. Usa appendChild y createElement. -->
+    <h1>Ej C</h1>
+    <div id="C">
+
+    </div>
+<script> // Crear un nuevo elemento
+function addParrafo(){
+    var nuevoParrafo = document.createElement("p");
+    nuevoParrafo.textContent = "Este es un nuevo párrafo."; // Obtener el contenedor
+    var contenedor = document.getElementById("C"); // Agregar el nuevo párrafo
+    contenedor.appendChild(nuevoParrafo);
+}
+
+</script> 
+<div id="C">
+    <button onclick="addParrafo()">Añade parrafo</button>
+</div>
+<!--EJERCICIO D: Crea una web que al pulsar el botón "eliminarParrafo" que se llame a la función
+eliminarParrafo(). Esta función obtiene el tercer párrafo dentro del div con el ID "contenedor" y,
+si existe, lo elimina del DOM utilizando removeChild. Esto resulta en la eliminación del tercer
+párrafo de la lista de seis párrafos.-->
+
+<h1>Ej D</h1>
+    <div id="D">
+        <p>Se va a eliminar parrafo 3</p>
+        <p>Parrafo 2</p>
+        <p>Parrafo 3</p>
+        <p>Parrafo</p>
+        <p>Parrafo</p>
+        <p>Parrafo</p>
+        <p>Parrafo</p>
+        <button onclick="removeParrafo()">Eliminar parrafo</button>
+    </div>
+    <script> 
+    var d = document.getElementById("D"); 
+    var parrafoAEliminar = document.querySelector("div#D p:nth-child(3)"); 
+        function removeParrafo(){
+            d.removeChild(parrafoAEliminar);        
+        }
+    </script>
+    <!--EJERCICIO A: Crea una página web que contenga un div con el ID "contenedor". Dentro del div,
+agrega una lista de elementos que incluye dos párrafos y dos elementos span. También, coloca
+un botón en la página con el texto "Modificar Contenedor”. Al pulsar en el botón "Modificar
+Contenedor", crea una función que realice lo siguiente:
+• Utiliza la propiedad childNodes para acceder a todos los nodos hijos del div con el ID
+"contenedor" y muestra esta lista en consola/alert/en el sitio web.
+• Utiliza la propiedad children para acceder a todos los elementos hijos del div y muestra esta
+lista en la consola/alert/en el sitio web.
+• Modifica el contenido del primer y segundo párrafo dentro del div, el primero utilizando
+childNodes y el segundo utilizando children.-->
+
+<h1>A-2</h1>
+<div id="A-2">
+    <p></p>
+    <p></p>
+    <span></span>
+    <span></span>
+    <button onclick="modificaDiv()">Modificar contenedor</button>
+</div>
+<script>
+    const a2div = document.getElementById("A-2");
+    var hijes = a2div.childNodes;
+    var hijesHtml = a2div.children;
+    function modificaDiv(){
+        alert(hijes);
+        alert(hijesHtml);
+        hijes[0].textContent = "Hola";
+        hijesHtml[1].innerHTML = "Holi";
+    }
+
+</script>
+<!--EJERCICIO B: Crea una página web que contenga un div con el ID "contenedor". Dentro del div,
+agrega una lista de elementos que incluye dos párrafos y dos elementos span. Además, incluye
+un botón con el texto "Resaltar Primer y Último Párrafo”. Cuando el usuario haga clic en el
+botón, crea una función que realice lo siguiente:
+• Al hacer clic en el botón, los primeros y últimos párrafos del contenedor se tienen que
+resaltar con un fondo amarillo.-->
+<h1>B-2</h1>
+<!--No sé por qué funciona...-->
+<div id="B-2">
+    <p>1</p>
+    <p>2</p>
+    <span>3</span>
+    <span>4</span>
+    <button onclick="resaltaDiv()">Modificar contenedor</button>
+</div>
+<script>
+    const b2div = document.getElementById("B-2");
+    var primer = b2div.firstChild;
+    var ulti = b2div.lastChild;
+    function resaltaDiv(){
+        primer.style.backgroundColor = "yellow";
+        ulti.style.backgroundColor = "yellow";
+    }
+
+</script>
+<!--EJERCICIO C: Crea una página web que contenga un `div` con el ID "contenedor". Dentro del div,
+agrega una lista de elementos que incluye dos párrafos y dos elementos `span`. También, incluye
+dos botones con los textos "Resaltar Siguientes" y "Resaltar Anteriores”.
+Cuando el usuario hace clic en el botón "Resaltar Siguientes", crea una función que realice lo
+siguiente:
+• Utiliza nextSibling para acceder al nodo hermano siguiente del primer párrafo dentro del
+div.
+DOM (V)
+• Si el nodo hermano siguiente es un elemento span, haz que se resalte.
+Cuando el usuario hace clic en el botón "Resaltar Anteriores", crea otra función que realice lo
+siguiente:
+• Utiliza previousSibling para acceder al nodo hermano anterior al segundo párrafo dentro del
+div.
+• Si el nodo hermano anterior es un elemento span, agrega la clase de estilo "resaltado" a ese
+elemento-->
+<h1>C-2</h1>
+<!--No sé por qué funciona...-->
+<div id="C-2">
+    <p>1</p>
+    <p>2</p>
+    <span>3</span>
+    <span>4</span>
+    <button onclick="resaltaSiguientes()">resalta Siguientes</button>
+    <button onclick="resaltaAnteriores()">resalta Anteriores</button>
+
+</div>
+<script>
+    const c2div = document.getElementById("C-2");
+    var childrenC2 = c2div.children;
+    var primerCchildren = childrenC2[0];
+    //var primerC = c2div.firstChild;
+    //var ultiC = c2div.lastChild;
+    function resaltaSiguientes(){
+        for (let index = 0; index < childrenC2.length; index++) {
+            if(children[index].nextSibling == "<span></span>"){
+                children[index].style.backgroundColor = "yellow";
+            }
+        }
+    }
+    function resaltaAnteriores() {
+            const segundoParrafo = document.querySelectorAll('#contenedor p')[1];
+            const anteriorElemento = segundoParrafo.previousSibling;
+
+            if (anteriorElemento instanceof HTMLSpanElement) {
+                anteriorElemento.classList.add('resaltar');
+            }
+        };
+
+</script>
 </body>
 </html>
