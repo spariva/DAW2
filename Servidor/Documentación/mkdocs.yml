@@ -4,3 +4,13 @@ nav:
   - Subpáginas:
     - Subpágina 1: php.md
     - Subpágina 2: social.md
+theme:
+  name: mkdocs
+  highlightjs: true
+  hljs_languages:
+    - yaml
+    - php
+    - javascript
+extra_css:
+  -style.css
+

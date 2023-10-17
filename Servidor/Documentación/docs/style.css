@@ -1,0 +1,40 @@
+body{
+    color:rgb(48, 48, 48);
+    background-color: burlywood;
+    font-family: sans-serif;
+    padding: 20px;
+}
+
+h1, h2{
+    color:rgb(14, 76, 76);
+    font-family: Impact, serif;
+    transition: font-size 2.0s ease;
+}
+
+h1, h2:hover{
+    font-size: larger;
+}
+
+h1 {
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+  
+  h2 {
+    font-size: 30px;
+  }
+  
+  .established {
+    font-style: italic;
+  }
+  
+  h1, h2, p {
+    text-align: center;
+  }
+  img {
+    margin-top: -25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
