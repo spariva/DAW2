@@ -1,4 +1,4 @@
-# Mis Vacaciones Relajadas
+# Mis Vacaciones Chill
 
 Estos días de descanso han sido un verdadero regalo. He podido ponerme al día a la par que desconectar.
 
@@ -6,8 +6,8 @@ Estos días de descanso han sido un verdadero regalo. He podido ponerme al día 
 
 El primer par de días lo dediqué por completo al descanso. Pasé tiempo con mi gente y disfrutando de mis hobbies.
 
-![Clau](clau.jpg)
-![Vera y Helena](veraHelena.jpg)
+![Clau](img/clau.jpg)
+![Vera y Helena](img/veraHelena.jpg)
 
 ## Social schedule:
 | Miércoles    | Jueves        | Sábado       |

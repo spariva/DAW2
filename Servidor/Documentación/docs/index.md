@@ -1,7 +1,7 @@
 # Mi puente: demasiado corto.
 
 For full documentation visit [mi web](https://makspariva.wordpress.com/).
-![fuego](fuego.jpg)
+![fuego](img/fuego.jpg)
 
 ## Resumen
 

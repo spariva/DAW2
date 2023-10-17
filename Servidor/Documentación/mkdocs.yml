@@ -1,11 +1,15 @@
 site_name: Puente Chill
 docs/
-  clau.jpeg
-  fuego.jpeg
-  notion1.png
-  notion2.png
-  notion3.png
-  veraHelena.png
+  index.md
+  php.md
+  social.md
+  img/
+    clau.jpeg
+    fuego.jpeg
+    notion1.png
+    notion2.png
+    notion3.png
+    veraHelena.png
 nav:
   - Inicio: index.md
   - Subpáginas:
