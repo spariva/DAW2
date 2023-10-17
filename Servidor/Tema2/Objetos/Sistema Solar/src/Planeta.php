@@ -1,9 +1,9 @@
 <?php
 class Planeta{
-    private $nombre;    
-    private $masa;
-    private $diametro;
-    private $distanciaSol;
+    public $nombre;    
+    public $masa;
+    public $diametro;
+    public $distanciaSol;
 
     public function __construct($nombre, $masa, $diametro, $distanciaSol){
         $this->nombre = $nombre;
