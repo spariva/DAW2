@@ -10,6 +10,10 @@ h1{
     color: rgb(226, 145, 183);
     font-family: Georgia, Times, 'Times New Roman', serif
 }
+button{
+    top:80px;
+    position: fixed;
+}
 #contenedor {
     display: flex;
     flex-direction: row;
@@ -22,9 +26,13 @@ h1{
 }
 
 .imagen {
-    width: 400px;
-    height: 400px;
-    flex: 0 1 200px;
+    width: 1200px;
+    height: 70px;
+    flex: 2 1 200px;
     margin: 10px; 
     background-color: blanchedalmond;
+}
+img{
+    width: 100%;
+    object-fit: scale-down ;
 }
