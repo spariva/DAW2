@@ -1,0 +1,23 @@
+body {
+    background-color: #F5ECEC; 
+    font-family: 'Roboto', sans-serif;
+}
+
+#contenedor {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: rgb(140, 131, 131);
+    align-content: space-between;
+}
+
+.imagen {
+    width: 200px;
+    height: 200px;
+    flex: 0 1 200px;
+    margin: 10px; 
+    background-color: blanchedalmond;
+}
