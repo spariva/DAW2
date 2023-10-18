@@ -1,8 +1,11 @@
 body, html{
     height: 100%;
     margin: 0;
+    padding: 0;
+    width: 100vw;
     font-family: Arial, sans-serif;
     background-color: rgb(233, 232, 232);
+    text-align: center;
 }
 header{
     position: fixed;
@@ -15,20 +18,28 @@ header{
 main{
     display: flex;
     flex-direction: row;
-    padding: 20px;
+    padding: 130px;
     align-content: space-around;
+    justify-content: center;
+    align-items: center;
+    gap: 90px;
 }
-section{
-
+section, nav ul{
+    width: 25%;
+    flex: 1 1 auto;
     border: 1px solid rgb(149, 149, 149);
+    min-width: 500px;
 }
 nav ul{
-
     list-style: none;
     display: flex;
     align-content: space-around;
     flex-flow: column;
     padding: 20px;
+    gap: 20px;
+}
+.graf{
+    flex: 1 1 auto;
 }
 form{
     display: flex;
@@ -39,7 +50,23 @@ form{
 input{
     margin: 10px;
 }
-input.submit{
-    margin: 10px;
-    background-color: khaki;
-}
+.chart{
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+   }
+   
+   .bar {
+    flex: 1 1 auto;
+    width: 50px;
+    margin: 0 10px; /* Espacio entre las barras */
+   }
+
+   .bar1 { background-color: #3498db; }
+   .bar2 { background-color: #e74c3c; }
+   .bar3 { background-color: #2ecc71; }
+   .bar4 { background-color: #f39c12; }
+   .bar5 { background-color: #9b59b6; }
