@@ -1,0 +1,45 @@
+body, html{
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgb(233, 232, 232);
+}
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: rgb(72, 130, 224); 
+    color: white;   
+}
+main{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    align-content: space-around;
+}
+section{
+
+    border: 1px solid rgb(149, 149, 149);
+}
+nav ul{
+
+    list-style: none;
+    display: flex;
+    align-content: space-around;
+    flex-flow: column;
+    padding: 20px;
+}
+form{
+    display: flex;
+    align-content: space-around;
+    flex-flow: column;
+    padding: 20px;
+}
+input{
+    margin: 10px;
+}
+input.submit{
+    margin: 10px;
+    background-color: khaki;
+}
