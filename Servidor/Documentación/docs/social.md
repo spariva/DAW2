@@ -6,8 +6,8 @@ Estos días de descanso han sido un verdadero regalo. He podido ponerme al día 
 
 El primer par de días lo dediqué por completo al descanso. Pasé tiempo con mi gente y disfrutando de mis hobbies.
 
-![Clau](img/clau.jpg)
-![Vera y Helena](img/veraHelena.jpg)
+![clau](img/clau.jpg)
+![veraHelena](img/veraHelena.jpg)
 
 ## Social schedule:
 | Miércoles    | Jueves        | Sábado       |

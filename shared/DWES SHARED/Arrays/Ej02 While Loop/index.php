@@ -54,8 +54,8 @@
     Alumno mas joven usando la funcion <b>min():</b>
     <!--TODO: HAY QUE HACERLO CON REDUCE TMBN-->
     <? php
-        function jovenzagal($arr){
-            $arr.reduce($arr, function($anterior, $actual)){
+        function jovenzagal($alumnos){
+            $alumnos.reduce($alumnos, function($anterior, $actual)){
                 
             };   
         }

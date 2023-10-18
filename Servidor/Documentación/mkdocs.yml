@@ -1,27 +1,28 @@
 site_name: Puente Chill
-docs/
-  index.md
-  php.md
-  social.md
-  img/
-    clau.jpeg
-    fuego.jpeg
-    notion1.png
-    notion2.png
-    notion3.png
-    veraHelena.png
+
+theme: material
+
+markdown_extensions:
+  - pymdownx.superfences
+
 nav:
-  - Inicio: index.md
-  - Subpáginas:
-    - Subpágina 1: php.md
-    - Subpágina 2: social.md
-theme:
-  name: mkdocs
-  highlightjs: true
-  hljs_languages:
-    - yaml
-    - php
-    - javascript
-extra_css:
-  -'style.css'
+  - 'Inicio': 'index.md'
+  - 'Subpáginas':
+    - 'Subpágina 1': 'php.md'
+    - 'Subpágina 2': 'social.md'
+  - highlightjs: true
+    hljs_languages:
+      - yaml
+      - php
+      - javascript
+  - extra_css:
+    -'style.css'
+
+log:
+  level: debug
+  handlers:
+    - console
+    - file
+  - <log end>
+
 

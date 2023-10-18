@@ -6,16 +6,16 @@ Durante mis días de descanso, he dedicado tiempo a estudiar PHP e intentar escr
 - **Conexión con bases de datos**: Intenté entender qué tenemos que hacer en el proyecto, no lo conseguí.
 - **Desarrollo web con PHP**: Buenas prácticas y típicos vídeos de youtube.
 
-![Notion 3](img/notion3.png)
+![notion3](img/notion3.png)
 
 ## Notion
 
-![Notion 1](img/notion1.png)
+![notion1](img/notion1.png)
 
 También he intentado organizarme, dando mis primeros pasos con Notion y desarrollando una wiki de programación con lo que voy aprendiendo.
 
 [mi web](https://https://www.notion.so/Wiki-de-programaci-n-1cf2c133a0ee4155907f022d9fcf3315/)
-![Notion 2](img/notion2.png)
+![notion2](img/notion2.png)
 
 ### Bloque de código en Md:
 
