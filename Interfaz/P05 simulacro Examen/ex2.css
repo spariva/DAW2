@@ -63,6 +63,14 @@ h2{
   list-style: none;
 }
 
+#contenedor-grande{
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 20px;
+  grid-auto-rows: minmax(150px, auto);
+  grid-auto-columns: minmax(300px, auto);
+}
+
 #div-izq ul li{
   padding: 10px;
   border-radius: 10px;
@@ -80,11 +88,13 @@ h2{
   border-radius: 10px;
   padding: 20px;
   margin: 10px 10px 5px 20px;
-  width: 30%;
+  width: 40%;
+  min-width: 200px;
+  max-height: 50%;
 }
 
 #div-dcha{
-  padding: 10px;
+  padding: 15px;
   border: 1px solid black;
   border-radius: 10px;
   grid-template-columns: 1fr 1fr;
