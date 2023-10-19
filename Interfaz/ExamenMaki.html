@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen Maki</title>
+    <link rel="stylesheet" href="ExamenMaki.css">
+</head>
+<body>
+    <header>
+        <nav class="contenedor-flex nav">
+            <a href="#" class="icono">
+              <img src="" alt="">
+              <h1>Examen Maki</h1>
+            </a>
+            <ul>
+
+              <li><a href="#survey-form">Astrología</a></li>
+                <li><a href="#pasiones">Pasiones</a></li>
+              <li><a href="#fotos">Fotos</a></li>
+              
+            </ul>
+          </nav>
+    </header>
+    <main>
+        <div id="contenedor-grande" class="contenedor-grid">
+            <div id="pasiones" class="contenedor-flex flex-column">
+                <h2>Pasiones</h2>
+                <ul>
+                  <li>Ajedrez</li>
+                  <li>Arte instalativo</li>
+                  <li>Bailar</li>
+            </div>
+            <div id="fotos" class="contenedor-grid ">
+                <h2>Fotos y textos</h2>
+                <div class="subdiv">
+                  <h3>Reflexión:</h3>
+                  <p>Me gustan las fotos donde no ocurre nada.</p>
+                </div>
+                <div class="subdiv">
+                  <h3>Elemento 2</h3>
+                  <p>Those pictures are me howling to the silence of the night</p>
+                    
+                </div>
+                <div class="subdiv">
+                  <h3>Elemento 3</h3>
+                  <p>Fotos intensas.</p>
+                  <div class="contenedor-foto">
+                    <div class="imagen"><img id="miImagen" src="https://makspariva.files.wordpress.com/2018/10/fireflies.jpg" alt="fotos intensas"/></div>
+                    <div class="imagen"><img id="miImagen2" src="https://makspariva.files.wordpress.com/2018/07/dsc00543.jpg" alt="fotos intensas"/></div>
+                    <div class="imagen"><img id="miImagen3" src="https://makspariva.files.wordpress.com/2018/07/dsc00293.jpg" alt="fotos intensas"/></div>
+                </div>
+                </div>
+                <div class="subdiv">
+                  <h3>Elemento vacío por estrés</h3>
+                  <p></p>
+                </div>
+            </div>
+            <div>
+                <form id="survey-form" action="https://survey-form.com" method="post">
+                    <div class="container">
+                        <label for="name" id="name-label">Nombre
+                          <input type="text" name="name" id="name" class="name" placeholder="Nombre" required/>
+                        </label>
+                        <label for="email" id="email-label">Mail
+                          <input type="email" name="email" id="email" class="email" placeholder="RealMail@hotmail.com" required/>
+                        </label>
+                        <label id="number-label"> Age <span style="color: rgb(245, 226, 222);">(optional)</span>
+                          <input type="number" name="age" id="number" class="name" min="18" max="120" placeholder="Min 18" required/>
+                        </label>
+                        <label for="name">¿Cuáles son tus luminales?
+                          <input type="text" name="name" id="name" class="name" placeholder="Piscis, ascendente virgo, luna en Aries" required/>
+                        </label>
+                        <label for="name">Introduzca carta natal
+                          <input type="file" name="profile-pic" id="profile-pic" class="profile-pic"/>
+                        </label>
+                        <hr>
+                        <label>¿Cuál es el peor signo con diferencia?</label>
+                        <select id="dropdown">
+                          <option value="Aries">Aries</option>
+                          <option value="Ninguno" disabled>No hay ningún signo malo, ni bueno</option>
+                          <option value="Géminis">Géminis que he visto en Google que es manipulador</option>
+                          <option value="Fuego">Cualquiera de fuego, pero sobretodo Leo</option>
+                        </select>
+                        <p class="elemento"> ¿Qué elemento te gusta más? </p>
+                          <label class="elemental">
+                            fuego <input type="radio" name="elemento" value="fuego" class="input-radio"/>
+                          </label>
+                          <label class="elemental">
+                            aire<input type="radio" name="elemento" value="aire" class="input-radio"/>
+                          </label>  
+                          <label class="elemental">
+                            tierra<input type="radio" name="elemento" value="tierra" class="input-radio"/>
+                          </label>  
+                          <label class="elemental">
+                            agua<input type="radio" name="elemento" value="agua" class="input-radio"/>
+                          <br><br>
+                          </label>  
+                    </div>
+                    <input type="submit" id="submit" class="submit-button"/>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
