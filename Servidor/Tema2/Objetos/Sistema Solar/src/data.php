@@ -3,5 +3,10 @@
 if(!isset($sistemaSolar)){
     $sistemaSolar = new Sistema();
 }else{
-    $sistemaSolar=>load(        );
+    if (file_exists(FILE_NAME)){
+        $sistemaSolar->load();
+    }
 }
+
+
+?>

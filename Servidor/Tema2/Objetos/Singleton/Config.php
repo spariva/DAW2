@@ -1,6 +1,6 @@
 <?php
 
-public class Config{
+class Config{
     private static $varSingleton;
     public  $nombre;
 
@@ -14,11 +14,11 @@ public class Config{
      private function __construct() {}
 
     public function setNombre($nombre){
-        this->$nombre = $nombre
+        $this->nombre = $nombre;
     }
 
     public function getNombre(){
-        return this->$nombre;
+        return $this->nombre;
     }
 }       
 

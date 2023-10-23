@@ -1,5 +1,6 @@
 <?php
 
+define ('FILE_NAME', 'sistema.json');
 class Sistema {
 
     private $planetas;
