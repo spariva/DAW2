@@ -15,14 +15,18 @@
   No he usado breakpoints del Bootstrap pero es 100% responsive.-->
   <script defer src="galeria.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  <h1 class="display-3 text-center fs-1 bg-body-secondary text-success">Galería Bootstrap</h1>
-  <p class="lead text-center">Pincha en el carrousel o las miniaturas. Cada foto tiene asociada una playlist =)</p>
-  <div class="d-flex flex-row justify-content-around align-items-center aHover">
-    <div class="d-flex justify-content-center flex-grow-1"><img src="https://makspariva.files.wordpress.com/2018/07/dsc00543.jpg" class="rounded img-thumbnail" id="primero" alt="..."  onclick="cambiarImagen(0)"></div>
-    <div class="d-flex justify-content-center flex-grow-1"><img src="https://makspariva.files.wordpress.com/2018/10/mg_7000.jpg" class="rounded img-thumbnail" id="segundo" alt="..." onclick="cambiarImagen(1)"></div>
-    <div class="d-flex justify-content-center flex-grow-1"><img src="img\inside.jpg"class="rounded img-thumbnail" id="tercero" alt="..." onclick="cambiarImagen(2)"></div>
+ <!--?Cabecera-->
+  <h1 class="display-3 text-center fs-1 bg-body text-success text-opacity-75">Galería Bootstrap</h1>
+  <p class="lead text-center text-secondary">Pincha en el carrousel o las miniaturas. Cada foto tiene asociada una playlist =)</p>
+ <!--?Miniaturas-->
+  <div class="d-flex flex-row flex-wrap justify-content-around align-items-center aHover">
+    <div class="d-flex justify-content-center flex-grow-1"><img src="https://makspariva.files.wordpress.com/2018/07/dsc00543.jpg" class="rounded img-thumbnail" alt="..."  onclick="cambiarImagen(0)"></div>
+    <div class="d-flex justify-content-center flex-grow-1"><img src="https://makspariva.files.wordpress.com/2018/10/mg_7000.jpg" class="rounded img-thumbnail" alt="..." onclick="cambiarImagen(1)"></div>
+    <div class="d-flex justify-content-center flex-grow-1"><img src="img\inside.jpg"class="rounded img-thumbnail" alt="..." onclick="cambiarImagen(2)"></div>
   </div>
-  <iframe id="playlista" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6T442Dd7j4FYpP7rtCh4Mp?utm_source=generator" width="100%" height="422" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+ <!--?Playlist-->
+  <iframe id="playlista" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6lHivMtxlldZdqEvpwGRxZ?utm_source=generator" width="100%" height="422" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  <!--?Carrusel-->
   <div id="carouselExampleIndicators" class="carousel slide">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -31,10 +35,10 @@
       </div>
       <br>
       <div class="carousel-inner">
-        <div class="carousel-item active" id="primero">
+        <div class="carousel-item" id="primero">
           <img src="https://makspariva.files.wordpress.com/2018/07/dsc00543.jpg" class="d-block w-100" alt="...">
         </div>
-        <div class="carousel-item" id="segundo">
+        <div class="carousel-item active" id="segundo">
           <img src="https://makspariva.files.wordpress.com/2018/10/mg_7000.jpg" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item" id="tercero">
