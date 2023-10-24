@@ -1,0 +1,10 @@
+.aHover div img:hover{
+    border-color: rgb(43, 226, 211);
+    box-shadow: 2px 2px 10px 2px rgb(43, 226, 202);
+    transform: scale(1.05);  
+    transition: all 0.4s ease-in-out;   
+}
+.aHover div img{
+    max-height: 500px;
+    max-width: 400px;
+}

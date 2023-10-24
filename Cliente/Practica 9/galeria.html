@@ -2,52 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=dd, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galería imágenes e iframes</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link  href="galeria.css" rel="stylesheet">
 </head>
-<body>
-    <!--VALE: hay un div flex center con fotos preview, enlaza con el carrousel, o sea si pinchas a uno cambia al otro,
-    el carrousel va con el js de bootstrap, el enlace va con el mío o uso el mismo botón de bootstrap a ver si cuela, 
-y luego ya enlazo que cambie la playlist, tipo img[0]=playlist[0] y así
-
-Voy a tener que meterlo todo en un flex-column-->
-<h1 class="display-3 text-center fs-1 bg-success">Galería con bootstrap</h1>
-<p class="lead text-center">Pincha en el carrousel o las miniaturas. Cada foto tiene asociada una playlist =)</p>
-<div class="d-flex justify-content-center align-items-start">
-    <div class="p-2"><img src="https://makspariva.files.wordpress.com/2018/07/dsc00543.jpg" class="rounded float-end img-thumbnail" id="primero" alt="..." style="max-width: 30%"></div>
-  <div class="p-2"><img src="https://makspariva.files.wordpress.com/2018/10/mg_7000.jpg" class="rounded float-center img-thumbnail" id="segundo" alt="..." style="max-width: 30%"></div>
-  <div class="p-2"><img src="https://makspariva.files.wordpress.com/2018/07/img_9622.jpg"class="rounded float-start img-thumbnail" id="tercero" alt="..." style="max-width: 30%"></div>
-</div>
-    <script src="galeria.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    
-    <div id="carouselExampleIndicators" class="carousel slide">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="https://makspariva.files.wordpress.com/2018/07/dsc00543.jpg" class="d-block w-100" id="primero" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="https://makspariva.files.wordpress.com/2018/07/dsc00293.jpg" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="https://makspariva.files.wordpress.com/2018/10/img_9626.jpg" class="d-block w-100" alt="...">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+<body class="bg-primary-subtle">
+  <!--Explicación: Hay un div flex con fotos preview (que a su vez contiene otro div flex con img para centrarlas), enlaza con el carrousel, o sea si pinchas a uno cambia al otro,
+  El carrousel va con el js de bootstrap, el enlazamiento va con el mío, y la galería de minifotos también. 
+  Cada imagen tiene asociada una playlist: tipo img[0]=playlist[0] etc (también va por mi js)
+  Mi css solo es para modificar las transiciones.
+  No he usado breakpoints del Bootstrap pero es 100% responsive.-->
+  <script defer src="galeria.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <h1 class="display-3 text-center fs-1 bg-body-secondary text-success">Galería Bootstrap</h1>
+  <p class="lead text-center">Pincha en el carrousel o las miniaturas. Cada foto tiene asociada una playlist =)</p>
+  <div class="d-flex flex-row justify-content-around align-items-center aHover">
+    <div class="d-flex justify-content-center flex-grow-1"><img src="https://makspariva.files.wordpress.com/2018/07/dsc00543.jpg" class="rounded img-thumbnail" id="primero" alt="..."  onclick="cambiarImagen(0)"></div>
+    <div class="d-flex justify-content-center flex-grow-1"><img src="https://makspariva.files.wordpress.com/2018/10/mg_7000.jpg" class="rounded img-thumbnail" id="segundo" alt="..." onclick="cambiarImagen(1)"></div>
+    <div class="d-flex justify-content-center flex-grow-1"><img src="img\inside.jpg"class="rounded img-thumbnail" id="tercero" alt="..." onclick="cambiarImagen(2)"></div>
+  </div>
+  <iframe id="playlista" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6T442Dd7j4FYpP7rtCh4Mp?utm_source=generator" width="100%" height="422" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  <div id="carouselExampleIndicators" class="carousel slide">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
-    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4WYpdgoIcn6?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <br>
+      <div class="carousel-inner">
+        <div class="carousel-item active" id="primero">
+          <img src="https://makspariva.files.wordpress.com/2018/07/dsc00543.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" id="segundo">
+          <img src="https://makspariva.files.wordpress.com/2018/10/mg_7000.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" id="tercero">
+          <img src="img\inside.jpg" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
 </body>
 </html>
