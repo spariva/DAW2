@@ -24,15 +24,19 @@
     <script>
         const txtTarea = document.getElementById("txtTarea");
         const ul = document.querySelector("ul");
-        //var li = document.getElementsByTagName('li');
+        var li = document.getElementsByTagName('li');
         var seleccionado = document.getElementsByClassName("seleccionado")[0];
 
+        //Al agregar, aparte de crear el elemento li con el valor del input, le añado el listener de click para que se pueda seleccionar,
+        // y luego lo añado al array de lis.
         function agregar(){
             const tarea = txtTarea.value;
             const liNuevo = document.createElement("li");
             liNuevo.innerText = tarea;
             ul.appendChild(liNuevo);
             txtTarea.value = "";
+            liNuevo.addEventListener("click", seleccionar);
+            li.push(liNuevo);
         }
 
         function eliminar(){
@@ -45,6 +49,7 @@
             }
         }
 
+        //para que me recorra los lis que hay en ese momento y les añade el listener, que llame a seleccionar
         for (let index = 0; index < li.length; index++) {
             li[index].addEventListener("click", seleccionar);
         }
@@ -56,7 +61,6 @@
             seleccionado = e.target;
             seleccionado.classList.add("seleccionado");
         }
-
     </script>
 </body>
 </html>
