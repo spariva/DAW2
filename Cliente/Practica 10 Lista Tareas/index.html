@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do list</title>
+</head>
+<body>
+    <style>
+        .seleccionado{
+            background-color: rgb(255, 122, 122);
+        }
+    </style>
+    <h1>Lista Tareas</h1>
+    <ul>
+        <li>Comprar</li>
+        <li>Hacer la tarea 1</li>
+        <li>Estudiar</li>
+    </ul>
+    <input type="text" id="txtTarea" placeholder="Ingrese una tarea">
+    <button id="btnAgregar" onclick="agregar()">Agregar</button>
+    <button id="btnEliminar" onclick="eliminar()">Eliminar</button>
+    <button id="btnMover" onclick="mover()">Mover tarea arriba</button>
+    <script>
+        const txtTarea = document.getElementById("txtTarea");
+        const ul = document.querySelector("ul");
+        //var li = document.getElementsByTagName('li');
+        var seleccionado = document.getElementsByClassName("seleccionado")[0];
+
+        function agregar(){
+            const tarea = txtTarea.value;
+            const liNuevo = document.createElement("li");
+            liNuevo.innerText = tarea;
+            ul.appendChild(liNuevo);
+            txtTarea.value = "";
+        }
+
+        function eliminar(){
+            ul.removeChild(seleccionado);
+        }
+
+        function mover(){
+            if(seleccionado.previousElementSibling != null){
+                ul.insertBefore(seleccionado, seleccionado.previousElementSibling);
+            }
+        }
+
+        for (let index = 0; index < li.length; index++) {
+            li[index].addEventListener("click", seleccionar);
+        }
+
+        function seleccionar(e){
+            if(seleccionado != null){
+                seleccionado.classList.remove("seleccionado");
+            }
+            seleccionado = e.target;
+            seleccionado.classList.add("seleccionado");
+        }
+
+    </script>
+</body>
+</html>
