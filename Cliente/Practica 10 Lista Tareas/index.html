@@ -13,16 +13,19 @@
         }
     </style>
     <h1 class="display-3 text-center fs-1 bg-warning-subtle ">Lista Tareas</h1>
-    <div class="container">
-        <ul class="p-3 text-primary-emphasis bg-info-subtle border border-primary-subtle rounded-3">
-            <li>Comprar</li>
-            <li>Hacer la tarea 1</li>
-            <li>Estudiar</li>
+    <div class="container p-3">
+        <!--?Nota: no puedo añadirle color de fondo a los li con bootstrap porque luego el .seleccionado no lo sobreescribe.-->
+        <ul class="list-group p-3 text-primary-emphasis bg-info-subtle border border-primary-subtle rounded-3">
+            <li class="list-group-item">Comprar</li>
+            <li class="list-group-item">Hacer la tarea 1</li>
+            <li class="list-group-item">Estudiar</li>
         </ul>
-        <input class="p-3 text-primary-emphasis bg-dark-subtle border border-primary-subtle rounded-3" type="text" id="txtTarea" placeholder="Ingrese una tarea">
-        <button class="p-3 text-primary-emphasis bg-warning-subtle border border-primary-subtle rounded-3" id="btnAgregar" onclick="agregar()">Agregar</button>
-        <button class="p-3 text-primary-emphasis bg-success-subtle border border-primary-subtle rounded-3" id="btnEliminar" onclick="eliminar()">Eliminar</button>
-        <button class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3" id="btnMover" onclick="mover()">Mover tarea arriba</button>
+        <div class="d-flex flex-row flex-no-wrap justify-content-around justify-content-xl-center align-items-center p-2">
+            <input class="p-3 text-primary-emphasis bg-dark-subtle border border-primary-subtle rounded-3" type="text" id="txtTarea" placeholder="Ingrese una tarea">
+            <button class="p-3 text-primary-emphasis bg-warning-subtle border border-primary-subtle rounded-3" id="btnAgregar" onclick="agregar()">Agregar</button>
+            <button class="p-3 text-primary-emphasis bg-success-subtle border border-primary-subtle rounded-3" id="btnEliminar" onclick="eliminar()">Eliminar</button>
+            <button class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3" id="btnMover" onclick="mover()">Mover tarea arriba</button>
+        </div>
     </div>
 
     <script>
@@ -39,6 +42,7 @@
             liNuevo.innerText = tarea;
             ul.appendChild(liNuevo);
             txtTarea.value = "";
+            liNuevo.classList.add('list-group-item');
             liNuevo.addEventListener("click", seleccionar);
             li.push(liNuevo);
         }
