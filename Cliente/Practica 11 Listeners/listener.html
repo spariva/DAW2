@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listeners</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body class="bg-danger-subtle">
+    <style>
+        .seleccionado{
+            background-color: rgb(233, 133, 246);
+        }
+    </style>
+    <h1 class="display-3 text-center fs-1 bg-warning-subtle ">Listeners</h1>
+    <div class="container text-center p-3">
+        <!--?EJERCICIO A: 
+Muestra un mensaje que indica el elemento en el que se hizo clic dentro de un
+contenedor. Agrega tres botones dentro de un contenedor. Cuando se hace clic en uno de los
+botones, se dispara el evento de clic en el contenedor. Usamos la propiedad `target` para
+verificar si el elemento en el que se hizo clic es un botón, y luego mostramos un mensaje que
+indica en cuál de los botones hiciste clic según su ID.-->
+        <div class="d-flex flex-row flex-no-wrap justify-content-center align-items-center p-2"></div>
+            <button class="A p-3 text-primary-emphasis bg-warning-subtle border border-primary-subtle rounded-3" id="1">Agregar</button>
+            <button class="A p-3 text-primary-emphasis bg-success-subtle border border-primary-subtle rounded-3" id="2">Eliminar</button>
+            <button class="A p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3" id="3">Mover tarea arriba</button>
+        </div>
+    </div> 
+    <script defer>
+        var botones = document.getElementsByClassName('A');
+
+        function alerta(event){
+            alert("Se hizo click en el elemento:"+ event.type + " en: " + event.target);
+        }
+
+        for (let index = 0; index < botones.length; index++) {
+            botones[index].addEventListener("click", alerta);
+        }
+
+        
+    </script>
+
+<!--?EJERCICIO B:
+Programa una web que muestre en un alert el tipo de evento que se produce al
+pulsar cualquiera de los 3 botones que tiene que tener el sitio. Para escuchar este tipo de
+eventos utiliza container.addEventListener("click", function(event) { …}-->
+<script defer>
+    var container = document.getElementById('B');
+    container.addEventListener("click", function(e) {
+        alert("En el elemento: " + e.type + " en: " + e.target.tagName);
+    });
+
+</script>
+    <div id="B" class="container text-center overflow-hidden bg-success-subtle border rounded-3">
+        <div class="row gx-3">
+            <div class="col-4 p-2">
+                <div class="bg-info-subtle p-2 border rounded-3">
+                    <h2>1</h2>
+                    <button class="p-3 text-primary-emphasis bg-danger-subtle border border-primary-subtle rounded-3" id="1">1 botón</button>
+                </div>
+            </div>
+            <div class="col-4 p-2">
+                <div class="bg-primary-subtle p-2 border rounded-3">
+                    <h2>2</h2>
+                    <button class="p-3 text-primary-emphasis bg-warning-subtle border border-primary-subtle rounded-3" id="3">2 botón</button>
+                </div>
+            </div>
+            <div class="col-4  p-2">
+                <div class="bg-warning-subtle p-2 border rounded-3">
+                    <h2>3</h2>
+                    <button class="p-3 text-primary-emphasis bg-dark-subtle border border-primary-subtle rounded-3" id="2">3 botón</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="B container text-center overflow-hidden bg-success-subtle border rounded-3">
+        <div class="row gx-3">
+            <div class="col-4 p-2">
+                <div class="bg-info-subtle p-2 border rounded-3">
+                    <h2>1</h2>
+                    <button class="p-3 text-primary-emphasis bg-danger-subtle border border-primary-subtle rounded-3" id="1">1 botón</button>
+                </div>
+            </div>
+            <div class="col-4 p-2">
+                <div class="bg-primary-subtle p-2 border rounded-3">
+                    <h2>2</h2>
+                    <button class="p-3 text-primary-emphasis bg-warning-subtle border border-primary-subtle rounded-3" id="3">2 botón</button>
+                </div>
+            </div>
+            <div class="col-4  p-2">
+                <div class="bg-warning-subtle p-2 border rounded-3">
+                    <h2>3</h2>
+                    <button class="p-3 text-primary-emphasis bg-dark-subtle border border-primary-subtle rounded-3" id="2">3 botón</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        const txtTarea = document.getElementById("txtTarea");
+        const ul = document.querySelector("ul");
+        var li = document.getElementsByTagName('li');
+        var seleccionado = document.getElementsByClassName("seleccionado")[0];
+
+        function agregar(){
+            const tarea = txtTarea.value;
+            const liNuevo = document.createElement("li");
+            liNuevo.innerText = tarea;
+            ul.appendChild(liNuevo);
+            txtTarea.value = "";
+            liNuevo.classList.add('list-group-item');
+            liNuevo.addEventListener("click", seleccionar);
+            li.push(liNuevo);
+        }
+
+        function eliminar(){
+            ul.removeChild(seleccionado);
+        }
+
+        //Sin la comprobación pasaría al final de la lista (creo que index negativo o algo así?)
+        function mover(){
+            if(seleccionado.previousElementSibling != null){
+                ul.insertBefore(seleccionado, seleccionado.previousElementSibling);
+            }
+        }
+
+        //para que me recorra los lis que hay en ese momento y les añade el listener, que llame a seleccionar
+        for (let index = 0; index < li.length; index++) {
+            li[index].addEventListener("click", seleccionar);
+        } 
+
+        //tengo que comprobar si es null para que no haya varios elementos seleccionados a la vez,
+        // aunque como seleccionado = document.getElementsByClassName("seleccionado")[0]; solo operaría
+        // con el primero en haber sido seleccionado (aunque el segundo se resaltaría).
+        function seleccionar(e){
+            if(seleccionado != null){
+                seleccionado.classList.remove("seleccionado");
+            }
+            seleccionado = e.target;
+            seleccionado.classList.add("seleccionado");
+        }
+    </script>
+</body>
+</html>
