@@ -21,16 +21,16 @@ botones, se dispara el evento de clic en el contenedor. Usamos la propiedad `tar
 verificar si el elemento en el que se hizo clic es un botón, y luego mostramos un mensaje que
 indica en cuál de los botones hiciste clic según su ID.-->
         <div class="d-flex flex-row flex-no-wrap justify-content-center align-items-center p-2"></div>
-            <button class="A p-3 text-primary-emphasis bg-warning-subtle border border-primary-subtle rounded-3" id="1">Agregar</button>
-            <button class="A p-3 text-primary-emphasis bg-success-subtle border border-primary-subtle rounded-3" id="2">Eliminar</button>
-            <button class="A p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3" id="3">Mover tarea arriba</button>
+            <button class="A p-3 text-primary-emphasis bg-warning-subtle border border-primary-subtle rounded-3" id="1">1 Agregar</button>
+            <button class="A p-3 text-primary-emphasis bg-success-subtle border border-primary-subtle rounded-3" id="2">2 Eliminar</button>
+            <button class="A p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3" id="3">3 Mover tarea arriba</button>
         </div>
     </div> 
     <script defer>
         var botones = document.getElementsByClassName('A');
 
         function alerta(event){
-            alert("Se hizo click en el elemento:"+ event.type + " en: " + event.target);
+            alert("Se hizo: "+ event.type + " en: " + event.target.id);
         }
 
         for (let index = 0; index < botones.length; index++) {
@@ -47,7 +47,7 @@ eventos utiliza container.addEventListener("click", function(event) { …}-->
 <script defer>
     var container = document.getElementById('B');
     container.addEventListener("click", function(e) {
-        alert("En el elemento: " + e.type + " en: " + e.target.tagName);
+        alert("En el elemento: " + e.type + " en: " + e.target.id);
     });
 
 </script>
@@ -98,6 +98,7 @@ eventos utiliza container.addEventListener("click", function(event) { …}-->
         </div>
     </div>
 
+    
 
 
 
