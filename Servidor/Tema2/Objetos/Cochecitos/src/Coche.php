@@ -1,8 +1,8 @@
 <?php
 class Coche{
-    private string matricula;
-    private string marca;
-    private float carga;
+    private string $matricula;
+    private string $marca;
+    private float $carga;
 
     public function __construct(string $matricula, string $marca, float $carga){
         $this->matricula = $matricula;
