@@ -4,34 +4,6 @@
     <title>Ejemplo de stopPropagation</title>
 </head>
 <body>
-    <ul id="lista">
-        <li>Elemento 1</li>
-        <li>Elemento 2</li>
-        <li>Elemento 3</li>
-        <li>Elemento 4</li>
-        <li>Elemento 5</li>
-    </ul>
-    <p id="mensaje"></p>
 
-    <script>
-        // Obtén la lista y el párrafo por sus ID
-        const lista = document.getElementById("lista");
-        const mensaje = document.getElementById("mensaje");
-
-        // Agrega un manejador de eventos de clic a la lista
-        lista.addEventListener("click", function(event) {
-            // Evita que el evento de clic se propague al párrafo
-            event.stopPropagation();
-
-            // Obtiene el elemento de la lista en el que se hizo clic
-            const elementoClicado = event.target;
-
-            // Muestra el mensaje en el párrafo
-            mensaje.textContent = "Hiciste clic en el elemento: " + elementoClicado.textContent;
-
-            // Muestra un mensaje de alerta
-            alert("Hiciste clic en la lista");
-        });
-    </script>
 </body>
 </html>

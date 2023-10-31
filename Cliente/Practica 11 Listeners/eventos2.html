@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEMA 3. EVENTOS (II)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body class="bg-danger-subtle">
+    <style>
+        .seleccionado{
+            background-color: rgb(233, 133, 246);
+        }
+    </style>
+    <h1 class="display-3 text-center fs-1 bg-warning-subtle ">TEMA 3. EVENTOS (II)</h1>
+    <!--? 1. Eventos de Ratón:-->
+    <div class="container text-center p-3">
+        <div class="d-flex flex-row flex-no-wrap justify-content-center align-items-center p-2">
+            <button class="p-3 text-primary-emphasis bg-warning-subtle border border-primary-subtle rounded-3" id="btn1">Evento 1</button>
+            <button class="p-3 text-primary-emphasis bg-success-subtle border border-primary-subtle rounded-3" id="miDiv">Evento 2</button>
+        </div>
+    <div class="container p-3">
+    <script>
+        const btn1= document.getElementById('btn1');
+            btn1.addEventListener("click", () => {
+            alert("¡Has hecho clic en el botón!");
+            });
+        const btn2 = document.getElementById('btn2');
+            btn2.addEventListener("mouseover", () => {
+            btn2.style.backgroundColor = "blue";
+            });
+        
+    </script>
+    <div id="div1">Lleva el ratón sobre mí y luego sácalo</div>
+    <script> 
+    const mouseOut1 = document.getElementById("div1");
+    mouseOut1.addEventListener("mouseover", () => {
+    mouseOut1.style.backgroundColor = "lightblue";
+    });
+    mouseOut1.addEventListener("mouseout", () => {
+    mouseOut1.style.backgroundColor = "";
+    });
+    </script>
+    <button id="btn4">Haz clic y mantén presionado</button>
+    <script>
+    const btn4 = document.getElementById("btn4");
+    btn4.addEventListener("mousedown", () => {
+    btn4.innerHTML = "Estás presionando el botón";
+    });
+    btn4.addEventListener("mouseup", () => {
+    btn4.innerHTML = "Haz clic y mantén presionado";
+    });
+    </script>
+
+<!--? 2. Eventos de Teclado:
+Los eventos keydown y keyup en JavaScript se utilizan para detectar cuando una tecla del teclado
+se presiona y se suelta: -->
+    <script>    
+        document.addEventListener("keydown", (event) => {
+        if (event.keyCode === 13) {
+        console.log("La tecla Enter ha sido presionada.");
+        }
+    });
+        document.addEventListener("keyup", (event) => {
+    // Verificar si la tecla soltada es la tecla "Espacio" (código 32)
+        if (event.keyCode === 13) {
+        console.log("La tecla Espacio ha sido soltada.");
+        }
+    });
+    </script>
+<!--? 3. Eventos de Formulario:-->
+    <form class="mb-3" action="inxex.html" method="POST">
+        <fieldset>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre">
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" placeholder="Apellido">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Email">
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" placeholder="Contraseña">
+            <label for="password2">Repetir contraseña:</label>
+            <input type="password" id="password2" name="password2" placeholder="Repetir contraseña">
+            <input type="submit" value="Enviar">
+        </fieldset>
+    </form>
+
+
+
+
+        <ul class="list-group p-3 text-primary-emphasis bg-info-subtle border border-primary-subtle rounded-3">
+            <li class="list-group-item">Comprar</li>
+            <li class="list-group-item">Hacer la tarea 1</li>
+            <li class="list-group-item">Estudiar</li>
+        </ul>
+        <div class="d-flex flex-row flex-no-wrap justify-content-around justify-content-xl-center align-items-center p-2">
+            <input class="p-3 text-primary-emphasis bg-dark-subtle border border-primary-subtle rounded-3" type="text" id="txtTarea" placeholder="Ingrese una tarea">
+            <button class="p-3 text-primary-emphasis bg-warning-subtle border border-primary-subtle rounded-3" id="btnAgregar" onclick="agregar()">Agregar</button>
+            <button class="p-3 text-primary-emphasis bg-success-subtle border border-primary-subtle rounded-3" id="btnEliminar" onclick="eliminar()">Eliminar</button>
+            <button class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3" id="btnMover" onclick="mover()">Mover tarea arriba</button>
+        </div>
+    </div>
+
+    <script>
+        const txtTarea = document.getElementById("txtTarea");
+        const ul = document.querySelector("ul");
+        var li = document.getElementsByTagName('li');
+        var seleccionado = document.getElementsByClassName("seleccionado")[0];
+
+        //Al agregar, aparte de crear el elemento li con el valor del input, le añado el listener de click para que se pueda seleccionar,
+        // y luego lo añado al array de lis.
+        function agregar(){
+            const tarea = txtTarea.value;
+            const liNuevo = document.createElement("li");
+            liNuevo.innerText = tarea;
+            ul.appendChild(liNuevo);
+            txtTarea.value = "";
+            liNuevo.classList.add('list-group-item');
+            liNuevo.addEventListener("click", seleccionar);
+            li.push(liNuevo);
+        }
+
+        function eliminar(){
+            ul.removeChild(seleccionado);
+        }
+
+        //Sin la comprobación pasaría al final de la lista (creo que index negativo o algo así?)
+        function mover(){
+            if(seleccionado.previousElementSibling != null){
+                ul.insertBefore(seleccionado, seleccionado.previousElementSibling);
+            }
+        }
+
+        //para que me recorra los lis que hay en ese momento y les añade el listener, que llame a seleccionar
+        for (let index = 0; index < li.length; index++) {
+            li[index].addEventListener("click", seleccionar);
+        }
+
+        //tengo que comprobar si es null para que no haya varios elementos seleccionados a la vez,
+        // aunque como seleccionado = document.getElementsByClassName("seleccionado")[0]; solo operaría
+        // con el primero en haber sido seleccionado (aunque el segundo se resaltaría).
+        function seleccionar(e){
+            if(seleccionado != null){
+                seleccionado.classList.remove("seleccionado");
+            }
+            seleccionado = e.target;
+            seleccionado.classList.add("seleccionado");
+        }
+    </script>
+</body>
+</html>
