@@ -7,10 +7,12 @@
     <title>Fail Date</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="estilos.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="fake-chat.js-master/app/css/fake-chat.min.css"> -->
 </head>
 <body class="bg-danger-subtle">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script defer src="faildate.js"></script>
+    <!-- <script defer src="fake-chat.js-master/app/js/fake-chat.js"></script> -->
     <style>
 
     </style>
@@ -29,20 +31,9 @@
             </div>
         </div>
     </header>
-    <!-- <form class="bg-danger-subtle align-content-center p-10" id="miFormulario"> 
-        <h2 class="text-center text-info">Who are you</h2>
-        <input type="text" name="nombre" placeholder="Nombre"> 
-        <input type="email" name="email" placeholder="Correo electrónico"> 
-        <button type="submit">Enviar</button> 
-    </form> 
-    <script> 
-        const formulario = document.getElementById("miFormulario"); 
-        formulario.addEventListener("submit", (event) => { 
-        event.preventDefault(); 
-        }); 
-    </script> -->
+    <!--?Candidates-->
     <div class="d-flex justify-content-center align-items-center p-4 gap-5" id="candidates">
-        <div class="card" style="width: 18rem;" id="Anthony">
+        <div class="card h-50" style="width: 18rem;" id="Anthony">
             <img src="img/Anthony.PNG" class="card-img-top" alt="desc1">
             <div class="card-body">
             <h5 class="card-title">Anthony, 38</h5>
@@ -77,13 +68,25 @@
         </div>
     </div>
     <div class="position-relative">
-        <p id="mensaje" class="text-success-emphasis position-absolute top-50 start-50 translate-middle"></p>
+        <a id="linkDate" href="#dateArea" class="btn btn-info btn-xl text-white position-absolute top-50 start-50 translate-middle"></a>
     </div>
-    <div class="container p-3">
+    <br>
+    <!-- <form class="bg-danger-subtle align-content-center p-10" id="miFormulario"> 
+        <h2 class="text-center text-info">Who are you</h2>
+        <input type="text" name="nombre" placeholder="Nombre"> 
+        <input type="email" name="email" placeholder="Correo electrónico"> 
+        <button type="submit">Enviar</button> 
+    </form> 
+    <script> 
+        const formulario = document.getElementById("miFormulario"); 
+        formulario.addEventListener("submit", (event) => { 
+        event.preventDefault(); 
+        }); 
+    </script> -->
+    <div class="container p-3" id="dateArea">
         <ul class="list-group p-3 text-primary-emphasis bg-info-subtle border border-primary-subtle rounded-3">
             <li class="list-group-item">Comprar</li>
-            <li class="list-group-item">Hacer la tarea 1</li>
-            <li class="list-group-item">Estudiar</li>
+
         </ul>
         <div class="d-flex flex-row flex-no-wrap justify-content-around justify-content-xl-center align-items-center p-2">
             <input class="p-3 text-primary-emphasis bg-dark-subtle border border-primary-subtle rounded-3" type="text" id="txtTarea" placeholder="Ingrese una tarea">
@@ -139,5 +142,6 @@
             seleccionado.classList.add("seleccionado");
         }
     </script>
+
 </body>
 </html>

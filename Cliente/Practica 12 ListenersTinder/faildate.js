@@ -5,7 +5,7 @@ const candidates = document.getElementById("candidates");
 const anthony = document.getElementById("Anthony");
 const ghostkid = document.getElementById("Ghostkid");
 const zoe = document.getElementById("Zoe");
-const message = document.getElementById("message");
+const linkDate = document.getElementById("linkDate");
 const dating = document.getElementsByClassName("dating");
 const deleting = document.getElementsByClassName("deleting");
 
@@ -22,6 +22,37 @@ candidates.addEventListener("mouseout", function(e){
     e.target.classList.remove("resaltado-agro");
 });
 
+candidates.addEventListener("click", function(e){
+    if(e.target.classList.contains("dating")){
+        switch (e.target.id) {
+            case anthony:
+                linkDate.textContent = "Prepare to your date with" + e.target.id + "!";
+                break;
+        
+            default:
+                break;
+        }
+    }
+    if(e.target.classList.contains("deleting")){
+        switch (e.target.id) {
+            case anthony:
+                linkDate.textContent = "Anthony left the room pissed off.";
+                e.target.src = endingCry;
+                break;
+            case ghostkid:
+                linkDate.textContent = "Ghostkid left the room pissed off.";
+                e.target.src = endingGhost;
+                break;
+            case zoe:
+                linkDate.textContent = "Zoe left the room pissed off.";
+                e.target.src = endingFire;
+                break;
+            default:
+                break;
+        }
+    }
+});
+        //goes to #chat and the thumbnail changes and also the linkDate?
 
 
 
@@ -47,3 +78,29 @@ function del(e){
             // Muestra un mensaje de alerta
             alert("Hiciste clic en la lista");
         });
+// let mychat = new FakeChat('#mychat', {
+//     messages: [
+//         {
+//             text: 'Hello my friend!✌',
+//             timer: 0,
+//         },
+//         {
+//             text: 'Looking for a plugin that simulates chat?',
+//             timer: 3000,
+//         },
+//         {
+//             text: 'You found it! - <b>Fake-chat.js</b>',
+//             timer: 5000,
+//         },
+//     ],
+//     visible: true,
+//     adding: 'beforeend',
+//     theme: {
+//         theme: 'timber',
+//         angle: 'square',
+//     },
+//     animation: {
+//         class: 'animation_class',
+//         function: 'animation_func',
+//     }
+// });
