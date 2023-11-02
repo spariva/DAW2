@@ -1,0 +1,152 @@
+<!--?En esta práctica las imágenes las he sacado de internet y me he inspirado en la estética y dinámica del videojuego Coffee Talk-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fail Date</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="estilos.css" rel="stylesheet">
+</head>
+<body class="bg-danger-subtle">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script defer src="faildate.js"></script>
+    <style>
+
+    </style>
+    <h1 class="display-3 text-center fs-1 bg-warning-subtle ">Fail Date Game</h1>
+    <header class="cabecera">
+        <div class="container px-4 px-lg-5 h-100" id="home">
+            <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                <div class="col-lg-8 align-self-end">
+                    <h1 class="text-white font-weight-bold">Start dating now!</h1>
+                    <hr class="divider" />
+                </div>
+                <div class="col-lg-8 align-self-baseline">
+                    <p class="text-white mb-5">What could go wrong?</p>
+                    <a class="btn btn-info btn-xl" href="#candidates">See your matches!</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- <form class="bg-danger-subtle align-content-center p-10" id="miFormulario"> 
+        <h2 class="text-center text-info">Who are you</h2>
+        <input type="text" name="nombre" placeholder="Nombre"> 
+        <input type="email" name="email" placeholder="Correo electrónico"> 
+        <button type="submit">Enviar</button> 
+    </form> 
+    <script> 
+        const formulario = document.getElementById("miFormulario"); 
+        formulario.addEventListener("submit", (event) => { 
+        event.preventDefault(); 
+        }); 
+    </script> -->
+    <div class="d-flex justify-content-center align-items-center p-4 gap-5" id="candidates">
+        <div class="card" style="width: 18rem;" id="Anthony">
+            <img src="img/Anthony.PNG" class="card-img-top" alt="desc1">
+            <div class="card-body">
+            <h5 class="card-title">Anthony, 38</h5>
+            <p class="card-text">Kind and poly, I like museum dates. Fancy a coffee?</p>
+            </div>
+            <ul class="list-group list-group-flush">
+            <li class="list-group-item text-center dating" id="dateAnthony">Go to a Date</li>
+            <li class="list-group-item text-center deleting" id="deleteAnthony">Delete =(</li>
+            </ul>
+        </div>
+        <div class="card" style="width: 18rem;" id="Ghostkid">
+            <img src="img/Ghostkid.PNG" class="card-img-top" alt="desc1">
+            <div class="card-body">
+            <h5 class="card-title">Ghostkid, 27</h5>
+            <p class="card-text">Dead inside. No te puto pilles.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+            <li class="list-group-item text-center dating" id="dateGhostkid">Go to a Date</li>
+            <li class="list-group-item text-center deleting" id="deleteGhostkid">Delete =(</li>
+            </ul>
+        </div>
+        <div class="card" style="width: 18rem;" id="Zoe">
+            <img src="img/Zoe.PNG" class="card-img-top" alt="desc1">
+            <div class="card-body">
+            <h5 class="card-title">Zoe, 30</h5>
+            <p class="card-text">Sagitarius, chaotic neutral, cat lover. I like coffee and adventure.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+            <li class="list-group-item text-center dating" id="dateZoe">Go to a Date</li>
+            <li class="list-group-item text-center deleting" id="deleteZoe">Delete =(</li>
+            </ul>
+        </div>
+    </div>
+    <div class="position-relative">
+        <p id="mensaje" class="text-success-emphasis position-absolute top-50 start-50 translate-middle"></p>
+    </div>
+    
+    
+    <div id="miDiv">Pasa el ratón por encima de mí</div> 
+    <script> 
+        const div = document.getElementById("miDiv"); 
+        div.addEventListener("mouseover", () => { 
+        div.style.backgroundColor = "lightblue"; 
+        });
+    </script>
+    <div class="container p-3">
+        <ul class="list-group p-3 text-primary-emphasis bg-info-subtle border border-primary-subtle rounded-3">
+            <li class="list-group-item">Comprar</li>
+            <li class="list-group-item">Hacer la tarea 1</li>
+            <li class="list-group-item">Estudiar</li>
+        </ul>
+        <div class="d-flex flex-row flex-no-wrap justify-content-around justify-content-xl-center align-items-center p-2">
+            <input class="p-3 text-primary-emphasis bg-dark-subtle border border-primary-subtle rounded-3" type="text" id="txtTarea" placeholder="Ingrese una tarea">
+            <button class="p-3 text-primary-emphasis bg-warning-subtle border border-primary-subtle rounded-3" id="btnAgregar" onclick="agregar()">Agregar</button>
+            <button class="p-3 text-primary-emphasis bg-success-subtle border border-primary-subtle rounded-3" id="btnEliminar" onclick="eliminar()">Eliminar</button>
+            <button class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3" id="btnMover" onclick="mover()">Mover tarea arriba</button>
+        </div>
+    </div>
+
+    <script>
+        const txtTarea = document.getElementById("txtTarea");
+        const ul = document.querySelector("ul");
+        var li = document.getElementsByTagName('li');
+        var seleccionado = document.getElementsByClassName("seleccionado")[0];
+
+        //Al agregar, aparte de crear el elemento li con el valor del input, le añado el listener de click para que se pueda seleccionar,
+        // y luego lo añado al array de lis.
+        function agregar(){
+            const tarea = txtTarea.value;
+            const liNuevo = document.createElement("li");
+            liNuevo.innerText = tarea;
+            ul.appendChild(liNuevo);
+            txtTarea.value = "";
+            liNuevo.classList.add('list-group-item');
+            liNuevo.addEventListener("click", seleccionar);
+            li.push(liNuevo);
+        }
+
+        function eliminar(){
+            ul.removeChild(seleccionado);
+        }
+
+        //Sin la comprobación pasaría al final de la lista (creo que index negativo o algo así?)
+        function mover(){
+            if(seleccionado.previousElementSibling != null){
+                ul.insertBefore(seleccionado, seleccionado.previousElementSibling);
+            }
+        }
+
+        //para que me recorra los lis que hay en ese momento y les añade el listener, que llame a seleccionar
+        for (let index = 0; index < li.length; index++) {
+            li[index].addEventListener("click", seleccionar);
+        }
+
+        //tengo que comprobar si es null para que no haya varios elementos seleccionados a la vez,
+        // aunque como seleccionado = document.getElementsByClassName("seleccionado")[0]; solo operaría
+        // con el primero en haber sido seleccionado (aunque el segundo se resaltaría).
+        function seleccionar(e){
+            if(seleccionado != null){
+                seleccionado.classList.remove("seleccionado");
+            }
+            seleccionado = e.target;
+            seleccionado.classList.add("seleccionado");
+        }
+    </script>
+</body>
+</html>

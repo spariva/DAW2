@@ -1,0 +1,44 @@
+header.cabecera {
+    padding-top: 90rem;
+    padding-bottom: calc(10rem - 4.5rem);
+    background: linear-gradient(to bottom, rgba(92, 77, 66, 0.161) 0%, rgba(92, 77, 66, 0.297) 100%), url("https://img.freepik.com/premium-photo/pastel-sweet-blue-pink-sky-pixel-art-style-background-with-copy-space_176697-1779.jpg?size=626&ext=jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+  }
+   header.cabecera h1, header.cabecera .h1 {
+    font-size: 2.25rem;
+  }
+  @media (min-width: 992px) {
+    header.cabecera {
+      height: 100vh;
+      min-height: 40rem;
+      padding-top: 4.5rem;
+      padding-bottom: 0;
+    }
+    header.cabecera p {
+      font-size: 1.15rem;
+    }
+    header.cabecera h1, header.cabecera .h1 {
+      font-size: 3rem;
+    }
+  }
+  @media (min-width: 1200px) {
+    header.cabecera h1, header.cabecera .h1 {
+      font-size: 3.5rem;
+    }
+  }
+
+.resaltado-pastel{
+  background-color: rgba(227, 113, 233, 0.937);
+}
+
+.resaltado-agro{
+  background-color: rgba(236, 41, 80, 0.894);
+}
+
+
+.hidden{
+  display: none;
+}

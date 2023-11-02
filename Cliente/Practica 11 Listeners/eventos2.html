@@ -100,7 +100,31 @@ se presiona y se suelta: -->
             <button class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3" id="btnMover" onclick="mover()">Mover tarea arriba</button>
         </div>
     </div>
-
+    <div id="draggable" draggable="true">Elemento arrastrable</div> 
+    <div id="droppable">Área de des no</div> 
+    <script> 
+        const draggable = document.getElementById("draggable"); 
+        const droppable = document.getElementById("droppable"); 
+        draggable.addEventListener("dragstart", (event) => { 
+            event.dataTransfer.setData("text/plain", "Este es un elemento arrastrable"); 
+        }); 
+        droppable.addEventListener("dragover", (event) => { 
+            event.preventDefault(); 
+        }); 
+        droppable.addEventListener("drop", (event) => { 
+            event.preventDefault(); 
+            const data = event.dataTransfer.getData("text/plain"); 
+            droppable.innerHTML = data; 
+        }); 
+    </script> 
+     <div id="miDiv">Haz clic derecho aquí</div> 
+     <script> 
+         const div = document.getElementById("miDiv"); 
+         div.addEventListener("contextmenu", (event) => { 
+             event.preventDefault(); // Evita que aparezca el menú contextual predeterminado 
+             alert("Has hecho clic derecho en el div."); 
+         }); 
+     </script> 
     <script>
         const txtTarea = document.getElementById("txtTarea");
         const ul = document.querySelector("ul");
