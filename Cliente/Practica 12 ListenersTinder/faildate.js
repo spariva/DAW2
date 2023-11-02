@@ -6,8 +6,6 @@ const anthony = document.getElementById("Anthony");
 const ghostkid = document.getElementById("Ghostkid");
 const zoe = document.getElementById("Zoe");
 const linkDate = document.getElementById("linkDate");
-const dating = document.getElementsByClassName("dating");
-const deleting = document.getElementsByClassName("deleting");
 
 candidates.addEventListener("mouseover", function(e){
     if(e.target.classList.contains("dating")){
@@ -28,8 +26,14 @@ candidates.addEventListener("click", function(e){
             case anthony:
                 linkDate.textContent = "Prepare to your date with" + e.target.id + "!";
                 break;
-        
+            case ghostkid:
+                linkDate.textContent = "Prepare to your date with" + e.target.id + "!";
+                break;
+            case zoe:  
+                linkDate.textContent = "Prepare to your date with" + e.target.id + "!";
+                break;
             default:
+                console.log("error en el switch dating");
                 break;
         }
     }
@@ -37,7 +41,7 @@ candidates.addEventListener("click", function(e){
         switch (e.target.id) {
             case anthony:
                 linkDate.textContent = "Anthony left the room pissed off.";
-                e.target.src = endingCry;
+                e.target.classList.add("hidden");
                 break;
             case ghostkid:
                 linkDate.textContent = "Ghostkid left the room pissed off.";

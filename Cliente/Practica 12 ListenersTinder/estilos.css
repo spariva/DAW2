@@ -29,7 +29,38 @@ header.cabecera {
       font-size: 3.5rem;
     }
   }
-
+  div.cabecera {
+    padding-top: 90rem;
+    padding-bottom: calc(10rem - 4.5rem);
+    background: linear-gradient(to bottom, rgba(92, 77, 66, 0.161) 0%, rgba(92, 77, 66, 0.297) 100%), url("https://as1.ftcdn.net/v2/jpg/05/61/11/26/1000_F_561112671_aI1a5XOT0F8v3ubyKvLlv6YjhHXWvXP0.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+  }
+   div.cabecera h1, div.cabecera .h1 {
+    font-size: 2.25rem;
+  }
+  @media (min-width: 992px) {
+    div.cabecera {
+      height: 100vh;
+      min-height: 40rem;
+      padding-top: 4.5rem;
+      padding-bottom: 0;
+    }
+    div.cabecera p {
+      font-size: 1.15rem;
+    }
+    div.cabecera h1, div.cabecera .h1 {
+      font-size: 3rem;
+    }
+  }
+  @media (min-width: 1200px) {
+    div.cabecera h1, div.cabecera .h1 {
+      font-size: 3.5rem;
+    }
+  }
+  
 .resaltado-pastel{
   background-color: rgba(227, 113, 233, 0.937);
 }
