@@ -21,9 +21,9 @@ botones, se dispara el evento de clic en el contenedor. Usamos la propiedad `tar
 verificar si el elemento en el que se hizo clic es un botón, y luego mostramos un mensaje que
 indica en cuál de los botones hiciste clic según su ID.-->
         <div class="d-flex flex-row flex-no-wrap justify-content-center align-items-center p-2"></div>
-            <button class="A p-3 text-primary-emphasis bg-warning-subtle border border-primary-subtle rounded-3" id="1">1 Agregar</button>
-            <button class="A p-3 text-primary-emphasis bg-success-subtle border border-primary-subtle rounded-3" id="2">2 Eliminar</button>
-            <button class="A p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3" id="3">3 Mover tarea arriba</button>
+            <button class="A p-3 text-primary-emphasis bg-warning-subtle border border-primary-subtle rounded-3" id="1">1 .</button>
+            <button class="A p-3 text-primary-emphasis bg-success-subtle border border-primary-subtle rounded-3" id="2">2 .</button>
+            <button class="A p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3" id="3">3 .</button>
         </div>
     </div> 
     <script defer>
@@ -44,135 +44,142 @@ indica en cuál de los botones hiciste clic según su ID.-->
 Programa una web que muestre en un alert el tipo de evento que se produce al
 pulsar cualquiera de los 3 botones que tiene que tener el sitio. Para escuchar este tipo de
 eventos utiliza container.addEventListener("click", function(event) { …}-->
-<script defer>
-    var container = document.getElementById('B');
-    container.addEventListener("click", function(e) {
-        alert("En el elemento: " + e.type + " en: " + e.target.id);
-    });
-
-</script>
     <div id="B" class="container text-center overflow-hidden bg-success-subtle border rounded-3">
         <div class="row gx-3">
             <div class="col-4 p-2">
                 <div class="bg-info-subtle p-2 border rounded-3">
                     <h2>1</h2>
-                    <button class="p-3 text-primary-emphasis bg-danger-subtle border border-primary-subtle rounded-3" id="1">1 botón</button>
+                    <button class="p-3 text-primary-emphasis bg-danger-subtle border border-primary-subtle rounded-3" id="B 1">1 botón</button>
                 </div>
             </div>
             <div class="col-4 p-2">
                 <div class="bg-primary-subtle p-2 border rounded-3">
                     <h2>2</h2>
-                    <button class="p-3 text-primary-emphasis bg-warning-subtle border border-primary-subtle rounded-3" id="3">2 botón</button>
+                    <button class="p-3 text-primary-emphasis bg-warning-subtle border border-primary-subtle rounded-3" id="B 2">2 botón</button>
                 </div>
             </div>
             <div class="col-4  p-2">
                 <div class="bg-warning-subtle p-2 border rounded-3">
                     <h2>3</h2>
-                    <button class="p-3 text-primary-emphasis bg-dark-subtle border border-primary-subtle rounded-3" id="2">3 botón</button>
+                    <button class="p-3 text-primary-emphasis bg-dark-subtle border border-primary-subtle rounded-3" id="B 3">3 botón</button>
                 </div>
             </div>
         </div>
     </div>
-
-
-    <div class="B container text-center overflow-hidden bg-success-subtle border rounded-3">
-        <div class="row gx-3">
-            <div class="col-4 p-2">
-                <div class="bg-info-subtle p-2 border rounded-3">
-                    <h2>1</h2>
-                    <button class="p-3 text-primary-emphasis bg-danger-subtle border border-primary-subtle rounded-3" id="1">1 botón</button>
-                </div>
-            </div>
-            <div class="col-4 p-2">
-                <div class="bg-primary-subtle p-2 border rounded-3">
-                    <h2>2</h2>
-                    <button class="p-3 text-primary-emphasis bg-warning-subtle border border-primary-subtle rounded-3" id="3">2 botón</button>
-                </div>
-            </div>
-            <div class="col-4  p-2">
-                <div class="bg-warning-subtle p-2 border rounded-3">
-                    <h2>3</h2>
-                    <button class="p-3 text-primary-emphasis bg-dark-subtle border border-primary-subtle rounded-3" id="2">3 botón</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <ul id="lista">
-        <li>Elemento 1</li>
-        <li>Elemento 2</li>
-        <li>Elemento 3</li>
-        <li>Elemento 4</li>
-        <li>Elemento 5</li>
+    <script>
+        var container = document.getElementById('B');
+        container.addEventListener("click", function(e) {
+            alert("En el elemento: " + e.type + " en: " + e.target.id);
+        });
+    
+    </script>
+    <ul id="lista" class="p-3 text-primary-emphasis bg-info-subtle border border-primary-subtle rounded-3">
+        <li class="list-group-item">Elemento 1</li>
+        <li class="list-group-item">Elemento 2</li>
+        <li class="list-group-item">Elemento 3</li>
+        <li class="list-group-item">Elemento Especial</li>
     </ul>
     <p id="mensaje"></p>
 
     <script>
-        // Obtén la lista y el párrafo por sus ID
         const lista = document.getElementById("lista");
         const mensaje = document.getElementById("mensaje");
-
-        // Agrega un manejador de eventos de clic a la lista
         lista.addEventListener("click", function(event) {
-            // Evita que el evento de clic se propague al párrafo
             event.stopPropagation();
-
-            // Obtiene el elemento de la lista en el que se hizo clic
             const elementoClicado = event.target;
-
-            // Muestra el mensaje en el párrafo
             mensaje.textContent = "Hiciste clic en el elemento: " + elementoClicado.textContent;
-
-            // Muestra un mensaje de alerta
             alert("Hiciste clic en la lista");
         });
     </script>
+    <div class="container mb-5" id="container" width="80%" height="300px">
+        <p class="text-center text-primary-emphasis">Pulsa una tecla.</p>
+        <p class="text-center text-primary-emphasis" id="mensajeTecla"></p>
+        <p id="coord" class="text-center text-primary-emphasis"></p>
+    </div>
+    <script>
+        const mensajeTecla = document.getElementById('mensajeTecla');
+        document.addEventListener("keypress", function(k){
+            mensajeTecla.textContent = "Se ha presionado " + k.key + " código: " + k.keyCode;
+        });
+    </script>
+    <script>
+        const container = document.getElementById('container');
+        //var cursorCoordinates = mensajeTecla.appendChild(document.createElement('p'));
+        var cursorCoordinates = document.getElementById('coord');
+
+        container.addEventListener("mousemove", function(event) {
+        const x = event.clientX - container.getBoundingClientRect().left;
+        const y = event.clientY - container.getBoundingClientRect().top;
+
+        // Actualiza el texto con las coordenadas X e Y 
+        cursorCoordinates.textContent = `X: ${x}, Y: ${y}`;
+        
+        // Cambia el color de fondo basado en la posición del cursor
+        const red = Math.floor((x / container.clientWidth) * 255); // clientWitdth devuelve el ancho interno del elemento 
+        const green = Math.floor((y / container.clientHeight) * 255);
+        container.style.backgroundColor = `rgb(${red}, ${green}, 200)`;
+        });
+
+    </script>
+    <div class="container-lg p-3 justify-content-center bg-white text-center" id="whiteDiv">
+        <div class="bg-primary-subtle mx-auto" style="width: 50%; height: 100px;" id="box"></div>
+        <div class="mt-3">
+            <button id="bubbleBtn" class="mx-auto text-primary-emphasis bg-success-subtle border rounded-5">Bubble button</button>
+            <p id="messageBubble"></p>
+        </div>
+    </div>
     
+    <script>
+        const bubbleBtn = document.getElementById('bubbleBtn');
+        const whiteDiv = document.getElementById('whiteDiv');
+        const p = document.getElementById('messageBubble');
 
+        bubbleBtn.addEventListener('click', function() {
+            p.textContent = event.target.id;
+        });//si le llamo event lo pilla, si quiero cambiar nombre he de especificar que el param.
 
+        const caja = document.getElementById('box');
+        caja.addEventListener('click', () => {
+            p.textContent = event.target.id;
+        });
+
+        whiteDiv.addEventListener('click', () => {
+            if (event.target !== bubbleBtn && event.target !== caja) {
+                p.textContent = event.target.id;
+            }
+        });
+    </script>
+    <h3 class="text-center mt-4 mb-2">JavaScript removeEventListener()</h3>
+    <div class="container bg-warning-subtle" id="orangeDiv">
+        <p>
+            This div element has an onmousemove event handler that displays a
+            random number every time you move your mouse inside this orange
+            field.
+        </p>
+        <p>
+            Click the button to remove the div's event handler.
+        </p>
+        <div class="text-center p-2">
+            <button id="remove" class="text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">Remove</button>
+        </div>
+    </div>
+    <p id="number" class="text-center text-primary-emphasis"></p>
 
     <script>
-        const txtTarea = document.getElementById("txtTarea");
-        const ul = document.querySelector("ul");
-        var li = document.getElementsByTagName('li');
-        var seleccionado = document.getElementsByClassName("seleccionado")[0];
+        const orangeDiv = document.getElementById('orangeDiv');
+        const number = document.getElementById('number');
+        const remover = document.getElementById('remove');
 
-        function agregar(){
-            const tarea = txtTarea.value;
-            const liNuevo = document.createElement("li");
-            liNuevo.innerText = tarea;
-            ul.appendChild(liNuevo);
-            txtTarea.value = "";
-            liNuevo.classList.add('list-group-item');
-            liNuevo.addEventListener("click", seleccionar);
-            li.push(liNuevo);
+        function randomNum(e){
+            number.textContent = Math.Random()*100;
         }
 
-        function eliminar(){
-            ul.removeChild(seleccionado);
-        }
+        orangeDiv.addEventListener("mousemove", randomNum());
 
-        //Sin la comprobación pasaría al final de la lista (creo que index negativo o algo así?)
-        function mover(){
-            if(seleccionado.previousElementSibling != null){
-                ul.insertBefore(seleccionado, seleccionado.previousElementSibling);
-            }
-        }
+        remover.addEventListener("click", function(){
+            orangeDiv.removeEventListener("mousemove", randomNum());
+        });
 
-        //para que me recorra los lis que hay en ese momento y les añade el listener, que llame a seleccionar
-        for (let index = 0; index < li.length; index++) {
-            li[index].addEventListener("click", seleccionar);
-        } 
-
-        //tengo que comprobar si es null para que no haya varios elementos seleccionados a la vez,
-        // aunque como seleccionado = document.getElementsByClassName("seleccionado")[0]; solo operaría
-        // con el primero en haber sido seleccionado (aunque el segundo se resaltaría).
-        function seleccionar(e){
-            if(seleccionado != null){
-                seleccionado.classList.remove("seleccionado");
-            }
-            seleccionado = e.target;
-            seleccionado.classList.add("seleccionado");
-        }
     </script>
 </body>
 </html>
