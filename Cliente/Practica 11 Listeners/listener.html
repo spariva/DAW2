@@ -185,10 +185,10 @@ eventos utiliza container.addEventListener("click", function(event) { …}-->
             number.textContent = Math.random()*100;
         }
 
-        orangeDiv.addEventListener("mousemove", randomNum());
+        orangeDiv.addEventListener("mousemove", randomNum);
 
         remove.addEventListener("click", function(){
-            orangeDiv.removeEventListener("mousemove", randomNum());
+            orangeDiv.removeEventListener("mousemove", randomNum);
         });
 
     </script>

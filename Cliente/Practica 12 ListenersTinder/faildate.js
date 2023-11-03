@@ -40,16 +40,16 @@ candidates.addEventListener("click", function(e){
     if(e.target.classList.contains("deleting")){
         switch (e.target.id) {
             case anthony:
-                linkDate.textContent = "Anthony left the room pissed off.";
+                linkDate.textContent = "Anthony has left the room pissed off.";
                 e.target.classList.add("hidden");
                 break;
             case ghostkid:
-                linkDate.textContent = "Ghostkid left the room pissed off.";
-                e.target.src = endingGhost;
+                linkDate.textContent = "Ghostkid has left the room pissed off.";
+                e.target.classList.add("hidden");
                 break;
             case zoe:
-                linkDate.textContent = "Zoe left the room pissed off.";
-                e.target.src = endingFire;
+                linkDate.textContent = "Zoe left has the room pissed off.";
+                e.target.classList.add("hidden");
                 break;
             default:
                 break;
@@ -64,7 +64,7 @@ function del(e){
     e.target.parentElement.classList.add("delete");
     setTimeout(() => {
         alert(e.target.parentElement.id + " left the room pissed off.");
-    }, 500);
+    }, 100);
 }
 
 
@@ -108,3 +108,35 @@ function del(e){
 //         function: 'animation_func',
 //     }
 // });
+
+//*keydown keyup.
+let playPauseBtn = document.getElementById('play-pause-btn');
+let bgMusic = document.getElementById('bgm');
+
+function toggleMusic() {
+    if (bgMusic.paused) {
+        bgMusic.play();
+        playPauseBtn.innerHTML = '<span id="pause-emoji">▐▐</span><span id="pause-text">PAUSE</span>';
+    } else {
+        bgMusic.pause();
+        playPauseBtn.innerHTML = '<span id="play-emoji">▶</span><span id="play-text">PLAY</span>';
+    }
+}
+
+playPauseBtn.addEventListener('click', toggleMusic);
+
+function startMusic() {
+    toggleMusic();
+    playPauseBtn.style.display = 'inline-flex';
+}
+
+function toWhite() {
+    setTimeout(function () {
+        let titulo = document.getElementsByClassName("titulo");
+        let coming = document.getElementById("coming");
+        titulo[0].style.color = "white";
+        startMusic();
+        coming.style.display = "inherit";
+    }, 850);
+}
+
