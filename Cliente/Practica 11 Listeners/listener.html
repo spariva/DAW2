@@ -181,12 +181,11 @@ eventos utiliza container.addEventListener("click", function(event) { …}-->
         const number = document.getElementById('number');
         const remove = document.getElementById('remove');
 
-        function randomNum(event){
-            console.log(event.clientX);
+        function randomNum(){
             number.textContent = Math.random()*100;
         }
 
-        orangeDiv.addEventListener("mousemove", randomNum(event));
+        orangeDiv.addEventListener("mousemove", randomNum());
 
         remove.addEventListener("click", function(){
             orangeDiv.removeEventListener("mousemove", randomNum());
