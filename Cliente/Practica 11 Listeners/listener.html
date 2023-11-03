@@ -67,20 +67,21 @@ eventos utiliza container.addEventListener("click", function(event) { …}-->
         </div>
     </div>
     <script>
-        var container = document.getElementById('B');
-        container.addEventListener("click", function(e) {
+        var containerB = document.getElementById('B');
+        containerB.addEventListener("click", function(e) {
             alert("En el elemento: " + e.type + " en: " + e.target.id);
         });
     
     </script>
-    <ul id="lista" class="p-3 text-primary-emphasis bg-info-subtle border border-primary-subtle rounded-3">
-        <li class="list-group-item">Elemento 1</li>
-        <li class="list-group-item">Elemento 2</li>
-        <li class="list-group-item">Elemento 3</li>
-        <li class="list-group-item">Elemento Especial</li>
-    </ul>
-    <p id="mensaje"></p>
-
+    <div class="container-sm d.flex  text-center justify-content-end">
+        <ul id="lista" class="p-3 text-primary-emphasis bg-info-subtle border border-primary-subtle rounded-3 w-50">
+            <li class="list-group-item">Elemento 1</li>
+            <li class="list-group-item">Elemento 2</li>
+            <li class="list-group-item">Elemento 3</li>
+            <li class="list-group-item">Elemento Especial</li>
+        </ul>
+        <p id="mensaje"></p>
+    </div>
     <script>
         const lista = document.getElementById("lista");
         const mensaje = document.getElementById("mensaje");
@@ -171,7 +172,7 @@ eventos utiliza container.addEventListener("click", function(event) { …}-->
         const remover = document.getElementById('remove');
 
         function randomNum(e){
-            number.textContent = Math.Random()*100;
+            number.textContent = Math.random()*100;
         }
 
         orangeDiv.addEventListener("mousemove", randomNum());
