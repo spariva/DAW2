@@ -73,14 +73,27 @@ eventos utiliza container.addEventListener("click", function(event) { …}-->
         });
     
     </script>
-    <div class="container-sm d.flex  text-center justify-content-end">
-        <ul id="lista" class="p-3 text-primary-emphasis bg-info-subtle border border-primary-subtle rounded-3 w-50">
-            <li class="list-group-item">Elemento 1</li>
-            <li class="list-group-item">Elemento 2</li>
-            <li class="list-group-item">Elemento 3</li>
-            <li class="list-group-item">Elemento Especial</li>
-        </ul>
-        <p id="mensaje"></p>
+    <div class="container-sm p-4 text-center overflow-hidden">
+        <div class="row gx-5"> 
+            <div class="col-3">
+                <ul id="lista" class="p-3 text-primary-emphasis bg-info-subtle border border-primary-subtle rounded-3">
+                    <li class="list-group-item">Elemento 1</li>
+                    <li class="list-group-item">Elemento 2</li>
+                    <li class="list-group-item">Elemento 3</li>
+                    <li class="list-group-item">Elemento Especial</li>
+                </ul>
+                <div class="row">
+                    <div class="col-8"><p id="mensaje" class="text-end text-primary"></p></div>
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="container mt-1 mb-5 h-75 w-100" id="container" >
+                    <p class="text-center text-primary-emphasis">Pulsa una tecla.</p>
+                    <p class="text-center text-primary-emphasis" id="mensajeTecla"></p>
+                    <p id="coord" class="text-center text-primary-emphasis"></p>
+                </div>
+            </div>    
+        </div>
     </div>
     <script>
         const lista = document.getElementById("lista");
@@ -92,11 +105,7 @@ eventos utiliza container.addEventListener("click", function(event) { …}-->
             alert("Hiciste clic en la lista");
         });
     </script>
-    <div class="container mb-5" id="container" width="80%" height="300px">
-        <p class="text-center text-primary-emphasis">Pulsa una tecla.</p>
-        <p class="text-center text-primary-emphasis" id="mensajeTecla"></p>
-        <p id="coord" class="text-center text-primary-emphasis"></p>
-    </div>
+
     <script>
         const mensajeTecla = document.getElementById('mensajeTecla');
         document.addEventListener("keypress", function(k){
@@ -122,12 +131,13 @@ eventos utiliza container.addEventListener("click", function(event) { …}-->
         });
 
     </script>
-    <div class="container-lg p-3 justify-content-center bg-white text-center" id="whiteDiv">
-        <div class="bg-primary-subtle mx-auto" style="width: 50%; height: 100px;" id="box"></div>
-        <div class="mt-3">
+    <div class="container-lg p-3 bg-white text-center" id="whiteDiv">
+        <!--!wtf: h-100 no funciona, y me fuerza a meter un style ?¿ -->
+        <div class="bg-primary-subtle mx-auto w-50 mb-3" style="height: 100px;" id="box"></div>
+        <!-- <div class="text-center mt-3 w-25"> -->
             <button id="bubbleBtn" class="mx-auto text-primary-emphasis bg-success-subtle border rounded-5">Bubble button</button>
             <p id="messageBubble"></p>
-        </div>
+        <!-- </div> -->
     </div>
     
     <script>
@@ -169,15 +179,16 @@ eventos utiliza container.addEventListener("click", function(event) { …}-->
     <script>
         const orangeDiv = document.getElementById('orangeDiv');
         const number = document.getElementById('number');
-        const remover = document.getElementById('remove');
+        const remove = document.getElementById('remove');
 
-        function randomNum(e){
+        function randomNum(event){
+            console.log(event.clientX);
             number.textContent = Math.random()*100;
         }
 
-        orangeDiv.addEventListener("mousemove", randomNum());
+        orangeDiv.addEventListener("mousemove", randomNum(event));
 
-        remover.addEventListener("click", function(){
+        remove.addEventListener("click", function(){
             orangeDiv.removeEventListener("mousemove", randomNum());
         });
 
