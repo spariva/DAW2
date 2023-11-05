@@ -21,16 +21,19 @@ candidates.addEventListener("mouseout", function(e){
 });
 
 candidates.addEventListener("click", function(e){
+    console.log(e.target.id);
+    console.log(e.target.parentElement);
+    console.log(e.target.parentElement.id);
     if(e.target.classList.contains("dating")){
         switch (e.target.id) {
-            case anthony:
-                linkDate.textContent = "Prepare to your date with" + e.target.id + "!";
+            case 'anthony':
+                linkDate.textContent = "Prepare to your date with " + e.target.parentElement.id + "!";
                 break;
-            case ghostkid:
-                linkDate.textContent = "Prepare to your date with" + e.target.id + "!";
+            case 'ghostkid':
+                linkDate.textContent = "Prepare to your date with " + e.target.id + "!";
                 break;
-            case zoe:  
-                linkDate.textContent = "Prepare to your date with" + e.target.id + "!";
+            case 'zoe':  
+                linkDate.textContent = "Prepare to your date with " + e.target.id + "!";
                 break;
             default:
                 console.log("error en el switch dating");
@@ -39,15 +42,15 @@ candidates.addEventListener("click", function(e){
     }
     if(e.target.classList.contains("deleting")){
         switch (e.target.id) {
-            case anthony:
+            case 'anthony':
                 linkDate.textContent = "Anthony has left the room pissed off.";
                 e.target.classList.add("hidden");
                 break;
-            case ghostkid:
+            case 'ghostkid':
                 linkDate.textContent = "Ghostkid has left the room pissed off.";
                 e.target.classList.add("hidden");
                 break;
-            case zoe:
+            case 'zoe':
                 linkDate.textContent = "Zoe left has the room pissed off.";
                 e.target.classList.add("hidden");
                 break;
@@ -111,14 +114,14 @@ function del(e){
 
 //*keydown keyup.
 let playPauseBtn = document.getElementById('play-pause-btn');
-let bgMusic = document.getElementById('bgm');
+let mLofly = document.getElementById('m-lofly');
 
 function toggleMusic() {
-    if (bgMusic.paused) {
-        bgMusic.play();
+    if (mLofly.paused) {
+        mLofly.play();
         playPauseBtn.innerHTML = '<span id="pause-emoji">▐▐</span><span id="pause-text">PAUSE</span>';
     } else {
-        bgMusic.pause();
+        mLofly.pause();
         playPauseBtn.innerHTML = '<span id="play-emoji">▶</span><span id="play-text">PLAY</span>';
     }
 }
