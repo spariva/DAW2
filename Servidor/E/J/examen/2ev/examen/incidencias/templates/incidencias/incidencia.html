@@ -1,0 +1,19 @@
+{% extends 'incidencias/base.html' %}
+
+{% block content %}
+    <form action="{% url 'incidencias:mandar' estacion.id %}" method="post">
+        {% csrf_token %}
+        <h4>{{ estacion.linea }}</h4>
+
+        {% if error %}
+            <span style="color:red">{{error}}</span>
+        {% endif %}
+        <p>Está poniendo una incidencia sobre la estación de: {{ estacion.nombre }}</p>
+        <div class="mb-3">
+            <label for="incidencia" class="form-label">Incidencia:</label>
+            <textarea class="form-control" name="incidencia" id="incidencia" rows="3"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+{% endblock content %}

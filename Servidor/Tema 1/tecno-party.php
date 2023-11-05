@@ -28,7 +28,7 @@ $numFranjas = (isset($_GET["number"])?$_GET["number"]:1);
         align-items: center;
     }
     .a {
-        background-color: <?= hexadecimal()?>;
+        background-color: <?= hexadecimal(); ?>;
     }
 </style>
 </head>
@@ -41,7 +41,7 @@ $numFranjas = (isset($_GET["number"])?$_GET["number"]:1);
 </div>
 
     <?php for($i = 0; $i < $numFranjas; $i++) : ?>
-    <div style='width: 20%; height: 100%; display: inline-block; background-color: " . hexadecimal() . ";'></div>
+    <div style='width: 20%; height: 100%; display: inline-block; background-color: " <?= ";'></div>
     <?php endfor ?>
     <?php 
     for($i = 0; $i < $numFranjas; $i++){

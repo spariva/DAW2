@@ -1,0 +1,31 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+  <div class="question">
+    <h3>{{ question.question_text }}</h3>
+
+    {% if question.choice_set.all %}
+        <form action="{% url 'polls:vote' question.id %}" method="post">
+            <fieldset>
+                <legend>Opciones</legend>
+                {% csrf_token %}
+                {% if error %}
+                    <p>{{ error }}</p>
+                {% endif %}
+                {% for choice in question.choice_set.all %}
+                    <div class="choice-wrap">
+                        <input type="radio" name="choice" id="choice{{forloop.counter}}" value="{{ choice.id }}">
+                        <label for="choice{{forloop.counter}}">{{ choice.choice_text }}</label>
+                    </div>
+                {% endfor %}
+        
+                <input type="submit" class="btn btn-primary my-3" value="Votar">
+            </fieldset>
+        </form>
+    {% else %}
+        <p>No hay opciones para elegir, igual deberias hablar con el admin para que las ponga</p>
+    {% endif %}
+    {% comment %} <ul class="choices">
+    </ul> {% endcomment %}
+  </div>
+{% endblock %}

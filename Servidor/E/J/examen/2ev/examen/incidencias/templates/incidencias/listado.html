@@ -1,0 +1,21 @@
+{% extends 'incidencias/base.html' %}
+{% block content %}
+    {% if msg %}
+        <p>{{msg}}</p>
+    {% endif %}
+  <div class="div">
+    {% for linea in lineas %}
+      <h4>{{ linea.nombre }}</h4>
+      {% if linea.estacion_set.all %}
+        <p class="m-0 p-0">Estaciones:</p>
+        <ul>
+          {% for estacion in linea.estacion_set.all %}
+            <li>
+              {{ estacion.nombre }} <a href="{% url 'incidencias:incidencia' estacion.id %}">Nueva incidencia</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endblock %}
