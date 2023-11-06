@@ -11,7 +11,7 @@
     function ejercicio3() {
         ejercicio2();
         $nombre = "Mario";
-        echo "Esta página ha sido programada por " . $nombre;
+        echo "Esta página ha sido programada por $nombre";
     }
 
     function ejercicio4() {
@@ -36,7 +36,7 @@
         $x = 5;
         $y = 2;
 
-        echo $x . " y " . $y . "\n";
+        echo "$x y  $y \n";
         echo $x + $y;
         echo $x - $y;
         echo $x * $y;

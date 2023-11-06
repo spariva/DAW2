@@ -1,6 +1,6 @@
 <?php
 
-namespace Trait;
+namespace Clases;
 
 trait TieneFecha
 {
