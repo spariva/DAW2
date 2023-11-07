@@ -1,5 +1,5 @@
 <?php
-function concatenarPalabras(string &$acc, ...$palabras){
+function concatenarPalabras(string &$acc, mixed ...$palabras){
     for($i=0; $i<=count($palabras);$i++){
         $acc .= "' '.$palabras[$i]";
     }
@@ -15,7 +15,7 @@ function concatenarPalabras(string &$acc, ...$palabras){
 <body>
     <?php 
     $acc="inicio";
-    concatenarPalabras($acc, "hola", "caracola");
+    concatenarPalabras($acc, ["hola", "caracola"]);
     echo $acc;
     ?>
 </body>
