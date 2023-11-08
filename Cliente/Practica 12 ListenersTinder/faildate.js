@@ -21,18 +21,19 @@ candidates.addEventListener("mouseout", function(e){
 });
 
 candidates.addEventListener("click", function(e){
+    //e.stopPropagation();
     console.log(e.target.id);
     console.log(e.target.parentElement);
     console.log(e.target.parentElement.id);
     if(e.target.classList.contains("dating")){
         switch (e.target.id) {
-            case 'anthony':
+            case 'Anthony':
                 linkDate.textContent = "Prepare to your date with " + e.target.parentElement.id + "!";
                 break;
-            case 'ghostkid':
+            case 'Ghostkid':
                 linkDate.textContent = "Prepare to your date with " + e.target.id + "!";
                 break;
-            case 'zoe':  
+            case 'Zoe':  
                 linkDate.textContent = "Prepare to your date with " + e.target.id + "!";
                 break;
             default:
@@ -48,6 +49,7 @@ candidates.addEventListener("click", function(e){
                 break;
             case 'ghostkid':
                 linkDate.textContent = "Ghostkid has left the room pissed off.";
+                // alert(e.target.parentElement + " left the room pissed off.");
                 e.target.classList.add("hidden");
                 break;
             case 'zoe':
@@ -55,6 +57,7 @@ candidates.addEventListener("click", function(e){
                 e.target.classList.add("hidden");
                 break;
             default:
+                console.log("error en el switch dating");
                 break;
         }
     }
@@ -65,26 +68,11 @@ candidates.addEventListener("click", function(e){
 
 function del(e){
     e.target.parentElement.classList.add("delete");
+    alert(e.target.parentElement.id + " left the room pissed off.");
     setTimeout(() => {
         alert(e.target.parentElement.id + " left the room pissed off.");
-    }, 100);
+    }, 10);
 }
-
-
-        // Agrega un manejador de eventos de clic a la lista
-        lista.addEventListener("click", function(event) {
-            // Evita que el evento de clic se propague al párrafo
-            event.stopPropagation();
-
-            // Obtiene el elemento de la lista en el que se hizo clic
-            const elementoClicado = event.target;
-
-            // Muestra el mensaje en el párrafo
-            mensaje.textContent = "Hiciste clic en el elemento: " + elementoClicado.textContent;
-
-            // Muestra un mensaje de alerta
-            alert("Hiciste clic en la lista");
-        });
 // let mychat = new FakeChat('#mychat', {
 //     messages: [
 //         {
@@ -114,14 +102,14 @@ function del(e){
 
 //*keydown keyup.
 let playPauseBtn = document.getElementById('play-pause-btn');
-let mLofly = document.getElementById('m-lofly');
+let musicLoFi = document.getElementById('m-lofly');
 
 function toggleMusic() {
-    if (mLofly.paused) {
-        mLofly.play();
+    if (musicLoFi.paused) {
+        musicLoFi.play();
         playPauseBtn.innerHTML = '<span id="pause-emoji">▐▐</span><span id="pause-text">PAUSE</span>';
     } else {
-        mLofly.pause();
+        musicLoFi.pause();
         playPauseBtn.innerHTML = '<span id="play-emoji">▶</span><span id="play-text">PLAY</span>';
     }
 }
