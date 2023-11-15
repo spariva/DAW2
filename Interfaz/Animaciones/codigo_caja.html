@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        #contenedor{
+            left:200px;
+            top:200px;
+            width:400px;
+            height:400px;
+            perspective:600px;
+        }
+        div{
+            position:absolute;
+            width:100%;
+            height:100%;
+            left:0;
+            top:0;
+            font-size:350px;
+            text-align: center;
+            color:white;
+        }
+        #capa1{
+            background:linear-gradient(black, red);
+            transform:rotateX(90deg) translateZ(200px);
+        }
+        #capa2{
+            background:
+					linear-gradient(-90deg,black, blue);
+				transform:rotateY(90deg) translateZ(200px);
+        }
+        #capa3{
+            background:
+					linear-gradient(0deg,black, orange);
+           transform:rotateX(-90deg) translateZ(200px);
+        }        
+#capa4{
+            background:
+					linear-gradient(90deg,black, green);
+           transform:rotateY(-90deg) translateZ(200px);
+        }
+    </style>
+</head>
+<body>
+<div id="contenedor">
+   <div id="capa1">1</div>
+   <div id="capa2">2</div>
+   <div id="capa3">3</div>
+   <div id="capa4">4</div>
+</div>
+</body>
+</html>
