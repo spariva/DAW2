@@ -53,14 +53,14 @@
 
     Alumno mas joven usando la funcion <b>min():</b>
     <!--TODO: HAY QUE HACERLO CON REDUCE TMBN-->
-    <? php
-        function jovenzagal($alumnos){
-            $alumnos.reduce($alumnos, function($anterior, $actual)){
+    <?php
+        // function jovenzagal($alumnos){
+        //     $alumnos.reduce($alumnos, function($anterior, $actual){
                 
-            };   
-        }
-        $jovenzuelo
-        echo $jovenzuelo . " tiene " . $edadJovenzuelo;
+        //     });   
+        // }
+        // $jovenzuelo
+        // echo $jovenzuelo . " tiene " . $edadJovenzuelo;
     ?>
     <?php
         $edades = array_column($alumnos, 'edad');
