@@ -31,7 +31,8 @@
     <script>
         const txtTarea = document.getElementById("txtTarea");
         const ul = document.querySelector("ul");
-        var li = document.getElementsByTagName('li');
+        // var li = document.getElementsByTagName('li');//html collection
+        var li = document.querySelectorAll('li');//node list
         var seleccionado = document.getElementsByClassName("seleccionado")[0];
 
         //Al agregar, aparte de crear el elemento li con el valor del input, le añado el listener de click para que se pueda seleccionar,
@@ -44,7 +45,7 @@
             txtTarea.value = "";
             liNuevo.classList.add('list-group-item');
             liNuevo.addEventListener("click", seleccionar);
-            li.push(liNuevo);
+            // li.push(liNuevo);
         }
 
         function eliminar(){
