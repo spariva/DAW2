@@ -62,6 +62,10 @@ miInput.addEventListener("change", (event) => {
   alert("El valor del campo ha cambiado a: " + event.target.value);
 });
 
+// miInput.addEventListener("input", (event) => {
+//     alert("El valor del campo ha cambiado a: " + event.target.value);
+// });
+//cambio inmediato
 //?EVENTOS DE CARGA
 
 const miImagen = document.getElementById("miImagen");
@@ -89,7 +93,7 @@ function cambiarColor() {
   }, ${Math.random() * 255})`;
 }
 
-setTimeout(cambiarColor, 3000);
+setTimeout(cambiarColor, 5000);
 
 function cambiarColor2() {
   divColor2.style.backgroundColor = `rgb(${Math.random() * 255}, ${
@@ -99,7 +103,12 @@ function cambiarColor2() {
   cont.textContent = `El color ha cambiado ${contador} veces`;
 }
 
-setInterval(cambiarColor2, 1000);
+const intervalColores = setInterval(cambiarColor2, 5000);
+
+setTimeout(() => {
+    clearInterval(intervalColores);
+    console.log("Intervalo detenido después de 12 segundos.");
+    }, 12000);
 
 //?EVENTOS DE INTERACCIÓN
 
@@ -138,5 +147,5 @@ droppable.addEventListener("drop", (event) => {
 
 document.addEventListener("beforeunload", (event) => {
   event.preventDefault(); // Previene que la ventana se cierre inmediatamente
-  event.returnValue = "No te vayas :(";
+  alert("No te vayas :(");
 });

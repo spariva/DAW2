@@ -1,0 +1,46 @@
+header{
+    background-color: hsl(26, 69%, 88%);
+    border: 3px solid #edb58b;
+    border-radius: 15px;
+    width: 100vw;
+    margin-top: 15px;
+    padding: 0;
+}
+
+#logo{
+    height: 75px;
+    width: auto;
+}
+button{
+    width: 100px;
+    border-radius: 20%;
+}
+body{
+    background-image: url('img/SuperFondo.jpg'); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+#juego{
+    width: 60vw;
+    height: 70vh;
+    margin: 0;
+    padding: 0;
+    background-image: url('img/fondo.jpg'); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 5px solid black;
+    border-radius: 15px;
+    position: relative;
+}
+#puntuacion, #temporizador{
+    width: 200px;
+    border: 2px solid #edb58b;
+    background-color: #F6DFCD;
+    border-radius: 15px;
+}
+
+.topo{
+    background-color: #edb58b;
+}

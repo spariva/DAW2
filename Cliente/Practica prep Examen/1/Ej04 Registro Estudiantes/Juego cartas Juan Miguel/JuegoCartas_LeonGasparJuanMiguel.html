@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Juan Miguel León Gaspar">
+        <meta name="description" content="Práctica juego con eventos">
+        <title>El juego de los michis</title>
+        <link rel="stylesheet" href="./estilosCartas.css">
+        <script src="./scriptCartas.js" defer></script>
+        
+    </head>
+<body>
+    <div class="titulo">
+        <h1 class="titulo__texto">El juego de los michis</h1>
+        <img id="titulo__logo" src="./media/logo.png" alt="logo_gato">
+    </div>
+    
+    <div class="panelJuego" id="panelJuego">
+        <ul class="panelJuego__lista">
+            <li class="carta">
+                <div class="vista frontal-vista">
+                    <img src="./media/question_cat.png" alt="carta_interrogacion">
+                </div>
+                <div class="vista trasera-vista">
+                    <img class="marco" src="./media/frame.png">
+                    <img class="gatoImagen" src="./media/michi1.jpg" alt="carta_img">
+                </div>
+            </li>
+            <li class="carta">
+                <div class="vista frontal-vista">
+                    <img src="./media/question_cat.png" alt="carta_interrogacion">
+                </div>
+                <div class="vista trasera-vista">
+                    <img class="marco" src="./media/frame.png">
+                    <img class="gatoImagen"  src="./media/michi2.jpg" alt="carta_img">
+                </div>
+            </li>
+            <li class="carta">
+                <div class="vista frontal-vista">
+                    <img src="./media/question_cat.png" alt="carta_interrogacion">
+                </div>
+                <div class="vista trasera-vista">
+                    <img class="marco" src="./media/frame.png">
+                    <img class="gatoImagen"  src="./media/michi3.jpg" alt="carta_img">
+                </div>
+            </li>
+            <li class="carta">
+                <div class="vista frontal-vista">
+                    <img src="./media/question_cat.png" alt="carta_interrogacion">
+                </div>
+                <div class="vista trasera-vista">
+                    <img class="marco" src="./media/frame.png">
+                    <img class="gatoImagen"  src="./media/michi4.jpg" alt="carta_img">
+                </div>
+            </li>
+            <li class="carta">
+                <div class="vista frontal-vista">
+                    <img src="./media/question_cat.png" alt="carta_interrogacion">
+                </div>
+                <div class="vista trasera-vista">
+                    <img class="marco" src="./media/frame.png">
+                    <img class="gatoImagen"  src="./media/michi5.jpg" alt="carta_img">
+                </div>
+            </li>
+            <li class="carta">
+                <div class="vista frontal-vista">
+                    <img src="./media/question_cat.png" alt="carta_interrogacion">
+                </div>
+                <div class="vista trasera-vista">
+                    <img class="marco" src="./media/frame.png">
+                    <img class="gatoImagen"  src="./media/michi6.jpg" alt="carta_img">
+                </div>
+            </li>
+            <li class="carta">
+                <div class="vista frontal-vista">
+                    <img src="./media/question_cat.png" alt="carta_interrogacion">
+                </div>
+                <div class="vista trasera-vista">
+                    <img class="marco" src="./media/frame.png">
+                    <img class="gatoImagen"  src="./media/michi7.jpg" alt="carta_img">
+                </div>
+            </li>
+            <li class="carta">
+                <div class="vista frontal-vista">
+                    <img src="./media/question_cat.png" alt="carta_interrogacion">
+                </div>
+                <div class="vista trasera-vista">
+                    <img class="marco" src="./media/frame.png">
+                    <img class="gatoImagen"  src="./media/michi8.jpg" alt="carta_img">
+                </div>
+            </li>
+            <li class="carta">
+                <div class="vista frontal-vista">
+                    <img src="./media/question_cat.png" alt="carta_interrogacion">
+                </div>
+                <div class="vista trasera-vista">
+                    <img class="marco" src="./media/frame.png">
+                    <img class="gatoImagen"  src="./media/michi1.jpg" alt="carta_img">
+                </div>
+            </li>
+            <li class="carta">
+                <div class="vista frontal-vista">
+                    <img src="./media/question_cat.png" alt="carta_interrogacion">
+                </div>
+                <div class="vista trasera-vista">
+                    <img class="marco" src="./media/frame.png">
+                    <img class="gatoImagen"  src="./media/michi2.jpg" alt="carta_img">
+                </div>
+            </li>
+            <li class="carta">
+                <div class="vista frontal-vista">
+                    <img src="./media/question_cat.png" alt="carta_interrogacion">
+                </div>
+                <div class="vista trasera-vista">
+                    <img class="marco" src="./media/frame.png">
+                    <img class="gatoImagen"  src="./media/michi3.jpg" alt="carta_img">
+                </div>
+            </li>
+            <li class="carta">
+                <div class="vista frontal-vista">
+                    <img src="./media/question_cat.png" alt="carta_interrogacion">
+                </div>
+                <div class="vista trasera-vista">
+                    <img class="marco" src="./media/frame.png">
+                    <img class="gatoImagen"  src="./media/michi4.jpg" alt="carta_img">
+                </div>
+            </li>
+            <li class="carta">
+                <div class="vista frontal-vista">
+                    <img src="./media/question_cat.png" alt="carta_interrogacion">
+                </div>
+                <div class="vista trasera-vista">
+                    <img class="marco" src="./media/frame.png">
+                    <img class="gatoImagen"  src="./media/michi5.jpg" alt="carta_img">
+                </div>
+            </li>
+            <li class="carta">
+                <div class="vista frontal-vista">
+                    <img src="./media/question_cat.png" alt="carta_interrogacion">
+                </div>
+                <div class="vista trasera-vista">
+                    <img class="marco" src="./media/frame.png">
+                    <img class="gatoImagen"  src="./media/michi6.jpg" alt="carta_img">
+                </div>
+            </li>
+            <li class="carta">
+                <div class="vista frontal-vista">
+                    <img src="./media/question_cat.png" alt="carta_interrogacion">
+                </div>
+                <div class="vista trasera-vista">
+                    <img class="marco" src="./media/frame.png">
+                    <img class="gatoImagen"  src="./media/michi7.jpg" alt="carta_img">
+                </div>
+            </li>
+            <li class="carta">
+                <div class="vista frontal-vista">
+                    <img src="./media/question_cat.png" alt="carta_interrogacion">
+                </div>
+                <div class="vista trasera-vista">
+                    <img class="marco" src="./media/frame.png">
+                    <img class="gatoImagen" src="./media/michi8.jpg" alt="carta_img">
+                </div>
+            </li>
+
+            <!-- ! 16 elementos carta -->
+
+            <li class="carta">
+                <div class="vista frontal-vista">
+                    <img src="./media/question_cat.png" alt="carta_interrogacion">
+                </div>
+                <div class="vista trasera-vista">
+                    <img class="marco" src="./media/frame.png">
+                    <img class="gatoImagen" src="./media/michi9.jpg" alt="carta_img">
+                </div>
+            </li>
+            <li class="carta">
+                <div class="vista frontal-vista">
+                    <img src="./media/question_cat.png" alt="carta_interrogacion">
+                </div>
+                <div class="vista trasera-vista">
+                    <img class="marco" src="./media/frame.png">
+                    <img class="gatoImagen"  src="./media/michi10.jpg" alt="carta_img">
+                </div>
+            </li>
+            <li class="carta">
+                <div class="vista frontal-vista">
+                    <img src="./media/question_cat.png" alt="carta_interrogacion">
+                </div>
+                <div class="vista trasera-vista">
+                    <img class="marco" src="./media/frame.png">
+                    <img class="gatoImagen"  src="./media/michi11.jpg" alt="carta_img">
+                </div>
+            </li>
+            <li class="carta">
+                <div class="vista frontal-vista">
+                    <img src="./media/question_cat.png" alt="carta_interrogacion">
+                </div>
+                <div class="vista trasera-vista">
+                    <img class="marco" src="./media/frame.png">
+                    <img class="gatoImagen"  src="./media/michi12.jpg" alt="carta_img">
+                </div>
+            </li>
+            <li class="carta">
+                <div class="vista frontal-vista">
+                    <img src="./media/question_cat.png" alt="carta_interrogacion">
+                </div>
+                <div class="vista trasera-vista">
+                    <img class="marco" src="./media/frame.png">
+                    <img class="gatoImagen"  src="./media/michi13.jpg" alt="carta_img">
+                </div>
+            </li>
+            <li class="carta">
+                <div class="vista frontal-vista">
+                    <img src="./media/question_cat.png" alt="carta_interrogacion">
+                </div>
+                <div class="vista trasera-vista">
+                    <img class="marco" src="./media/frame.png">
+                    <img class="gatoImagen"  src="./media/michi14.jpg" alt="carta_img">
+                </div>
+            </li>
+            <li class="carta">
+                <div class="vista frontal-vista">
+                    <img src="./media/question_cat.png" alt="carta_interrogacion">
+                </div>
+                <div class="vista trasera-vista">
+                    <img class="marco" src="./media/frame.png">
+                    <img class="gatoImagen"  src="./media/michi15.jpg" alt="carta_img">
+                </div>
+            </li>
+            <li class="carta">
+                <div class="vista frontal-vista">
+                    <img src="./media/question_cat.png" alt="carta_interrogacion">
+                </div>
+                <div class="vista trasera-vista">
+                    <img class="marco" src="./media/frame.png">
+                    <img class="gatoImagen"  src="./media/michi16.jpg" alt="carta_img">
+                </div>
+            </li>
+            <li class="carta">
+                <div class="vista frontal-vista">
+                    <img src="./media/question_cat.png" alt="carta_interrogacion">
+                </div>
+                <div class="vista trasera-vista">
+                    <img class="marco" src="./media/frame.png">
+                    <img class="gatoImagen"  src="./media/michi9.jpg" alt="carta_img">
+                </div>
+            </li>
+            <li class="carta">
+                <div class="vista frontal-vista">
+                    <img src="./media/question_cat.png" alt="carta_interrogacion">
+                </div>
+                <div class="vista trasera-vista">
+                    <img class="marco" src="./media/frame.png">
+                    <img class="gatoImagen"  src="./media/michi10.jpg" alt="carta_img">
+                </div>
+            </li>
+            <li class="carta">
+                <div class="vista frontal-vista">
+                    <img src="./media/question_cat.png" alt="carta_interrogacion">
+                </div>
+                <div class="vista trasera-vista">
+                    <img class="marco" src="./media/frame.png">
+                    <img class="gatoImagen"  src="./media/michi11.jpg" alt="carta_img">
+                </div>
+            </li>
+            <li class="carta">
+                <div class="vista frontal-vista">
+                    <img src="./media/question_cat.png" alt="carta_interrogacion">
+                </div>
+                <div class="vista trasera-vista">
+                    <img class="marco" src="./media/frame.png">
+                    <img class="gatoImagen"  src="./media/michi12.jpg" alt="carta_img">
+                </div>
+            </li>
+            <li class="carta">
+                <div class="vista frontal-vista">
+                    <img src="./media/question_cat.png" alt="carta_interrogacion">
+                </div>
+                <div class="vista trasera-vista">
+                    <img class="marco" src="./media/frame.png">
+                    <img class="gatoImagen"  src="./media/michi13.jpg" alt="carta_img">
+                </div>
+            </li>
+            <li class="carta">
+                <div class="vista frontal-vista">
+                    <img src="./media/question_cat.png" alt="carta_interrogacion">
+                </div>
+                <div class="vista trasera-vista">
+                    <img class="marco" src="./media/frame.png">
+                    <img class="gatoImagen"  src="./media/michi14.jpg" alt="carta_img">
+                </div>
+            </li>
+            <li class="carta">
+                <div class="vista frontal-vista">
+                    <img src="./media/question_cat.png" alt="carta_interrogacion">
+                </div>
+                <div class="vista trasera-vista">
+                    <img class="marco" src="./media/frame.png">
+                    <img class="gatoImagen"  src="./media/michi15.jpg" alt="carta_img">
+                </div>
+            </li>
+            <li class="carta">
+                <div class="vista frontal-vista">
+                    <img src="./media/question_cat.png" alt="carta_interrogacion">
+                </div>
+                <div class="vista trasera-vista">
+                    <img class="marco" src="./media/frame.png">
+                    <img class="gatoImagen" src="./media/michi16.jpg" alt="carta_img">
+                </div>
+            </li>
+            <!-- ! 32 elementos carta  -->
+        </ul>
+    </div>
+
+    <div class="menu" id="menu">
+        <p id="parrafoContador"></p>
+        <p id="parrafoTemporizador">Tiempo: <span id="spanTemporizador">60</span></p>
+        <p id="parrafoResultado"></p>
+        <img onclick="comenzarJuegoPuntos()" src="./media/juegoParejas.png" id="botonPuntos">
+        <button onclick="abandonar()" id="abandonar">Abandonar partida</button>
+        <img onclick="juegoPorTiempo()" src="./media/juegoTiempo.png"  id="botonTiempo">
+    </div>
+    <div>
+        <img onclick="comenzarJuego()" src="./media/start.png" id="iniciar">
+    </div>
+</body>
+</html>

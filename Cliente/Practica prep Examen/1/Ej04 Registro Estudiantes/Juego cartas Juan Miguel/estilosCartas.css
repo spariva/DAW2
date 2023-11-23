@@ -1,0 +1,208 @@
+@font-face {
+    font-family: gatoFuente;
+    src: url(./font/Cat.woff2);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+}
+
+:root {
+    --background: #f1c787;
+    --background_panel:#f8f8f8f8;
+    --background_boton:#e26464;
+    --background_menu:#816141;
+    --background_menu_borde:#ca9f73;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-width: 100vw;
+    min-height: 100vh;
+    background: var(--background);
+}
+
+.titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.titulo__texto{
+    font-size: 4em;
+    cursor: default;
+    font-family: gatoFuente;
+    letter-spacing: 5px;
+}
+
+#titulo__logo{
+    max-height: 15vh;
+}
+
+.panelJuego{
+    display: none;
+    height: 522px;
+    width: 75%;
+    padding: 20px;
+    border-radius: 25px;
+    background: var(--background_panel);
+    transition: 2s;
+}
+
+.panelJuego__lista{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.carta{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100% / 4 - 10px);
+    width: calc(100% / 8 - 4px);
+    /* Cambiar el with a 4 si se quiere 4 columnas por 4 filas */
+    /* width: calc(100% / 4 - 10px); */
+    cursor: pointer;
+}
+
+.carta.agitar{
+    animation: animacion 0.35s ease-in-out;
+}
+
+@keyframes animacion {
+    0%{
+        transform: translateX(0);
+    }
+    20%{
+        transform: translateX(-10px);
+    }
+    40%{
+        transform: translateX(10px);
+    }
+    60%{
+        transform: translateX(-5px);
+    }
+    80%{
+        transform: translateX(5px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+.vista{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    transition:  transform 0.25s linear;
+    pointer-events: none;
+    user-select: none;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.frontal-vista img{
+    max-width: 75px;
+}
+
+.trasera-vista{
+    transform: rotateY(-180deg);
+}
+
+.marco{
+    position: absolute;
+    position: absolute;
+    z-index: 1;
+    display: none;
+    height: 110%;
+    width: 100%;
+}
+
+.gatoImagen{
+    position: absolute;
+    border-radius: 5px;
+    max-width: 85px;
+}
+
+.carta.rotar .frontal-vista{
+    transform: rotateY(180deg);
+}
+
+.carta.rotar .trasera-vista{
+    transform: rotateY(0);
+}
+.menu{
+    display: none;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 20px;
+    background: var(--background_menu);
+    height: 100px;
+    border-radius: 10px;
+    border: 6px solid var(--background_menu_borde);
+    width: 600px;
+}
+
+.menu p{
+    font-size: 1.50em;
+    color:white;
+    cursor: default;
+    display: none;
+    font-family: sans-serif;
+}
+
+#abandonar{
+    display: none;
+    height: 40px;
+    width: 95px;
+    background: var(--background_boton);
+    border: 2px solid var(--background_panel);
+    border-radius: 20px;
+    cursor: pointer;
+    color: var(--background_panel);
+}
+
+#abandonar:hover{
+    background-color: #c25656;
+    color: #fafac4;
+}
+
+#iniciar{
+    cursor: pointer;
+}
+#botonPuntos{
+    background:none;
+}
+#botonPuntos:hover{
+    background: url(./media/cartas.png);
+}
+#botonTiempo{
+    background:none;
+}
+#botonTiempo:hover{
+    background: url(./media/cartaReloj.png);
+    background-size: cover;
+}
+#botonPuntos,
+#botonTiempo{
+    cursor: pointer;
+    height: 86px;
+    width: 160px;
+}
