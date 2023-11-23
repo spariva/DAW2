@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen 2 Maki DAW2V</title>
+    <script src="examen2.js"></script>
+</head>
+<body>
+    <style>
+        .board{
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .sphere{
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 50%;
+        }
+        .red{
+            background-color: red;
+        }
+        .green{
+            background-color: green;
+        }
+        .blue{
+            background-color: blue;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+        .button{
+            background-color: azure;
+            border-radius: 10px;
+            margin: auto;
+            padding: auto;
+        }
+        .containerButton {
+            text-align: center;
+            padding-top: 20px;
+        }
+        .square {
+            /* box-shadow: ; */
+            border-radius: 0%;
+        }
+    </style>
+    <div class="containerButton">
+        <button class="button">Start Game!</button>
+        <p id="counter"></p>
+    </div>
+    <div class="board" id="board">
+        <div class="sphere red" id="r"></div>
+        <div class="sphere green" id="g" ></div>
+        <div class="sphere blue" id="b"></div>
+        <div class="sphere yellow" id="y"></div>
+    </div>
+</body>
+</html>
