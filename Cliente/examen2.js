@@ -1,19 +1,15 @@
 //me aseguro que todo el documento se haya cargado
-
-//! No funciona  =( en la línea 27 da error el eventListener que inicia todo el juego. 
-//? En caso de funcionar el resto, lo que me faltaría es meter la secuencia de forma aleatoria en la función generateGame()
-
 document.addEventListener('DOMContentLoaded', function () {
-//Selecciono mis elementos del DOM
+    //Selecciono mis elementos del DOM
     //const board = document.getElementById("board");
-    const startGameBtn = document.getElementsByClassName("button");
+    const startGameBtn = document.getElementsByClassName("button")[0];
     const redS = document.getElementById("r");
     const greenS = document.getElementById("g");
     const blueS = document.getElementById("b");
     const yellowS = document.getElementById("y");
     const counter = document.getElementById("counter");
-    const sequence = "";
-    const actualSequence = "";
+    var sequence = "";
+    var actualSequence = [];
 
     //para acceder a si el juego ha empezado y número de aciertos, y número total de la secuencia
     //termino el juego una vez el totalSpheres == totalSequence,
@@ -25,16 +21,24 @@ document.addEventListener('DOMContentLoaded', function () {
         loop: null
     }
 
-//Añado listeners a cada elemento.
+    //Añado listeners a cada elemento.
     startGameBtn.addEventListener('click', startGame);
     //las esferas llaman a checkSequence y las paso como event.
-    redS.addEventListener('click', checkSequence(sphere));
-    greenS.addEventListener('click', checkSequence(sphere));
-    blueS.addEventListener('click', checkSequence(sphere));
-    yellowS.addEventListener('click', checkSequence(sphere));
+    redS.addEventListener('click', function (event) {
+        checkSequence(event);
+    });
+    greenS.addEventListener('click', function (event) {
+        checkSequence(event);
+    });
+    blueS.addEventListener('click', function (event) {
+        checkSequence(event);
+    });
+    yellowS.addEventListener('click', function (event) {
+        checkSequence(event);
+    });
 
 
-//Función que inicia el juego, que llamaría a generar juego que haría una secuencia random.
+    //Función que inicia el juego, que llamaría a generar juego que haría una secuencia random.
     function startGame() {
         state.gameStarted = true;
         //randomiza la sequence
@@ -44,119 +48,138 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
 
-    function simonSays(){
-        //cada 3 segundos se activa el intervalo, comprueba si la esfera clickada es correcta
-        //si lo es, suma un acierto y se reinicia la secuencia
-        if(state.gameStarted == false){
+    function simonSays() {
+        if (state.gameStarted == false) {
             console.log("problema con el state.gameStarted");
         }
         state.loop = setInterval(() => {
-            //para no hacer spaguetti if else digo que si la checkSequence returnea false, llama a derrota y termina el juego.
-            if(!checkSequence){
+            if (!checkSequence) {
                 clearInterval(state.loop);
                 lose();
             }
-            //recorro la sequence para ver a que esfera toca ponerle la clase square.
             for (let i = 0; i < sequence.length; i++) {
-                //voy guardando un nuevo array de la sequence actual
-                actualSequence = actualSequence.push(sequence[i]);
-                    //reccorro la sequence actual para ir en el orden poniendo a cada una la clase square.
-                    for (let j = 0; j < actualSequence.length; j++) {
-                        //con un switch compruebo uno a uno de la sequence actual cuál es, y según ello le modifico la clase.
-                        switch (actualSequence[j]) {
-                            case "r":
-                                redS.classList.toggle('square');
-                                //Para que no le deje cuadrado después de un segundo.
-                                setTimeout(redS.classList.remove('square'), 1000);
-                                break;
-                            case "g":
-                                greenS.classList.toggle('square');
-                                setTimeout(greenS.classList.remove('square'), 1000);
-                                break;
-                            case "b":
-                                blueS.classList.toggle('square');
-                                setTimeout(blueS.classList.remove('square'), 1000);
-                                break;
-                            case "y":
-                                yellowS.classList.toggle('square');
-                                setTimeout(yellowS.classList.remove('square'), 1000);
-                                break;
-                            default:
-                                console.log("error en el switch del simonSays()");
-                                break;
-                        }
+                console.log("Bucle Externo Iteración: " + i + " secuencia[i]:  " + sequence[i] + " longitud Actualsequence : " + actualSequence.length);
+                console.log(actualSequence);
+                actualSequence.push(sequence[i]);
+                actualSequence.forEach(item => {
+                    console.log(Array.isArray(item));
+                });
+                console.log(actualSequence);
+                console.log("Bucle externo: aS: " + actualSequence);
+                for (let j = 0; j < actualSequence.length; j++) {
+                    console.log("Bucle interno: Iteración j: " + j + " aS: " + actualSequence[j]);
+                    switch (actualSequence[j]) {
+                        case "r":
+                            console.log("switch red " + actualSequence[j] + " j: " + j + " i: " + i);
+                            redS.classList.add('square');
+                            console.log(redS.classList);
+                            setTimeout(() => {
+                                redS.classList.remove('square');
+                            }, 6000);
+                            break;
+                        case "g":
+                            console.log("switch green " + actualSequence[j] + " j: " + j + " i: " + i);
+                            greenS.classList.add('square');
+                            setTimeout(() => {
+                                greenS.classList.remove('square');
+                            }, 1000);
+                            break;
+                        case "b":
+                            console.log("switch blue " + actualSequence[j] + " j: " + j + " i: " + i);
+                            blueS.classList.add('square');
+                            setTimeout(() => {
+                                blueS.classList.remove('square');
+                            }, 1000);
+                            break;
+                        case "y":
+                            console.log("switch yellow " + actualSequence[j] + " j: " + j + " i: " + i);
+                            yellowS.classList.add('square');
+                            setTimeout(() => {
+                                yellowS.classList.remove('square');
+                            }, 1000);
+                            break;
+                        default:
+                            console.log("error en el switch del simonSays()");
+                            break;
                     }
+                }
             }
-            state.totalSpheres ++;
+            state.totalSpheres++;
             counter.innerText = `${state.totalSpheres} aciertos`;
-        }, 3000);
+        }, 13000);
     }
 
-    function checkSequence(sphereClickada){
+    function checkSequence(sphereClickada) {
         //empieza por ver si no has terminado ya la sequence
-        if (!state.totalSpheres < state.totalSequence) {
+        if (state.totalSpheres >= state.totalSequence) {
             victory();
         }
-        
+
         //accedo al último valor de la actualSequence y compruebo según sea el caso. 
         //si aciertas devuelve true.
         switch (actualSequence[actualSequence.length - 1]) {
             case "r":
-                if(sphereClickada.target.id == "r"){
-                    return true;
+                if (!sphereClickada.target.id == "r") {
+                    lose();
                 }
                 break;
             case "g":
-                if(sphereClickada.target.id == "g"){
-                    return true;
+                if (!sphereClickada.target.id == "g") {
+                    lose();
                 }
                 break;
             case "b":
-                if(sphereClickada.target.id == "b"){
-                    return true;
+                if (!sphereClickada.target.id == "b") {
+                    lose();
                 }
                 break;
             case "y":
-                if(sphereClickada.target.id == "y"){
-                    return true;
+                if (sphereClickada.target.id == "y") {
+                    lose();
                 }
                 break;
             default:
-                return false;
                 console.log("error en el switch del checkSequence()");
                 break;
         }
 
     }
 
-//De momento voy a poner a capón la secuencia para probarlo.
-    function generateGame(){
+    //De momento voy a poner a capón la secuencia para probarlo.
+    function generateGame() {
         sequence = ["r", "g", "b", "y", "r"];
-        return sequence;
+        // return sequence;
     }
 
-//al perder sale un mensaje y te invita a darle al botón para reiniciar los parámetros y el juego
-    function lose(){
+    //al perder sale un mensaje y te invita a darle al botón para reiniciar los parámetros y el juego
+    function lose() {
+        //reseteo parámetros
         state.gameStarted = false;
+        clearInterval(state.loop);
+        sequence = [];
+        actualSequence = [];
         counter.style.color = "red";
         counter.textContent = `Acertaste ${state.totalSpheres} pero te has equivocado =( Pulsa start, para reiniciar`
     }
 
     //al ganar sale un mensaje y te invita a darle al botón para reiniciar los parámetros y el juego
-    function victory(){
+    function victory() {
         state.gameStarted = false;
+        clearInterval(state.loop);
+        sequence = [];
+        actualSequence = [];
         counter.style.color = "green";
         counter.textContent = `Acertaste ${state.totalSpheres} ganaste! Pulsa start, para reiniciar`
     }
 
-// //Como en mi juego, añado un eventListener al board, y si contiene la clase sphere,
-// //llama a la función que comprueba si es la secuencia correcta.
-//     function attachEventListeners(){
-//            board.addEventListener('click', function(event) {
-//         if (event.target.classList.contains('sphere')){
+    // //Como en mi juego, añado un eventListener al board, y si contiene la clase sphere,
+    // //llama a la función que comprueba si es la secuencia correcta.
+    //     function attachEventListeners(){
+    //            board.addEventListener('click', function(event) {
+    //         if (event.target.classList.contains('sphere')){
 
-//         }
-//     }); 
-//     }
+    //         }
+    //     }); 
+    //     }
 
 });
