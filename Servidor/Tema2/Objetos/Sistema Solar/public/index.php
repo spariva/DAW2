@@ -1,27 +1,34 @@
-<?php
-
+<?php 
 include('../config/init.php');
-//en el init pongo la gestión de los requires por no ponerla aquí, no??
+include(DOC_ROOT."/src/data.php");
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema planetario</title>
+    <title>Document</title>
 </head>
 <body>
-    <div class="contenedor">
-        <form action="index.php" method="post">
-            <label for="nombre">Nombre</label>
-            <input type="text" name="nombre" id="nombre">
-            <label for="masa">Masa</label>
-            <input type="text" name="masa" id="masa">
-            <label for="diametro">Diámetro</label>
-            <input type="text" name="diametro" id="diametro">
-            <label for="distanciaSol">Distancia al sol</label>
-            <input type="text" name="distanciaSol" id="distanciaSol">
-            <input type="submit" value="Añadir planeta">
+    <div>
+        <h1>Bienvenido al gestior de sistemas planetario</h1>
+        <div>
+            <h2>Planetas individuales</h2>
+            <?=$planeta->toEdit()?>
+        </div>
+        <div>
+            <h2>Detalle</h2>
+            <?=$sp->toSelect($paraMostrarNombre)?>
+            <?php if($paraMostrar) { 
+                echo "<p>$paraMostrar</p>";
+            } ?>
+        </div>
+        <div>
+            <h2>Listado</h2>
+            <?= $sp->toTable() ?>
+        </div>
     </div>
+
 </body>
 </html>
