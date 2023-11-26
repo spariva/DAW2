@@ -47,7 +47,7 @@ if(isset($_POST['delete'])){
     </form>
     <ul>
         <?php foreach($todo as $k => $e) { ?>
-            <li><?=$e?><form action="index.php" method="post"><input type="hidden" value="<?=$k?>" name="delete"><input type="submit" value="X"></form></li>
+            <li><?=$e?><form action="todo.php" method="post"><input type="hidden" value="<?=$k?>" name="delete"><input type="submit" value="X"></form></li>
         <?php } ?>
     </ul>
 </body>
