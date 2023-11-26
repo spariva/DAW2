@@ -18,7 +18,7 @@ class Planeta {
 
     function toOption(string $selected = ''):string {
         $sel = ($this->nombre == $selected)?' selected':'';
-        return "<option value='$this->nombre' $sel>$this->nombre</option>";
+        return "<option value='$this->nombre'>$this->nombre</option>";
     }
 
     function toFila():string{
