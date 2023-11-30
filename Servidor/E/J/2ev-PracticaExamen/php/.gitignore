@@ -1,9 +1,0 @@
-# src/config.php
-vendor
-
-src/.env
-
-public/uploads/profile/img/*
-
-# except default profile pic
-!public/uploads/profile/img/default.jpg
