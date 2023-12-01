@@ -20,15 +20,25 @@ candidates.addEventListener("mouseout", function(e){
     e.target.classList.remove("resaltado-agro");
 });
 
+
+function del(e){
+    e.target.parentElement.classList.add("delete");
+    alert(e.target.parentElement.id + " left the room pissed off.");
+    setTimeout(() => {
+        alert(e.target.parentElement.id + " left the room pissed off.");
+    }, 10);
+}
+
 candidates.addEventListener("click", function(e){
     //e.stopPropagation();
-    console.log(e.target.id);
+    console.log("target id" + e.target.id);
     console.log(e.target.parentElement);
     console.log(e.target.parentElement.id);
     if(e.target.classList.contains("dating")){
+        // console.log(e.target.parentElement.parentElement.id);
         switch (e.target.id) {
             case 'Anthony':
-                linkDate.textContent = "Prepare to your date with " + e.target.parentElement.id + "!";
+                linkDate.textContent = "Prepare to your date with " + e.target.parentElement.parentElement.id + "!";
                 break;
             case 'Ghostkid':
                 linkDate.textContent = "Prepare to your date with " + e.target.id + "!";
@@ -66,13 +76,6 @@ candidates.addEventListener("click", function(e){
 
 
 
-function del(e){
-    e.target.parentElement.classList.add("delete");
-    alert(e.target.parentElement.id + " left the room pissed off.");
-    setTimeout(() => {
-        alert(e.target.parentElement.id + " left the room pissed off.");
-    }, 10);
-}
 // let mychat = new FakeChat('#mychat', {
 //     messages: [
 //         {
