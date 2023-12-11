@@ -1,6 +1,6 @@
 <?php
 
-$color = [
+$colors = [
     'lightskyblue',
     'lightgreen',
     'lightyellow',

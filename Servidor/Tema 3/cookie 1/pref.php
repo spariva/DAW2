@@ -1,27 +1,15 @@
 <?php 
 
-include_once 'colors.php';
+include ('colors.php');
 $error = [];
 
 if (isset($_GET['color'])){
     if(array_search($_GET['color'], $colors) !== false){
-        
-        
-        $_COOKIE = 
-}
-
-?>
-<?php
-$colors = array("red", "blue", "green", "yellow");
-
-if (isset($_GET['color'])) {
-    $selectedColor = $_GET['color'];
-    setcookie('color', $selectedColor, time() + (86400 * 30), "/"); // Set the color cookie for 30 days
-} else {
-    if (isset($_COOKIE['color'])) {
-        $selectedColor = $_COOKIE['color'];
+        setcookie('color', $_GET['color'], time() + (86400 * 7), "/"); // 86400 = 1 day y el path / indica que aplica la cookie a todas las páginas
+        header('Location: info.php');
+        die();
     } else {
-        $selectedColor = $colors[0]; // Default color
+        $error['color'] = 'Color no válido';
     }
 }
 
@@ -46,9 +34,13 @@ if (isset($_GET['color'])) {
     </style>
 </head>
 <body>
+    <h2>Choose a color</h2>
+    <?php if(isset($error['color'])) { ?>
+        <p style="color: red;"><?= $error['color']; ?></p>
+    <?php } ?>
     <?php foreach ($colors as $color) { ?>
-        <a href="?color=<?php echo $color; ?>">
-            <div class="box" style="background-color: <?php echo $color; ?>">
+        <a href="pref.php?color=<?php echo $color; ?>">
+            <div class="box" style="background-color: <?= $color; ?>">
                 <?php echo ucfirst($color); ?>
             </div>
         </a>
