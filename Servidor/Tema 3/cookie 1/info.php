@@ -8,22 +8,25 @@ if (isset($_COOKIE['color']) && in_array($_COOKIE['color'], $colors)) {
     setcookie('color', $_COOKIE['color'], time() + (60*60*24*7));//cada vez que revisites se vuelve a setear para que te vuelva a dar una semana.
 }
 
-function imprimirAvisoCookies() {
-    echo '<div style="background-color: #f8f8f8; padding: 10px; text-align: center; position: absolute">';
-    echo 'Esta web utiliza cookies. Acepta el uso de cookies o lo lamentarás.';
-    echo '<br>';
-    echo '<a href="?privacy=1">Aceptar</a>';
-    echo '</div>';
-}
+// function printCookieMessage() {
+//     echo '<div style="background-color: #f8f8f8; padding: 10px; text-align: center; position: absolute">';
+//     echo 'Esta web utiliza cookies. Acepta el uso de cookies o lo lamentarás.';
+//     echo '<br>';
+//     echo '<a href="?privacy=1">Aceptar</a>';
+//     echo '<a href="?privacy=0">Rechazar</a>';
+//     echo '</div>';
+// }
 
+$showCookie = false;
 if (!isset($_COOKIE['privacy'])){
-    imprimirAvisoCookies();    
-
+    $showCookie = true;
+    // printCookieMessage();    
     if (isset($_GET['privacy']) && $_GET['privacy'] == '1'){
         setcookie('privacy', '1', time() + (60*60*24*7));
     } else {
         setcookie('privacy', '0', time() + (60*60*24*7));
     }
+    $showCookie = false;
 }
 
 
@@ -59,6 +62,14 @@ if (!isset($_COOKIE['privacy'])){
 </head>
 <body>
     <div class="container">
+        <?php if ($showCookie){ ?>
+            <div style="background-color: #f8f8f8; padding: 10px; text-align: center; position: absolute">
+                <p style="color: red;">Esta web utiliza cookies. Acepta el uso de cookies o lo lamentarás.<p>
+                <br>
+                <a href="?privacy=1">Aceptar</a>
+                <a href="?privacy=0" style="color: red;">Rechazar</a>
+            </div>
+        <?php } ?>
         <div class="post">
             <h2>Blog Post 1</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc id aliquam luctus, nisl nunc fringilla justo, id lacinia nunc nunc in nunc.</p>
