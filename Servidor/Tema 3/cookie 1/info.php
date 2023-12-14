@@ -8,27 +8,20 @@ if (isset($_COOKIE['color']) && in_array($_COOKIE['color'], $colors)) {
     setcookie('color', $_COOKIE['color'], time() + (60*60*24*7));//cada vez que revisites se vuelve a setear para que te vuelva a dar una semana.
 }
 
-// function printCookieMessage() {
-//     echo '<div style="background-color: #f8f8f8; padding: 10px; text-align: center; position: absolute">';
-//     echo 'Esta web utiliza cookies. Acepta el uso de cookies o lo lamentarás.';
-//     echo '<br>';
-//     echo '<a href="?privacy=1">Aceptar</a>';
-//     echo '<a href="?privacy=0">Rechazar</a>';
-//     echo '</div>';
-// }
-
 $showCookie = false;
-if (!isset($_COOKIE['privacy'])){
-    $showCookie = true;
-    // printCookieMessage();    
-    if (isset($_GET['privacy']) && $_GET['privacy'] == '1'){
-        setcookie('privacy', '1', time() + (60*60*24*7));
-    } else {
-        setcookie('privacy', '0', time() + (60*60*24*7));
-    }
-    $showCookie = false;
-}
 
+if (!isset($_COOKIE['privacy'])){
+    $showCookie = true; //muestra el mensaje  
+} 
+
+if (isset($_GET['privacy'])){
+    if (isset($_GET['privacy']) == 'yes'){
+        setcookie('privacy', '1', time() + (60*60*24*7));
+        $showCookie = false;
+    } else if (isset($_GET['privacy']) == 'no'){
+        setcookie('privacy', '1', time() + (10*10));
+    }
+}
 
 ?>
 
@@ -38,7 +31,7 @@ if (!isset($_COOKIE['privacy'])){
     <title>My Blog</title>
     <style>
         body {
-            background-color: <?php echo $color; ?>;
+            background-color: <?= $color; ?>;
         }
         .container {
             max-width: 800px;
@@ -66,8 +59,8 @@ if (!isset($_COOKIE['privacy'])){
             <div style="background-color: #f8f8f8; padding: 10px; text-align: center; position: absolute">
                 <p style="color: red;">Esta web utiliza cookies. Acepta el uso de cookies o lo lamentarás.<p>
                 <br>
-                <a href="?privacy=1">Aceptar</a>
-                <a href="?privacy=0" style="color: red;">Rechazar</a>
+                <a href="?privacy=yes">Aceptar</a>
+                <a href="?privacy=no" style="color: red;">Rechazar</a>
             </div>
         <?php } ?>
         <div class="post">
