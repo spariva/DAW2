@@ -4,6 +4,7 @@
 
 //? Form de crear cookie: nombre, valor, expira, ruta, dominio, secura (checkbox) y httponly (checkbox)
 
+if (isset())
 ?>
 
 <!DOCTYPE html>
@@ -23,6 +24,8 @@
             padding: 20px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            background-color: burlywood;
+            flex: 1;
         }
         .cookie-item {
             display: flex;
