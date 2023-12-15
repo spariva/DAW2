@@ -19,8 +19,8 @@ if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
     <title>Document</title>
 </head>
 <body>
-    <form>
-        <input type="email" value="<?= $mail ?>"/>
+    <form method="POST" action="script.php">
+        <input type="email" name="mail" value="<?= $mail ?>"/>
         <input type="submit" value="Enviar"/>
     </form>
     <?= $errores['mail'] ?>
