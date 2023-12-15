@@ -4,7 +4,11 @@
 
 //? Form de crear cookie: nombre, valor, expira, ruta, dominio, secura (checkbox) y httponly (checkbox)
 
-if (isset())
+if (isset($_POST['deleteCookie'])){}
+
+setcookie('privacy', '1', time() + (60*60*24*7));
+
+
 ?>
 
 <!DOCTYPE html>
