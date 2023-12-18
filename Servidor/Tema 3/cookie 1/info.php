@@ -19,7 +19,8 @@ if (isset($_GET['privacy'])){
         setcookie('privacy', '1', time() + (60*60*24*7));
         $showCookie = false;
     } else if (isset($_GET['privacy']) == 'no'){
-        setcookie('privacy', '1', time() + (10*10));
+        setcookie('privacy', '0', time() + (60)); //si no aceptas la cookie, te la vuelve a mostrar en 1 minuto
+        $showCookie = false;
     }
 }
 
