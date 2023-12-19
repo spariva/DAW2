@@ -1,0 +1,47 @@
+body {
+    background-color: rgba(0, 0, 0, 0.335);
+}
+
+#pagina {
+    /* filter: blur(5px);  */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bloque {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: 2px solid white;
+    border-radius: 20px;
+    margin: 10%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.924);
+    text-align: center;
+}
+
+img {
+    border-radius: 20px;
+}
+
+#calendarioIframe {
+    width: 1000px;
+    height: 800px;
+    transition: 1.0s ease;
+}
+
+#avisoCookies{
+    background-color: rgba(30, 30, 30, 0.924);
+    color: white;
+    position: fixed;
+    bottom: 0;
+}
+
+@media screen and (max-width: 1200px) {
+    #calendarioIframe {
+        width: 400px;
+        height: 400px;
+    }
+
+}
