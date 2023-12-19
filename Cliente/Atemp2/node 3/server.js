@@ -1,11 +1,12 @@
 const http = require('http');
 const url = require('url');
+const path = require('path');
 
 const server = http.createServer((req, res) => {
-    const path = url.parse(req.url, true).pathname;
+    const path = url.parse(req.url, true).pathname; //true para sacar las propiedades, tipo el path, versión etc
 
     if (path === '/saludo') {
-        res.writeHead(200, {'Content-Type': 'text/plain'});
+        res.writeHead(200, {'Content-Type': 'text/html'});
         res.end('¡Hola! Bienvenide a saludos.');
     } else if (path === '/despedida') {
         res.writeHead(200, {'Content-Type': 'text/plain'});
