@@ -22,6 +22,7 @@ if (isset($_COOKIE['inicioSesion']) && $_COOKIE['inicioSesion'] == true) {
 
 if (isset($_SESSION['nombreUsuario']) && $_SESSION['nombreUsuario'] != "") {
     header("Location: cuenta.php?sesionIniciada=true");
+    exit();
 }
 
  $cuentaCreada = false;

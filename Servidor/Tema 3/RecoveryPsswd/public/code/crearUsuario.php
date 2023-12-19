@@ -28,9 +28,11 @@ try {
     $stmt->execute();
 
     header("Location: login.php?cuentaCreada=true");
+    exit();
 } catch (PDOException $pe) {
     die("No se pudo conectar a la base de datos $dbname: " . $pe->getMessage());
     header("Location: login.php?cuentaCreada=false");
+    exit();
 } finally {
     $conn = null; // fin
 }

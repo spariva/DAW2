@@ -64,16 +64,19 @@ try {
                 $conn = null; 
             }
 
-            header("Location: cuenta.php?token=$token");//Volvemos pero enviando el token para guardarlo en cookies
+            header("Location: cuenta.php?token=$token");
+            exit();//Volvemos pero enviando el token para guardarlo en cookies
             return;
         }
 
         //$nombreUsuario = $result['NOMBRE'];
         header("Location: cuenta.php?sesionIniciada=true");
+        exit();
 
     } else {
         echo "Por favor, inténtalo de nuevo.";
         header("Location: login.php?falloLogin=true");
+        exit();
 
     }
 

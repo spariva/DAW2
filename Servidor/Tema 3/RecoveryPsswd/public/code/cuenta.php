@@ -6,9 +6,10 @@ if(isset($_SESSION['nombreUsuario'])){
     $cuentaCreada = true;
     $msj = '<h3>Bienvenidx '.$_SESSION['nombreUsuario'].'</h3>';
 }else{
-    header("Location: login.php");
     $cuentaCreada = false;
     $msj = '<h3>Problema al iniciar Sesion</h3>';
+    header("Location: login.php");
+    exit();
 }
 
 if(isset($_GET['token'])){

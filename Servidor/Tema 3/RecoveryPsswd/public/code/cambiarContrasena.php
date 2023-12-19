@@ -31,9 +31,11 @@ try {
     if ($rowCount > 0) {
         echo "Contraseña cambiada con éxito.";
         header("Location: cuenta.php?contrasenaCambiada=true");
+        exit();
     } else {
         echo "No se encontró el usuario o la contraseña no se cambió.";
         header("Location: cuenta.php?contrasenaCambiada=true");
+        exit();
     }
 
 } catch (PDOException $pe) {
