@@ -48,7 +48,7 @@ try {
                 $stmt->execute();
             
                 // Utilizar consultas preparadas para evitar inyecciones SQL
-                $sql = "INSERT INTO TOKENS (TOKEN, USERID, EXPIRES,TIPO) VALUES(:TOKEN, :USERID, :EXPIRES, 'AUTH')";
+                $sql = "INSERT INTO TOKENS (TOKEN, USERID, EXPIRES,TIPO) VALUES(:TOKEN, :USERID, :EXPIRES, 'ACTIVATE')";
                 $stmt = $conn->prepare($sql);
 
                 // Asignar valores a los parámetros
