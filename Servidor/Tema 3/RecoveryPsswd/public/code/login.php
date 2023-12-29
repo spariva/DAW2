@@ -5,21 +5,6 @@ if((isset($_GET['cerrarCuenta'])) &&  ($_GET['cerrarCuenta']==true)){
     session_destroy();
 }
 
-/*$iniciadaSesion = false;
-if (isset($_COOKIE['inicioSesion']) && $_COOKIE['inicioSesion'] == true) {
-     $iniciadaSesion = true;
-     setcookie('inicioSesion', true, time() + (60 * 60 * 24 * 7), "/");
-     // la sesion se alarga una semana cada vez
- }else {
-   if(isset($_GET['inicioSesion']) && ($_GET['inicioSesion']) == true){
-    $iniciadaSesion = true;
-     setcookie('inicioSesion', true, time() + (60 * 60 * 24 * 7), "/");
-    }else{
-     setcookie('inicioSesion', false);
-    $iniciadaSesion = false;
-  }
- }*/
-
 if (isset($_SESSION['nombreUsuario']) && $_SESSION['nombreUsuario'] != "") {
     header("Location: cuenta.php?sesionIniciada=true");
     exit();
