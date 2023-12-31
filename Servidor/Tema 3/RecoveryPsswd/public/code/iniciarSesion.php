@@ -40,12 +40,12 @@ try {
                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
                 //Primero borraremos todos los tokens que tenga creados ese usuario antes de asignarle uno nuevo
-                $sql = 'DELETE FROM TOKENS WHERE USERID=:USERID';
-                $stmt = $conn->prepare($sql);
+                // $sql = 'DELETE FROM TOKENS WHERE USERID=:USERID';
+                // $stmt = $conn->prepare($sql);
                 
-                $stmt->bindParam(':USERID', $email, PDO::PARAM_STR);
+                // $stmt->bindParam(':USERID', $email, PDO::PARAM_STR);
                         
-                $stmt->execute();
+                // $stmt->execute();
             
                 // Utilizar consultas preparadas para evitar inyecciones SQL
                 $sql = "INSERT INTO TOKENS (TOKEN, USERID, EXPIRES,TIPO) VALUES(:TOKEN, :USERID, :EXPIRES, 'ACTIVATE')";
