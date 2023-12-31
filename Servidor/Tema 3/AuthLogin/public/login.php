@@ -1,9 +1,8 @@
-
 <?php
 session_start();
 
 if (isset($_SESSION['user'])) {
-    header('Location: dashboard.php');
+    header('Location: private.php');
     exit();
 }
 
@@ -22,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             setcookie('rememberUser', $username, time() + 3600 * 24 * 7); // Cookie válida por 7 días
         }
 
-        header('Location: dashboard.php');
+        header('Location: private.php');
         exit();
     } else {
         $error = 'Credenciales inválidas';
