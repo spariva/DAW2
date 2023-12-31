@@ -1,8 +1,7 @@
 <?php
 // FILEPATH: /Z:/programas/GitHub/DAW2/Servidor/Tema 3/AuthLogin/public/private.php
 
-// Verificar si el usuario ha iniciado sesión
-session_start();
+// Verificar si el usuario ha iniciado sesión, si no, redirigirlo a la página de inicio de sesión
 if (!isset($_SESSION['username'])) {
     header("Location: login.php");
     exit;

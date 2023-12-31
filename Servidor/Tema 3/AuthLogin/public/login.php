@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <h1>Iniciar sesión</h1>
 
     <?php if (isset($error)) : ?>
-        <p><?php echo $error; ?></p>
+        <p style="color:red"><?php echo $error; ?></p>
     <?php endif; ?>
 
     <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
