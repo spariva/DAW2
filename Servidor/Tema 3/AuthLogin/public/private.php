@@ -2,9 +2,9 @@
 // FILEPATH: /Z:/programas/GitHub/DAW2/Servidor/Tema 3/AuthLogin/public/private.php
 
 // Verificar si el usuario ha iniciado sesión, si no, redirigirlo a la página de inicio de sesión
-if (!isset($_SESSION['username'])) {
+if (!isset($_SESSION['user'])) {
     header("Location: login.php");
-    exit;
+    exit();
 }
 
 // Obtener los datos del usuario desde la base de datos
