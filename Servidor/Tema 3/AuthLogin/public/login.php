@@ -9,12 +9,13 @@ if (isset($_SESSION['user'])) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
-
+    $_SESSION['user'] = $username;
+    echo $_SESSION['user'];
     // Aquí puedes realizar la validación de las credenciales del usuario
     // Por ejemplo, verificar si el usuario y la contraseña son correctos en una base de datos
+    
+    if ($username === 'admin' && $password === '1') {
 
-    if ($username === 'admin' && $password === 'password') {
-        $_SESSION['user'] = $username;
 
         if (isset($_POST['remember'])) {
             // Establecer una cookie para recordar al usuario
