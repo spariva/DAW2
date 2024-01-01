@@ -8,17 +8,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
     try {
-        $db = new PDO('mysql:host=localhost;dbname=pruebaLogin','admin','1234');
-        $consulta = $db->prepare("SELECT * FROM users WHERE name = :name ");
-        $consulta->bindParam(":name", $name, PDO::PARAM_INT);
-        $resultado = $consulta->execute();
-        
-        if($resultado){
-            $receta = $consulta->fetch();
-        } else{
-            $receta = null;
-        }
-    
+        $options = [
+            PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+        ];
+        $db = new PDO('mysql:host=localhost;dbname=pruebaLogin','admin','1234', $options);
+
+            // Utilizar consultas preparadas para evitar inyecciones SQL
+        $sql = "INSERT INTO USER (EMAIL, PSSWD, NOMBRE) VALUES (:email, :psswd, :nombre)";
+        $stmt = $conn->prepare($sql);
+
+        $hashPsswd = password_hash($psswd, PASSWORD_DEFAULT);
+
+        // Asignar valores a los parámetros
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $stmt->bindParam(':psswd', $hashPsswd, PDO::PARAM_STR);
+        $stmt->bindParam(':nombre', $nombre, PDO::PARAM_STR);
+
+        //Ejecucion (es dnd es mas probable el error)
+        $stmt->execute();
+
+        header("Location: login.php?cuentaCreada=true");
+        exit();
+
     }catch(PDOException $e){
         echo "ERROR:" . $e->getMessage();
         die();
