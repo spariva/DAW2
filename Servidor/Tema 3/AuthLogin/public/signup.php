@@ -3,10 +3,33 @@
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Procesar los datos del formulario de registro aquí
+    $nombre = $_POST['nombre'];
+    $email = $_POST['email'];
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+
+    try {
+        $db = new PDO('mysql:host=localhost;dbname=pruebaLogin','admin','1234');
+        $consulta = $db->prepare("SELECT * FROM users WHERE name = :name ");
+        $consulta->bindParam(":name", $name, PDO::PARAM_INT);
+        $resultado = $consulta->execute();
+        
+        if($resultado){
+            $receta = $consulta->fetch();
+        } else{
+            $receta = null;
+        }
+    
+    }catch(PDOException $e){
+        echo "ERROR:" . $e->getMessage();
+        die();
+    }
+    // ...
+    
+    $password = $_POST['password'];
     // ...
     // Redirigir al usuario a otra página después del registro exitoso
-    header('Location: registro_exitoso.php');
-    exit;
+    header('Location: private.php');
+    exit();
 }
 ?>
 
