@@ -1,5 +1,6 @@
 const os = require('node:os');
-//import os from 'node:os'; mjs
+//import os from 'node:os'; mjs este también funcionaría
+//import { cpus, platform, release, homedir, hostname, networkInterfaces, userInfo, version, type, uptime, tmpdir, totalmem, freemem } from 'node:os';
 console.log('CPUS info: ', os.cpus());
 console.log(os.platform());
 console.log(os.release());
