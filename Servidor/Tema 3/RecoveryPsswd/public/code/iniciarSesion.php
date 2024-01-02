@@ -20,7 +20,7 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Utilizar consultas preparadas para evitar inyecciones SQL
-    $sql = "SELECT NOMBRE, PSSWD FROM USER WHERE EMAIL = :email LIMIT 1";
+    $sql = "SELECT NOMBRE, PSSWD FROM USERS WHERE EMAIL = :email LIMIT 1";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':email', $email, PDO::PARAM_STR);
 
@@ -66,7 +66,6 @@ try {
 
             header("Location: cuenta.php?token=$token");
             exit();//Volvemos pero enviando el token para guardarlo en cookies
-            return;
         }
 
         //$nombreUsuario = $result['NOMBRE'];
