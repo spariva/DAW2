@@ -14,7 +14,7 @@ try {
     $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sql = "UPDATE USER SET PSSWD = :new_psswd WHERE EMAIL = :email";
+    $sql = "UPDATE USERS SET PSSWD = :new_psswd WHERE EMAIL = :email";
     $stmt = $conn->prepare($sql);
 
     //Tambien haremos psswd_hash

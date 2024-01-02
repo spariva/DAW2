@@ -14,7 +14,7 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Utilizar consultas preparadas para evitar inyecciones SQL
-    $sql = "INSERT INTO USER (EMAIL, PSSWD, NOMBRE) VALUES (:email, :psswd, :nombre)";
+    $sql = "INSERT INTO USERS (EMAIL, PSSWD, NOMBRE) VALUES (:email, :psswd, :nombre)";
     $stmt = $conn->prepare($sql);
 
     $hashPsswd = password_hash($psswd, PASSWORD_DEFAULT);
@@ -29,10 +29,9 @@ try {
 
     header("Location: login.php?cuentaCreada=true");
     exit();
-} catch (PDOException $pe) {
-    die("No se pudo conectar a la base de datos $dbname: " . $pe->getMessage());
+} catch (PDOException $pe) {    
     header("Location: login.php?cuentaCreada=false");
-    exit();
+    die("No se pudo conectar a la base de datos $dbname: " . $pe->getMessage());
 } finally {
     $conn = null; // fin
 }

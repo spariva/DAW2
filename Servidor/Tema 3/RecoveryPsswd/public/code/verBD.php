@@ -8,7 +8,7 @@ try {
     $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sql = "SELECT * FROM USER";
+    $sql = "SELECT * FROM USERS";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
 
