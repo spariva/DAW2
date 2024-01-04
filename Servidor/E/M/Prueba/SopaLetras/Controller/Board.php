@@ -12,6 +12,7 @@
             $this->columns = $columns;
 
             self::loadBoard();
+            //$this->loadBoard(); por qué no?
         }
 
         public function loadBoard() {
