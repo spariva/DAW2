@@ -88,5 +88,4 @@ def lambda1():
 
 if __name__ == "__main__":
     print("Hello World!")
-    print(factorial(5))
 
