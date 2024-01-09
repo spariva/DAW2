@@ -2,6 +2,36 @@
 # texto proporcionado por el usuario, cuente la frecuencia de cada palabra y
 # muestre las tres palabras más comunes junto con su número de apariciones.
 
+# Crea la función que recibe un string
+def analisisTexto(texto):
+    # Crea un diccionario vacío
+    diccionario = {}
+    # Separa el string en palabras
+    palabras = texto.split()
+    # Itera sobre cada palabra
+    for palabra in palabras:
+        # Si la palabra ya está en el diccionario, suma 1 a su valor
+        if palabra in diccionario:
+            diccionario[palabra] += 1
+        # Si no, añade la palabra al diccionario con valor 1
+        else:
+            diccionario[palabra] = 1
+    # Crea una lista con las palabras ordenadas por frecuencia
+    lista = sorted(diccionario, key=diccionario.get, reverse=True)
+    # Imprime las tres palabras más comunes
+    print(lista[0] + ": " + str(diccionario[lista[0]]))
+    print(lista[1] + ": " + str(diccionario[lista[1]]))
+    print(lista[2] + ": " + str(diccionario[lista[2]]))
+    # Calcula la frecuencia total de las palabras
+    total = 0
+    for palabra in diccionario:
+        total += diccionario[palabra]
+    # Imprime la frecuencia total
+    print("Total: " + str(total))
+    return total
+
+
+
 # Juego de Adivinanzas con Números Enteros: Desarrolla un juego en el que el
 # programa elija un número entero al azar entre 1 y 100, y el jugador tiene
 # que adivinarlo. El programa debe indicar si cada intento es demasiado alto o
