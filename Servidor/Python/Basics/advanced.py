@@ -30,8 +30,6 @@ def analisisTexto(texto):
     print("Total: " + str(total))
     return total
 
-
-
 # Juego de Adivinanzas con Números Enteros: Desarrolla un juego en el que el
 # programa elija un número entero al azar entre 1 y 100, y el jugador tiene
 # que adivinarlo. El programa debe indicar si cada intento es demasiado alto o
