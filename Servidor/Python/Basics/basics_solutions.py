@@ -31,6 +31,9 @@ def even_list(list):
     return [x for x in list if x % 2 == 0]
 
 
+list_numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+list_pares = even_list(list_numeros)
+
 # Diccionarios: Crea un programa que almacene los nombres y edades de tus
 # amigos como pares clave-valor en un diccionario, y luego imprime cada nombre
 # con su edad correspondiente.
@@ -84,5 +87,10 @@ def string_to_bytes(string):
 # lista de los cuadrados de los números del 1 al 10.
 
 
+# por cada número en el rango lo elevo a 2 y ya.
 def squares():
     return [x**2 for x in range(1, 11)]
+
+
+if __name__ == "__main__":
+    friends_ages({"Maki": 22, "Sergio": 23, "Miguel": 24})
