@@ -1,0 +1,242 @@
+:root {
+	--main-color: rgb(0, 128, 0);
+	--main-color-dark: rgb(0, 100, 0);
+	--unit: 0.85vw;
+	--time: 1.5s;
+}
+
+body {
+	height: 100vh;
+	margin: 0;
+	display: grid;
+	place-items: center;
+	background-color: rgb(94, 201, 107);
+	background-image: linear-gradient(
+		0deg,
+		rgba(94, 201, 107, 1) 0%,
+		rgba(233, 233, 233, 1) 100%
+	);
+}
+
+.ground {
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	width: calc(64 * var(--unit));
+	bottom: calc(6 * var(--unit));
+	height: calc(4 * var(--unit));
+	background-color: var(--main-color);
+	border-radius: calc(2 * var(--unit));
+}
+
+.dude {
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	width: calc(28 * var(--unit));
+	bottom: calc(20 * var(--unit));
+}
+
+.upper-body {
+	position: relative;
+	left: 0;
+	bottom: 0;
+	width: calc(28 * var(--unit));
+	height: calc(36 * var(--unit));
+	animation-name: shuffle;
+	animation-duration: calc(0.5 * var(--time));
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+	animation-delay: calc(-0.25 * var(--time));
+}
+
+.melon {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: calc(8 * var(--unit));
+	height: calc(8 * var(--unit));
+	background-color: var(--main-color);
+	border-radius: calc(0.5 * var(--unit)) calc(0.5 * var(--unit)) 50% 50%;
+	animation-name: nod;
+	animation-duration: calc(1 * var(--time));
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+	animation-direction: alternate;
+	animation-delay: calc(-1.5 * var(--time));
+	transform-origin: 25% 75%;
+}
+
+.gut {
+	position: absolute;
+	width: calc(28 * var(--unit));
+	height: calc(28 * var(--unit));
+	top: calc(8 * var(--unit));
+	background-color: var(--main-color-dark);
+	background-image: radial-gradient(
+		closest-corner at 30% 30%,
+		var(--main-color) 15%,
+		var(--main-color-dark) 175%
+	);
+	border-radius: 50%;
+	z-index: 2;
+}
+
+.arm-left,
+.arm-right {
+	position: absolute;
+	left: 60%;
+	top: 35%;
+	width: calc(7 * var(--unit));
+	height: calc(14 * var(--unit));
+	background-color: var(--main-color);
+	transform-origin: calc(3.5 * var(--unit)) calc(3.5 * var(--unit));
+	border-radius: calc(3.5 * var(--unit));
+	animation-name: swing;
+	animation-duration: calc(0.5 * var(--time));
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+	animation-direction: alternate;
+}
+
+.arm-right {
+	animation-delay: 0s;
+	z-index: 3;
+}
+.arm-left {
+	z-index: 1;
+	animation-direction: alternate-reverse;
+}
+
+.arm-left::after,
+.arm-right::after {
+	content: "";
+	position: absolute;
+	width: calc(15 * var(--unit));
+	height: calc(6 * var(--unit));
+	left: 0;
+	bottom: 0;
+	background-color: var(--main-color-light);
+	transform-origin: calc(3 * var(--unit)) calc(3 * var(--unit));
+	border-radius: calc(3 * var(--unit)) calc(0.5 * var(--unit))
+		calc(3 * var(--unit)) calc(3 * var(--unit));
+	animation-name: swing-swing;
+	animation-duration: calc(0.5 * var(--time));
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+	animation-direction: alternate-reverse;
+	animation-delay: calc(-0.5 * var(--time));
+}
+
+.arm-left::after {
+	background-color: var(--main-color-dark);
+	background-image: linear-gradient(
+		90deg,
+		var(--main-color-dark) 64%,
+		var(--main-color) 64%,
+		var(--main-color) 72%,
+		var(--main-color-dark) 72%
+	);
+	animation-delay: calc(-1 * var(--time));
+}
+
+.arm-right::after {
+	background-color: var(--main-color);
+	background: linear-gradient(
+		90deg,
+		var(--main-color) 64%,
+		var(--main-color-dark) 64%,
+		var(--main-color-dark) 72%,
+		var(--main-color) 72%
+	);
+}
+
+.foot-left,
+.foot-right {
+	width: calc(12 * var(--unit));
+	height: calc(5 * var(--unit));
+	position: absolute;
+	left: calc(1 * var(--unit));
+	top: calc(41 * var(--unit));
+	animation-name: step;
+	animation-duration: calc(1 * var(--time));
+	animation-iteration-count: infinite;
+	border-radius: calc(3 * var(--unit)) 50% calc(0.5 * var(--unit))
+		calc(0.5 * var(--unit));
+	transform-origin: 25% 50%;
+}
+
+.foot-left {
+	background-color: var(--main-color-dark);
+}
+
+.foot-right {
+	background-color: var(--main-color);
+	animation-delay: calc(-0.5 * var(--time));
+}
+
+@keyframes step {
+	0% {
+		transform: translateX(0px) translateY(0px);
+		animation-timing-function: ease-out;
+	}
+	25% {
+		transform: translateX(calc(6 * var(--unit)))
+			translateY(calc(-4.5 * var(--unit))) rotate(20deg);
+		animation-timing-function: ease-in-out;
+	}
+	50% {
+		transform: translateX(calc(18 * var(--unit))) translateY(0px);
+		animation-timing-function: ease-in-out;
+	}
+	100% {
+		transform: translateX(0px) translateY(0px);
+		animation-timing-function: ease-in-out;
+	}
+}
+
+@keyframes shuffle {
+	0%,
+	50%,
+	100% {
+		transform: translateY(0px);
+	}
+	25%,
+	75% {
+		transform: translateY(calc(-2 * var(--unit)));
+	}
+}
+
+@keyframes nod {
+	0%,
+	50%,
+	100% {
+		transform: translateY(0px) rotate(3deg);
+	}
+	25%,
+	75% {
+		transform: translateY(calc(1.5 * var(--unit))) rotate(-5deg);
+	}
+}
+
+@keyframes swing {
+	0% {
+		transform: rotate(50deg);
+	}
+	100% {
+		transform: rotate(-50deg);
+	}
+}
+
+@keyframes swing-swing {
+	0% {
+		transform: rotate(85deg);
+	}
+	100% {
+		transform: rotate(5deg);
+	}
+}
