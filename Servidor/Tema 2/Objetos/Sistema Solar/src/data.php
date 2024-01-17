@@ -34,6 +34,7 @@ if(isset($_POST['mostrar'])){
         $paraMostrarNombre = $paraMostrar->nombre;
     }
 }
+
 // NULL, "No encontrado", un planeta
 // $paraMostrarNombre el nombre o ''
 

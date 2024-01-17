@@ -1,0 +1,25 @@
+// sass --watch styles.scss:styles.css esto en la terminal para que si hay cambios se actualice el css
+// @import "config";
+// @import "utilites";
+// @import “mixins”; // para importar los mixins
+
+// $variable: (valor);
+// selector (etiqueta|id|clase) {
+// propiedad: $variable;
+// }
+
+$primary: #000;
+$secondary: #fff;
+$turquoise: #22c4c9;
+$red: #d32b2b;
+$primary-font: 'Roboto', sans-serif;
+$secondary-font: 'Open Sans', sans-serif;
+$font-size: 16px;
+
+
+body{
+    background-color: $turquoise;
+    color: $secondary;
+    font-size: $font-size;
+    font: $primary-font;
+}

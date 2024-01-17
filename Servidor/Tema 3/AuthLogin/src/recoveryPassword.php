@@ -9,9 +9,12 @@ try {
     
     if($resultado){
         $receta = $consulta->fetch();
+        return $receta;
     } else{
         $receta = null;
     }
+
+    
     
     //print_r($receta);
 
