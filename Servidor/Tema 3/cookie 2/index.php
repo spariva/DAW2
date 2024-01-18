@@ -88,6 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <h2>Lista de Cookies</h2>
         <!--Mostrar cada cookie en la lista-->
         <?php foreach ($_COOKIE as $cookie => $value) { ?>
+            
             <div class="cookie-item">
                 <span> <?php echo $cookie . ' : ' . $value ?> </span>
                 <form method="post" action="" id="form-cookie-<?= $cookie ?>">
