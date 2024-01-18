@@ -5,7 +5,7 @@
   --second-color-dark: rgb(171, 103, 38);
   --background-color: rgb(244, 152, 152);
   --background-sky-color: rgb(148, 88, 159);
-  --background-green-color: rgba(91, 214, 142, 0.954);
+  --background-green-color: rgba(53, 211, 164, 0.954);
   --unit: 0.95vw;
   --time: 3s; }
 
@@ -29,7 +29,7 @@ body {
   margin-right: auto;
   width: calc(96 * var(--unit));
   bottom: calc(6 * var(--unit));
-  height: calc(4 * var(--unit));
+  height: calc(2 * var(--unit));
   background: var(--background-green-color);
   background-image: -moz-linear-gradient(bottom, var(--background-green-color) 0%, var(--second-color-dark) 100%);
   background-image: -webkit-linear-gradient(bottom, var(--background-green-color) 0%, var(--second-color-dark) 100%);
@@ -167,17 +167,37 @@ body {
 .tree {
   position: absolute;
   left: 0;
+  right: calc(-90 * var(--unit));
+  margin-left: auto;
+  margin-right: auto;
+  width: calc(14 * var(--unit));
+  bottom: calc(7 * var(--unit));
+  height: calc(16 * var(--unit));
+  animation-name: treeMoving;
+  animation-duration: calc(3 * var(--time));
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-delay: calc(1 * var(--time)); }
+
+.loading-bar {
+  position: absolute;
+  left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  width: calc(100 * var(--unit));
-  bottom: calc(4 * var(--unit));
+  width: calc(96 * var(--unit));
+  bottom: calc(6 * var(--unit));
   height: calc(4 * var(--unit));
+  background: var(--background-green-color);
+  background-image: -moz-linear-gradient(bottom, var(--background-green-color) 0%, var(--main-color-dark) 100%);
+  background-image: -webkit-linear-gradient(bottom, var(--background-green-color) 0%, var(--main-color-dark) 100%);
+  background-image: linear-gradient(to bottom, var(--background-green-color) 0%, var(--main-color-dark) 75%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr= $color1, endColorstr= $color2,GradientType=1 );
   background-color: var(--second-color-dark);
   border-radius: calc(2 * var(--unit));
-  animation-name: treeMoving;
+  animation-name: barLoading;
   animation-duration: calc(10 * var(--time));
-  animation-iteration-count: infinite;
+  animation-iteration-count: 2;
   animation-timing-function: linear;
   animation-delay: calc(-10 * var(--time)); }
 
@@ -236,5 +256,10 @@ body {
     transform: translateX(0px); }
   100% {
     transform: translateX(calc(-100 * var(--unit))); } }
+@keyframes barLoading {
+  0% {
+    transform: translateX(calc(-100 * var(--unit))); }
+  100% {
+    transform: translateX(0px); } }
 
 /*# sourceMappingURL=gigante.css.map */
