@@ -191,6 +191,34 @@ body {
 	animation-delay: calc(-0.5 * var(--time));
 }
 
+.jump{
+	animation-name: jump;
+	animation-duration: calc(1 * var(--time));
+	animation-iteration-count: 2;
+	animation-timing-function: ease-in;
+	animation-delay: calc(0.2 * var(--time));
+	animation-fill-mode: backwards;
+}
+
+.tree{
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	width: calc(100 * var(--unit));
+	bottom: calc(4 * var(--unit));
+	height: calc(4 * var(--unit));
+	background-color: var(--second-color-dark);
+	border-radius: calc(2 * var(--unit));
+	animation-name: treeMoving;
+	animation-duration: calc(10 * var(--time));
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	animation-delay: calc(-10 * var(--time));
+}
+
+
 @keyframes step {
 	0% {
 		transform: translateX(0px) translateY(0px);
@@ -252,3 +280,33 @@ body {
 		transform: rotate(5deg);
 	}
 }
+
+@keyframes jump {
+	0% {
+		transform: translateY(0px);
+	}
+	30% {
+		transform: translateY(calc(-12 * var(--unit))) translateX(calc(2 * var(--unit)));
+	}
+	35% {
+		transform: translateY(calc(-12 * var(--unit))) translateX(calc(2 * var(--unit)));
+	}
+	60% {
+		transform: translateY(0px) translateX(calc(-8 * var(--unit)));
+	}
+	100% {
+		transform: translateY(0px) translateX(0px);
+	}
+}
+
+@keyframes treeMoving {
+	0% {
+		transform: translateX(0px);
+	}
+	100% {
+		transform: translateX(calc(-100 * var(--unit)));
+	}
+}
+
+
+
