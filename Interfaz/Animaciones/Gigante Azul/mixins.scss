@@ -1,0 +1,7 @@
+@mixin degradadoDual($color1, $color2) {
+    background: $color1;
+    background: -moz-linear-gradient(left, $color1 0%, $color2 100%);
+    background: -webkit-linear-gradient(left, $color1 0%, $color2 100%);
+    background: linear-gradient(to right, $color1 0%, $color2 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=1 );
+}
