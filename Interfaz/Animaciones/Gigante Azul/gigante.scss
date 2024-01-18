@@ -1,12 +1,13 @@
 :root {
 	--main-color: rgb(0, 115, 138);
 	--main-color-dark: rgb(0, 98, 118);
-	--second-color: rgb(0, 128, 128);
-	--second-color-dark: rgb(0, 118, 118);
+	--second-color: rgb(193, 108, 35);
+	--second-color-dark: rgb(171, 103, 38);
 	--background-color: rgb(244, 152, 152);
-	--background-sky-color: rgb(193, 193, 110);
-	--unit: 0.85vw;
-	--time: 1.5s;
+	--background-sky-color: rgb(148, 88, 159);
+	--background-green-color: rgba(91, 214, 142, 0.954);
+	--unit: 0.95vw;
+	--time: 3s;
 }
 
 @import "mixins";
@@ -17,10 +18,10 @@ body {
 	display: grid;
 	place-items: center;
 	background-color: var(--background-color);
-	background-image: linear-gradient(
-		0deg,
-		rgb(193, 193, 110) 0%,
-		rgb(244, 152, 152) 100%
+	@include degradadoDual(
+		var(--background-color),
+		var(--background-sky-color),
+		top
 	);
 }
 
@@ -30,10 +31,15 @@ body {
 	right: 0;
 	margin-left: auto;
 	margin-right: auto;
-	width: calc(64 * var(--unit));
+	width: calc(96 * var(--unit));
 	bottom: calc(6 * var(--unit));
 	height: calc(4 * var(--unit));
-	background-color: var(--main-color);
+	@include degradadoDual(
+		var(--background-green-color),
+		var(--second-color-dark),
+		bottom
+	);
+	background-color: var(--second-color-dark);
 	border-radius: calc(2 * var(--unit));
 }
 
@@ -81,12 +87,12 @@ body {
 	position: absolute;
 	width: calc(28 * var(--unit));
 	height: calc(28 * var(--unit));
-	top: calc(8 * var(--unit));
+	top: calc(9 * var(--unit));
 	background-color: var(--main-color-dark);
 	background-image: radial-gradient(
 		closest-corner at 30% 30%,
-		var(--main-color) 15%,
-		var(--main-color-dark) 175%
+		var(--main-color) 20%,
+		var(--main-color-dark) 160%
 	);
 	border-radius: 50%;
 	z-index: 2;
@@ -213,7 +219,7 @@ body {
 	}
 	25%,
 	75% {
-		transform: translateY(calc(-2 * var(--unit)));
+		transform: translateY(calc(-3 * var(--unit)));
 	}
 }
 

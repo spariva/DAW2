@@ -1,7 +1,9 @@
-@mixin degradadoDual($color1, $color2) {
+//Solo iría en la dirección deseada si no usa las versiones antiguas de navegadores.
+@mixin degradadoDual($color1, $color2, $direction) {
     background: $color1;
-    background: -moz-linear-gradient(left, $color1 0%, $color2 100%);
-    background: -webkit-linear-gradient(left, $color1 0%, $color2 100%);
-    background: linear-gradient(to right, $color1 0%, $color2 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=1 );
+    background-image: -moz-linear-gradient(bottom, $color1 0%, $color2 100%);
+    background-image: -webkit-linear-gradient(bottom, $color1 0%, $color2 100%);
+    background-image: linear-gradient(to $direction, $color1 0%, $color2 75%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr= $color1, endColorstr= $color2,GradientType=1 );
 }
+
