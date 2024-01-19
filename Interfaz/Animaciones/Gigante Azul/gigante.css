@@ -6,8 +6,8 @@
   --background-color: rgb(244, 152, 152);
   --background-sky-color: rgb(148, 88, 159);
   --background-green-color: rgba(53, 211, 164, 0.954);
-  --unit: 0.95vw;
-  --time: 3s; }
+  --unit: 0.85vw;
+  --time: 1s; }
 
 body {
   height: 100vh;
@@ -18,8 +18,7 @@ body {
   background: var(--background-color);
   background-image: -moz-linear-gradient(bottom, var(--background-color) 0%, var(--background-sky-color) 100%);
   background-image: -webkit-linear-gradient(bottom, var(--background-color) 0%, var(--background-sky-color) 100%);
-  background-image: linear-gradient(to top, var(--background-color) 0%, var(--background-sky-color) 75%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr= $color1, endColorstr= $color2,GradientType=1 ); }
+  background-image: linear-gradient(to top, var(--background-color) 0%, var(--background-sky-color) 75%); }
 
 .ground {
   position: absolute;
@@ -34,7 +33,6 @@ body {
   background-image: -moz-linear-gradient(bottom, var(--background-green-color) 0%, var(--second-color-dark) 100%);
   background-image: -webkit-linear-gradient(bottom, var(--background-green-color) 0%, var(--second-color-dark) 100%);
   background-image: linear-gradient(to bottom, var(--background-green-color) 0%, var(--second-color-dark) 75%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr= $color1, endColorstr= $color2,GradientType=1 );
   background-color: var(--second-color-dark);
   border-radius: calc(2 * var(--unit)); }
 
@@ -159,7 +157,7 @@ body {
 .jump {
   animation-name: jump;
   animation-duration: calc(1 * var(--time));
-  animation-iteration-count: 2;
+  animation-iteration-count: 1;
   animation-timing-function: ease-in;
   animation-delay: calc(0.2 * var(--time));
   animation-fill-mode: backwards; }
@@ -192,7 +190,6 @@ body {
   background-image: -moz-linear-gradient(bottom, var(--background-green-color) 0%, var(--main-color-dark) 100%);
   background-image: -webkit-linear-gradient(bottom, var(--background-green-color) 0%, var(--main-color-dark) 100%);
   background-image: linear-gradient(to bottom, var(--background-green-color) 0%, var(--main-color-dark) 75%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr= $color1, endColorstr= $color2,GradientType=1 );
   background-color: var(--second-color-dark);
   border-radius: calc(2 * var(--unit));
   animation-name: barLoading;

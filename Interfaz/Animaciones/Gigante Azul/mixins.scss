@@ -4,6 +4,6 @@
     background-image: -moz-linear-gradient(bottom, $color1 0%, $color2 100%);
     background-image: -webkit-linear-gradient(bottom, $color1 0%, $color2 100%);
     background-image: linear-gradient(to $direction, $color1 0%, $color2 75%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr= $color1, endColorstr= $color2,GradientType=1 );
+    // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr= $color1, endColorstr= $color2,GradientType=1 );
 }
 

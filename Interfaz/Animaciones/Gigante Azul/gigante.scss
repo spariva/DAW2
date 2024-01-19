@@ -6,8 +6,8 @@
 	--background-color: rgb(244, 152, 152);
 	--background-sky-color: rgb(148, 88, 159);
 	--background-green-color: rgba(53, 211, 164, 0.954);
-	--unit: 0.95vw;
-	--time: 3s;
+	--unit: 0.85vw;
+	--time: 1s;
 }
 
 @import "mixins";
@@ -195,7 +195,7 @@ body {
 .jump{
 	animation-name: jump;
 	animation-duration: calc(1 * var(--time));
-	animation-iteration-count: 2;
+	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
 	animation-delay: calc(0.2 * var(--time));
 	animation-fill-mode: backwards;
