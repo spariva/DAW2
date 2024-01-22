@@ -20,8 +20,8 @@ const port = 3000;
 // app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(bodyParser.json());
 
-app.get('/', (req, res) => {
-    res.send('Hello World!');
+app.get('/', (req, res, next) => {
+    next();
 });
 
 // // 4. Crear una ruta para el método POST

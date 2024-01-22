@@ -1,0 +1,19 @@
+{
+  "pokemons": [
+    {
+      "id": 107,
+      "nombre": "Pikachu",
+      "tipo": "electrico"
+    },
+    {
+      "id": 200,
+      "nombre": "Magikarp",
+      "tipo": "agua"
+    },
+    {
+      "id": 143,
+      "nombre": "Charmander",
+      "tipo": "fuego"
+    }
+  ]
+}

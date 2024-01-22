@@ -1,0 +1,29 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Juan Pérez",
+      "edad": 25
+    },
+    {
+      "id": 2,
+      "nombre": "María González",
+      "edad": 30
+    },
+    {
+      "id": 3,
+      "nombre": "Carlos Rodríguez",
+      "edad": 28
+    },
+    {
+      "id": 4,
+      "nombre": "Laura Martínez",
+      "edad": 22
+    },
+    {
+      "id": 5,
+      "nombre": "Pedro López",
+      "edad": 35
+    }
+  ]
+}
