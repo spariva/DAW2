@@ -7,7 +7,7 @@
   --background-sky-color: rgb(148, 88, 159);
   --background-green-color: rgba(53, 211, 164, 0.954);
   --unit: 0.85vw;
-  --time: 1s; }
+  --time: 1.8s; }
 
 body {
   height: 100vh;
