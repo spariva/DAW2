@@ -1,10 +1,4 @@
-"""╭───────────────────────────────────────────────────────────── CONTANDO VOCALES ──────────────────────────────────────────────────────────────╮
-│ Dada una cadena de texto, indique el número de vocales que tiene.                                                                           │
-│                                                                                                                                             │
-│ NOTA:                                                                                                                                       │
-│                                                                                                                                             │
-│  • No se puede utilizar la función count()                                                                                                  │
-╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+"""╭───────────────────────────────────────────────────────────── 
 ┏━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
 ┃   ┃ (entrada)                                ┃ (salida)        ┃
 ┃ # ┃ text: str                                ┃ num_vowels: int ┃
@@ -17,14 +11,15 @@
 
 
 def run(text: str) -> int:
-
-    vowels = 'aeiouAEIOUáéíóúÁÉÍÓÚ'
-    #Python nos permite recorrer asi de facil un string y sus elementos, lo trata directamente como un array de chars
+    vowels = "aeiouAEIOUáéíóúÁÉÍÓÚ"
+    # Python nos permite recorrer asi de facil un string y sus elementos
+    # lo trata directamente como un array de chars
     num_vowels = 0
 
     for char in text:
         if char in vowels:
             num_vowels += 1
-            
+
     return num_vowels
+
 
