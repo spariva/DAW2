@@ -18,6 +18,7 @@ inputCiudad.addEventListener('keyup', function () {
     };
 });
 
-xmlhr.open('POST', '/consultarCiudades', true);
-xmlhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
-xmlhr.send(JSON.stringify({ dosLetras: dosLetras }));
+xmlhr.open('GET', '/consultarCiudades', true);
+xmlhr.send();
+// xmlhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+// xmlhr.send(JSON.stringify({ dosLetras: dosLetras }));
