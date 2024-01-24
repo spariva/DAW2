@@ -1,4 +1,4 @@
-const express = require('express');
+    const express = require('express');
 const app = express();
 
 // Middleware para la verificación de autenticación
@@ -17,6 +17,9 @@ const verificarAutenticacion = (req, res, next) => {
 // Middleware para realizar otras tareas intermedias (pueden ser adicionales)
 const otroMiddleware = (req, res, next) => {
     // Realizar otras tareas intermedias si es necesario
+    const fecha = new Date();
+    const hora = fecha.getHours() + ':' + fecha.getMinutes() + ':' + fecha.getSeconds();
+    const mensaje = 'Petición recibida en el servidor a las ' + hora;
     console.log('Otro middleware ejecutado');
     next();
 };
