@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="./cliente.js" defer></script>
+    <style>
+        /* Center the box */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Style the box */
+        .box {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f2f2f2;
+        }
+
+        /* Style the text input */
+        .box input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Style the empty div */
+        .box .empty-div {
+            height: 100px;
+            border: 1px dashed #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <input type="text" placeholder="Enter text" id="inputCiudad">
+        <div class="empty-div" id="resultado"></div>
+    </div>
+</body>
+</html>
