@@ -1,0 +1,15 @@
+body {
+    font-family: Arial;
+    }
+    #contraste, #nocontraste {
+    margin-bottom: 20px;
+    padding: 10px;
+    }
+    .contraste-bueno {
+    color: #ffffff;
+    background-color: #3498db;
+    }
+    .contraste-malo {
+    color: #ffffff;
+    background-color: #7f8c8d;
+    }
