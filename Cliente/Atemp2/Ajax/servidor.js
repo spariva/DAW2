@@ -1,5 +1,6 @@
-import express from 'node:express';
-import fs from 'node:fs';
+const express = require('express');
+const fs = require('fs');
+
 
 const app = express();
 const port = 3000;
@@ -7,7 +8,7 @@ const port = 3000;
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
-  const dosLetras = req.query.dosLetras.toLowerCase();
+  const dosLetras = req.body.toLowerCase();
   const ciudadesJSON = require('tu_archivo.json');
 
   const ciudadesCoincidentes = ciudadesJSON.filter(ciudad => {
