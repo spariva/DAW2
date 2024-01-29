@@ -1,4 +1,4 @@
-    const express = require('express');
+const express = require('express');
 const app = express();
 
 // Middleware para la verificación de autenticación
