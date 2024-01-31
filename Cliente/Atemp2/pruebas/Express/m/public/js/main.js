@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const addTaskButton = document.getElementById('popup-close-button');
-    const taskInput = document.getElementById('tarea');
+    const addTaskButton = document.getElementById('task-add-button');
+    const taskInput = document.getElementById('task-input');
 
-    addButton.addEventListener('click', function() {
+    addTaskButton.addEventListener('click', function(e) {
+        e.preventDefault();
         const taskDescription = taskInput.value.trim();
         if (taskDescription) {
             addTask(taskDescription);
@@ -20,19 +21,20 @@ document.addEventListener('DOMContentLoaded', function() {
         })
             .then(response => response.json())
             .then(task => {
-                const taskElement = createTaskElement(task);
-                document.querySelector('#new-tasks .task-list').appendChild(taskElement);
+                const taskElement = createTask(task);
+                document.querySelector('.task-list#task-todo').appendChild(taskElement);
+                taskInput.value = '';
             })
             .catch(error => console.error('Error:', error));
     }
 
-    function createTaskElement(task) {
-        const taskElement = document.createElement('div');
-        taskElement.className = 'task-item';
-        taskElement.dataset.id = task.id;
+    function createTask(task) {
+        const taskItem = document.createElement('div');
+        taskItem.className = 'task';
+        taskItem.dataset.id = task.id;
 
         const taskDesc = document.createElement('span');
-        taskDesc.className = 'task-desc';
+        taskDesc.className = 'task-description';
         taskDesc.textContent = task.description;
         taskDesc.contentEditable = false;
 
@@ -49,21 +51,21 @@ document.addEventListener('DOMContentLoaded', function() {
             stateButton.onclick = function() { moveTask(task.id, 'new'); };
         }
 
-        const editButton = document.createElement('button');
-        editButton.className = 'edit-btn';
-        editButton.textContent = 'Editar';
-        editButton.onclick = function() { editTaskMode(task.id, editButton); };
+        const taskEditButton = document.createElement('button');
+        taskEditButton.className = 'task-edit-button';
+        taskEditButton.textContent = 'Editar';
+        taskEditButton.onclick = function() { editTaskMode(task.id, editButton); };
 
-        const deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Eliminar';
-        deleteButton.onclick = function() { deleteTask(task.id); };
+        const taskDeleteButton = document.createElement('button');
+        taskDeleteButton.textContent = 'Eliminar';
+        taskDeleteButton.onclick = function() { deleteTask(task.id); };
 
-        taskElement.appendChild(taskDesc);
-        taskElement.appendChild(stateButton);
-        taskElement.appendChild(editButton);
-        taskElement.appendChild(deleteButton);
+        taskItem.appendChild(taskDesc);
+        taskItem.appendChild(stateButton);
+        taskItem.appendChild(taskEditButton);
+        taskItem.appendChild(taskDeleteButton);
 
-        return taskElement;
+        return taskItem;
     }
 
 
@@ -74,7 +76,6 @@ document.addEventListener('DOMContentLoaded', function() {
         taskDesc.contentEditable = true;
         taskDesc.focus();
 
-        // Cambiar el botón de "Editar" a "Guardar"
         editButton.textContent = 'Guardar';
         editButton.onclick = function() {
             updateTask(taskId, taskDesc.innerText);
@@ -197,6 +198,5 @@ function downloadTasksAsPDF() {
 
     doc.save('tareas.pdf');
 }
-
 
 

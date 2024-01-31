@@ -10,7 +10,7 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile(__dirname + '/public/index.html');
 });
 
 app.get('/tasks', (req, res) => {
@@ -23,11 +23,12 @@ app.get('/tasks', (req, res) => {
 app.post('/tasks', (req, res) => {
     const newTask = { id: Date.now(), description: req.body.description };
 
-    fs.readFile(__dirname + '/data/tasks.json', (err, data) => {
+    fs.readFile(__dirname + jsonDataFile, (err, data) => {
         if (err) throw err;
-        const tasks = JSON.parse(data).tasks;
+        let tasks = [];
+        JSON.parse(data).tasks;
         tasks.push(newTask);
-        fs.writeFile(__dirname + '/tasks.json', JSON.stringify({ tasks }), (err) => {
+        fs.writeFile(__dirname + jsonDataFile, JSON.stringify({ tasks }), (err) => {
             if (err) throw err;
             res.json(newTask);
         });
@@ -51,5 +52,5 @@ app.delete('/tasks/:id', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+    console.log(`Servidor runeado en http://localhost:${PORT}`);
 });

@@ -1,6 +1,6 @@
 const popupOpenButton = document.getElementById('popup-open-button');
-const popupContainer = document.getElementById('popup-container');
-const popup = document.getElementById('popup');
+const popup = document.querySelector('.popup');
+const popupContainer = document.querySelector('.popup-container');
 const popupCloseButton = document.getElementById('popup-close-button');
 
 /* Evento de click para abrir el pop-up de agregar tarea */
