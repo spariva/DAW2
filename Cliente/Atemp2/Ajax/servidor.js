@@ -5,11 +5,13 @@ const fs = require('fs');
 const app = express();
 const port = 3000;
 
+
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
-  const dosLetras = req.body.toLowerCase();
-  const ciudadesJSON = require('tu_archivo.json');
+  const dosLetras = req.body.nombre.toLowerCase();
+  // Selecciona 
+  const ciudadesJSON = require('ciudades.json');
 
   const ciudadesCoincidentes = ciudadesJSON.filter(ciudad => {
     const nombreCiudad = ciudad.nombre.toLowerCase();
@@ -20,7 +22,7 @@ app.get('/', (req, res) => {
 
 app.post('/consultarCiudades', (req, res) => {
     const dosLetras = req.body.dosLetras.toLowerCase();
-    const ciudadesJSON = require('tu_archivo.json'); 
+    const ciudadesJSON = require('ciudades.json'); 
     const ciudadesCoincidentes = ciudadesJSON.filter(ciudad => {
       const nombreCiudad = ciudad.nombre.toLowerCase();
       return nombreCiudad.includes(dosLetras);
