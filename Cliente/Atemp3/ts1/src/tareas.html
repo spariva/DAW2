@@ -1,0 +1,66 @@
+<!-- This is the html for a task manager. It has 3 columns each of them with a title, and below them where the footer is usually placed, there´s a form to add a new task, with an input text and a select-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Manager</title>
+    <script src="tareas.js" defer></script>
+</head>
+<body>
+    <div class="container" style="display: flex; flex-direction: column;" id="taskList">
+        <div class="column" id="todo">
+            <h2>To Do</h2>
+            <div class="task">
+                <p>Task 1</p>
+                <button>Done</button>
+            </div>
+            <div class="task">
+                <p>Task 2</p>
+                <button>Done</button>
+            </div>
+            <div class="task">
+                <p>Task 3</p>
+                <button>Done</button>
+            </div>
+        </div>
+        <div class="column" id="doing">
+            <h2>Doing</h2>
+            <div class="task">
+                <p>Task 4</p>
+                <button>Done</button>
+            </div>
+            <div class="task">
+                <p>Task 5</p>
+                <button>Done</button>
+            </div>
+            <div class="task">
+                <p>Task 6</p>
+                <button>Done</button>
+            </div>
+        </div>
+        <div class="column" id="done">
+            <h2>Done</h2>
+            <div class="task">
+                <p>Task 7</p>
+                <button>Done</button>
+            </div>
+            <div class="task">
+                <p>Task 8</p>
+                <button>Done</button>
+            </div>
+            <div class="task">
+                <p>Task 9</p>
+                <button>Done</button>
+            </div>
+        </div>
+    </div>
+    <form action="">
+        <input type="text" placeholder="Add a new task">
+        <select name="column" id="column">
+            <option value="to-do">To Do</option>
+            <option value="doing">Doing</option>
+            <option value="done">Done</option>
+        </select>
+        <button type="submit">Add</button>
+    </form>
+</html>
