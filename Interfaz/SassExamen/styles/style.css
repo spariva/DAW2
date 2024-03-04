@@ -1,0 +1,91 @@
+body {
+  height: 20vh;
+  margin: 0;
+  display: grid;
+  background-color: #dcbce2; }
+
+.nav {
+  background-color: #353fd6;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center; }
+
+.h1 {
+  color: #ffffff;
+  font-size: 2rem; }
+
+button {
+  background-color: #a831c2;
+  color: #ffffff;
+  border-radius: 25%;
+  shadow-box: 0 0 10px 0 #a831c2;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  transition: 1.0s ease; }
+  button:hover {
+    background-color: #cc7bde; }
+
+.listaPeliculas {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: start;
+  gap: 15vw; }
+
+.listaPendientes .listaTitulo {
+  background-color: #b94cc4;
+  border-radius: 0;
+  font-size: 1.3rem; }
+.listaPendientes div {
+  background-color: #c872d1;
+  border-radius: 20%;
+  padding: 20px; }
+
+.listaPeliculas {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: start;
+  gap: 15vw; }
+
+.listaVistas .listaTitulo {
+  background-color: #d9c369;
+  border-radius: 0;
+  font-size: 1.3rem; }
+.listaVistas div {
+  background-color: #e3d392;
+  border-radius: 20%;
+  padding: 20px; }
+
+.listaPeliculas {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: start;
+  gap: 15vw; }
+
+.listaFavoritas .listaTitulo {
+  background-color: #118973;
+  border-radius: 0;
+  font-size: 1.3rem; }
+.listaFavoritas div {
+  background-color: #16b699;
+  border-radius: 20%;
+  padding: 20px; }
+
+.listaNoRecomendadas .listaTitulo {
+  background-color: #6027c2;
+  border-radius: 0;
+  font-size: 1.3rem; }
+.listaNoRecomendadas div {
+  background-color: #7a43d9;
+  border-radius: 30%;
+  padding: 20px; }
+
+/*# sourceMappingURL=style.css.map */

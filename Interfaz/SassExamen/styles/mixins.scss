@@ -1,0 +1,42 @@
+@mixin flexOptions($direction, $wrap, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin h2($font-size)  {
+    border-radius: 0;
+    font-size: $font-size;
+}
+
+// @mixin tareas($color-fondo-tarea, $borde-tarea, $ancho-tarea, $tamano-texto-tarea, $fuente) {
+//     background-color: $color-fondo-tarea;
+//     width: $ancho-tarea;
+//     border-radius: $borde-tarea;
+//     margin: 25px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     font-size: $tamano-texto-tarea;
+//     font-family: $tertiary-font;
+//     text-align: center;
+//     padding: 10px;
+//     padding-right: 20px;    
+//     position: relative;
+// }
+
+@mixin botones($color-fondo, $color-texto, $color-hover){
+    background-color: $color-fondo;
+    color: $color-texto;
+    border-radius: 25%;
+    shadow-box: 0 0 10px 0 $color-fondo;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    transition: 1.0s ease;
+    &:hover{
+        background-color: lighten($color-hover,20%);
+    }
+}
