@@ -1,0 +1,208 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Rubik', sans-serif;
+  }
+
+  .title-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    z-index: 2;
+  }
+  
+  .title-container img {
+    width: 5vw;
+    height: 5vw;
+    margin-right: 2vw;
+  }
+  
+  .title-container h1 {
+    margin: 0;
+    font-size:  48px;
+    color: #fff;
+  }
+  
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.0);
+    z-index: 9999;
+    display: none;
+  }
+  
+  .popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  
+  .popup-text {
+    width: 100%;
+  }
+  
+  .popup-image {
+    overflow: hidden;
+    display: none;
+  }
+
+  .popup-image img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .banner {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 0;
+  }
+  
+  .banner-bg {
+    background-image: url('images/erindale_rope_bridge_banner.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 110%;
+    height: 110%;
+    position: absolute;
+    z-index: -1;
+    transition: filter 0.3s;
+  }
+  
+  .blur-banner .banner-bg {
+    filter: blur(10px) brightness(0.8);
+    transition: filter 0.3s;
+  }
+
+  .pixi-container {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+  }
+  
+
+  .link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .link img {
+    width: 10vw; /* Use viewport width instead of fixed size */
+    height: 10vw; /* Use viewport width instead of fixed size */
+    display: block;
+    margin-bottom: 10px;
+    transition: transform 0.3s;
+  }
+  
+  .link span {
+    opacity: 0;
+    transform: translateY(5px);
+    transition: opacity 0.3s, transform 0.3s;
+    font-size: 1.5rem; /* Set initial font size */
+  }
+  
+  @media screen and (min-width: 900px) {
+    /* Adjust font size and icon size for larger screens */
+    .title-container h1 {
+        font-size:  2rem;
+    }
+    .title-container img {
+      width: 2vw;
+      height: 2vw;
+    }
+
+    .popup-content {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  
+    .popup-text {
+      width: 60%;
+    }
+  
+    .popup-image {
+      width: 40%;
+      height: 300px;
+      position: relative;
+      display: flex;
+    }  
+
+    .link img {
+      width: 5vw;
+      height: 5vw;
+    }
+  
+    .link span {
+      font-size: 1.5rem;
+    }
+  }
+  
+
+
+  .link:hover {
+    color: #fff;
+  }
+  
+  .link:hover img {
+    transform: translateY(-5px);
+  }
+  
+  .link:hover span {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .dim-banner .banner-bg {
+    filter: brightness(0.8);
+    transition: filter 0.3s;
+  }
+  
+  .gradient {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10vh;
+    z-index: 1;
+  }
