@@ -156,7 +156,7 @@ function resetearJuego() {
     cartaDos = "";
     elegidasDosCartas = false;
     contadorParesRotados = 0;
-    parrafoContador.textContent = "Parejas volteadas: " +contadorParesRotados;
+    parrafoContador.textContent = "Parejas volteadas: " + contadorParesRotados;
     segundosReloj = MINUTO;
     spanTemporizador.textContent = segundosReloj;
     spanTemporizador.style.color = "white";
