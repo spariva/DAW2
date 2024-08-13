@@ -36,7 +36,7 @@ function handleMove(position) {
     return true;
   }
 
-  if (gameBoard.includes(' ')) {
+  if (!gameBoard.includes(' ')) {
     printBoard();
     console.log('The game is a tie!');
     gameActive = false;
@@ -72,14 +72,19 @@ function checkWin() {
   //   }
   // }
 
-  //return false si no encuentra ninguna condición de victoria y true en cuanto encuentre una.
   return winConditions.some(condition => {
     const [a, b, c] = condition;
     return gameBoard[a] === currentPlayer && gameBoard[b] === currentPlayer && gameBoard[c] === currentPlayer;
   });
 }
 
+while(gameActive) {
+  printBoard();
+  const position = prompt(`Player ${currentPlayer} enter your move: `);
 
-
-
-
+  if (position < 0 || position > 8){
+    console.log("Invalid position, enter a number between 0 and 8.");
+  } else {
+    handleMove(parseInt(position));
+  }
+}
